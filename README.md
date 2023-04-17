@@ -12,5 +12,5 @@ There are extension methods for memory and streams.
 
 ## How to get it
 
-With the first release, this library will be available as NuGet package, too. 
-Unless published, you can compile the DLL using the source project.
+This library is available as 
+[NuGet package](https://www.nuget.org/packages/wan24-Compression/).
