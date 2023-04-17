@@ -1,0 +1,224 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/P/wan24-Compression/src/wan24-Compression Docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "i0kpEPVIUeUzpZGh9gDe7nw05foe030RwHo0/x9di5Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "dgYMDV/x0Wts/K5LR7ck0F+e8pGpDuiZ8W5KpdDlBFo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.html",
+          "hash": "XwUB8sauA//W7tF3nZhepEDrXNcwuVEnq+JuoRa60k4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionAlgorithmBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionAlgorithmBase.html",
+          "hash": "bFb0J9GXaZQeVlFfmgjuAreNPpeT5X+47BpNTbwXrbU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionExtensions.html",
+          "hash": "J1gkfjDYK5VYDYst6N/89G64EUFzHPwDdYi+2WU0iGM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionFlags.html",
+          "hash": "owvofATkm3oQwdaBTGwPVg9UAhKbu9COu8wdGbRUh3o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionHelper.html",
+          "hash": "hHbCRZDiC2n/aL1lMt9HmcfmxZI1MER7f9NkR/dUJh0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionOptions.html",
+          "hash": "mbr2rNhGeYGRoCyD1Kt5p2a/on8Kp8HIewRihHNchDY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.html",
+          "hash": "6ZWWU5NWCG8CXIZUMWu0kcbUNCJ/eEGh7BLcyFr+KOY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.html",
+          "hash": "1TE1tw+3+7DL/ggnzfX3+v+hgX0ZcSYshVBzFg4yAcI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "PyehZ3YsugA1KUbiGyoKV8va/PbCWwHYa2QTXDwCSRs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "QdNGI4nAj2oDyr5Z5C5kV43pjQh6isLlg9S52tUxCzE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 8,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

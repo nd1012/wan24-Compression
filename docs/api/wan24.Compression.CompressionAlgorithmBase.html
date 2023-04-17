@@ -1,0 +1,878 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CompressionAlgorithmBase
+   | Streams </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CompressionAlgorithmBase
+   | Streams ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="wan24.Compression.CompressionAlgorithmBase">
+  
+  
+  <h1 id="wan24_Compression_CompressionAlgorithmBase" data-uid="wan24.Compression.CompressionAlgorithmBase" class="text-break">Class CompressionAlgorithmBase
+  </h1>
+  <div class="markdown level0 summary"><p>Compression algorithm</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CompressionAlgorithmBase</span></div>
+      <div class="level2"><a class="xref" href="wan24.Compression.BrotliCompressionAlgorithm.html">BrotliCompressionAlgorithm</a></div>
+      <div class="level2"><a class="xref" href="wan24.Compression.GZipCompressionAlgorithm.html">GZipCompressionAlgorithm</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.Compression.html">wan24.Compression</a></h6>
+  <h6><strong>Assembly</strong>: wan24Compression.dll</h6>
+  <h5 id="wan24_Compression_CompressionAlgorithmBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CompressionAlgorithmBase</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase__ctor_" data-uid="wan24.Compression.CompressionAlgorithmBase.#ctor*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase__ctor_System_String_System_Int32_" data-uid="wan24.Compression.CompressionAlgorithmBase.#ctor(System.String,System.Int32)">CompressionAlgorithmBase(String, Int32)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CompressionAlgorithmBase(string name, int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>Name</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>Value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="wan24_Compression_CompressionAlgorithmBase__DefaultOptions" data-uid="wan24.Compression.CompressionAlgorithmBase._DefaultOptions">_DefaultOptions</h4>
+  <div class="markdown level1 summary"><p>Default options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CompressionOptions _DefaultOptions</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_DefaultOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.DefaultOptions*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_DefaultOptions" data-uid="wan24.Compression.CompressionAlgorithmBase.DefaultOptions">DefaultOptions</h4>
+  <div class="markdown level1 summary"><p>Default options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CompressionOptions DefaultOptions { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_Name_" data-uid="wan24.Compression.CompressionAlgorithmBase.Name*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_Name" data-uid="wan24.Compression.CompressionAlgorithmBase.Name">Name</h4>
+  <div class="markdown level1 summary"><p>Algorithm name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_Value_" data-uid="wan24.Compression.CompressionAlgorithmBase.Value*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_Value" data-uid="wan24.Compression.CompressionAlgorithmBase.Value">Value</h4>
+  <div class="markdown level1 summary"><p>Algorithm value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Value { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_Compress_" data-uid="wan24.Compression.CompressionAlgorithmBase.Compress*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_Compress_Stream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.Compress(Stream,Stream,wan24.Compression.CompressionOptions)">Compress(Stream, Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Compress a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Stream Compress(Stream uncompressedSource, Stream compressedTarget, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>Target</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_CompressAsync_" data-uid="wan24.Compression.CompressionAlgorithmBase.CompressAsync*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_CompressAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_" data-uid="wan24.Compression.CompressionAlgorithmBase.CompressAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)">CompressAsync(Stream, Stream, CompressionOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Compress a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task CompressAsync(Stream uncompressedSource, Stream compressedTarget, CompressionOptions options = null, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_Decompress_" data-uid="wan24.Compression.CompressionAlgorithmBase.Decompress*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_Decompress_Stream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.Decompress(Stream,Stream,wan24.Compression.CompressionOptions)">Decompress(Stream, Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Decompress a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Stream Decompress(Stream compressedSource, Stream uncompressedTarget, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>Target</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_DecompressAsync_" data-uid="wan24.Compression.CompressionAlgorithmBase.DecompressAsync*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_DecompressAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_" data-uid="wan24.Compression.CompressionAlgorithmBase.DecompressAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)">DecompressAsync(Stream, Stream, CompressionOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Decompress a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task DecompressAsync(Stream compressedSource, Stream uncompressedTarget, CompressionOptions options = null, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_GetCompressionStream_" data-uid="wan24.Compression.CompressionAlgorithmBase.GetCompressionStream*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_GetCompressionStream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.GetCompressionStream(Stream,wan24.Compression.CompressionOptions)">GetCompressionStream(Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Get a compression stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Stream GetCompressionStream(Stream compressedTarget, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>Compression stream</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_GetDecompressionStream_" data-uid="wan24.Compression.CompressionAlgorithmBase.GetDecompressionStream*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_GetDecompressionStream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.GetDecompressionStream(Stream,wan24.Compression.CompressionOptions)">GetDecompressionStream(Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Get a decompression stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract Stream GetDecompressionStream(Stream compressedSource, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><p>Decompression stream</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_ReadOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.ReadOptions*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_ReadOptions_Stream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.ReadOptions(Stream,Stream,wan24.Compression.CompressionOptions)">ReadOptions(Stream, Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Read the options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual (CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength) ReadOptions(Stream compressedSource, Stream uncompressedTarget, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a>, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;, <span class="xref">System.Int64</span>&gt;</td>
+        <td><p>Red options, serializer version and the uncompressed data length</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_ReadOptionsAsync_" data-uid="wan24.Compression.CompressionAlgorithmBase.ReadOptionsAsync*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_ReadOptionsAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_" data-uid="wan24.Compression.CompressionAlgorithmBase.ReadOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)">ReadOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Read the options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;(CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength)&gt; ReadOptionsAsync(Stream compressedSource, Stream uncompressedTarget, CompressionOptions options = null, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.ValueTuple</span>&lt;<a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a>, <span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;, <span class="xref">System.Int64</span>&gt;&gt;</td>
+        <td><p>Red options, serializer version and the uncompressed data length</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_WriteOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.WriteOptions*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_WriteOptions_Stream_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.CompressionAlgorithmBase.WriteOptions(Stream,Stream,wan24.Compression.CompressionOptions)">WriteOptions(Stream, Stream, CompressionOptions)</h4>
+  <div class="markdown level1 summary"><p>Write the options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CompressionOptions WriteOptions(Stream uncompressedSource, Stream compressedTarget, CompressionOptions options = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><p>Written options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="wan24_Compression_CompressionAlgorithmBase_WriteOptionsAsync_" data-uid="wan24.Compression.CompressionAlgorithmBase.WriteOptionsAsync*"></a>
+  <h4 id="wan24_Compression_CompressionAlgorithmBase_WriteOptionsAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_" data-uid="wan24.Compression.CompressionAlgorithmBase.WriteOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)">WriteOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Write the options</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual async Task&lt;CompressionOptions&gt; WriteOptionsAsync(Stream uncompressedSource, Stream compressedTarget, CompressionOptions options = null, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">uncompressedSource</span></td>
+        <td><p>Source stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">compressedTarget</span></td>
+        <td><p>Target stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>Options</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="wan24.Compression.CompressionOptions.html">CompressionOptions</a>&gt;</td>
+        <td><p>Written options</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            (c) 2023 Andreas Zimmermann, wan24.de
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
