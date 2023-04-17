@@ -17,6 +17,11 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>compression</PackageTags>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <PackageProjectUrl>https://github.com/nd1012/wan24-Compression</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/nd1012/wan24-Compression</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +32,12 @@
   <ItemGroup>
     <None Update="LICENSE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
