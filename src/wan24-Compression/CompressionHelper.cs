@@ -58,8 +58,7 @@ namespace wan24.Compression
         public static Stream Compress(this Stream uncompressedSource, Stream compressedTarget, CompressionOptions? options = null)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
-            return algo.Compress(uncompressedSource, compressedTarget, options);
+            return GetAlgorithm(options.Algorithm!).Compress(uncompressedSource, compressedTarget, options);
         }
 
         /// <summary>
@@ -76,8 +75,7 @@ namespace wan24.Compression
             CancellationToken cancellationToken = default)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
-            await algo.CompressAsync(uncompressedSource, compressedTarget, options, cancellationToken).DynamicContext();
+            await GetAlgorithm(options.Algorithm!).CompressAsync(uncompressedSource, compressedTarget, options, cancellationToken).DynamicContext();
         }
 
         /// <summary>
@@ -89,8 +87,7 @@ namespace wan24.Compression
         public static Stream GetCompressionStream(this Stream compressedTarget, CompressionOptions? options = null)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
-            return algo.GetCompressionStream(compressedTarget, options);
+            return GetAlgorithm(options.Algorithm!).GetCompressionStream(compressedTarget, options);
         }
 
         /// <summary>
@@ -103,8 +100,10 @@ namespace wan24.Compression
         public static Stream Decompress(this Stream compressedSource, Stream uncompressedTarget, CompressionOptions? options = null)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
+            CompressionAlgorithmBase algo = GetAlgorithm(options.Algorithm!);
             options = algo.ReadOptions(compressedSource, uncompressedTarget, options).Options;
+            options = GetDefaultOptions(options);
+            algo = GetAlgorithm(options.Algorithm!);
             options.Flags = CompressionFlags.None;
             options.FlagsIncluded = false;
             return algo.Decompress(compressedSource, uncompressedTarget, options);
@@ -120,8 +119,10 @@ namespace wan24.Compression
         public static async Task DecompressAsync(this Stream compressedSource, Stream uncompressedTarget, CompressionOptions? options = null, CancellationToken cancellationToken = default)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
+            CompressionAlgorithmBase algo = GetAlgorithm(options.Algorithm!);
             options = (await algo.ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext()).Options;
+            options = GetDefaultOptions(options);
+            algo = GetAlgorithm(options.Algorithm!);
             options.Flags = CompressionFlags.None;
             options.FlagsIncluded = false;
             await algo.DecompressAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext();
@@ -136,9 +137,77 @@ namespace wan24.Compression
         public static Stream GetDecompressionStream(this Stream compressedSource, CompressionOptions? options = null)
         {
             options = GetDefaultOptions(options);
-            if (!Algorithms.TryGetValue(options.Algorithm!, out CompressionAlgorithmBase? algo)) throw new ArgumentException("Invalid algorithm", nameof(options));
-            return algo.GetDecompressionStream(compressedSource, options);
+            return GetAlgorithm(options.Algorithm!).GetDecompressionStream(compressedSource, options);
         }
+
+        /// <summary>
+        /// Write the options
+        /// </summary>
+        /// <param name="uncompressedSource">Source stream</param>
+        /// <param name="compressedTarget">Target stream</param>
+        /// <param name="options">Options</param>
+        /// <returns>Written options</returns>
+        public static CompressionOptions WriteOptions(Stream uncompressedSource, Stream compressedTarget, CompressionOptions? options = null)
+        {
+            options = GetDefaultOptions(options);
+            return GetAlgorithm(options.Algorithm!).WriteOptions(uncompressedSource, compressedTarget, options);
+        }
+
+        /// <summary>
+        /// Write the options
+        /// </summary>
+        /// <param name="uncompressedSource">Source stream</param>
+        /// <param name="compressedTarget">Target stream</param>
+        /// <param name="options">Options</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>Written options</returns>
+        public static async Task<CompressionOptions> WriteOptionsAsync(
+            Stream uncompressedSource, 
+            Stream compressedTarget, 
+            CompressionOptions? options = null, 
+            CancellationToken cancellationToken = default
+            )
+        {
+            options = GetDefaultOptions(options);
+            return await GetAlgorithm(options.Algorithm!).WriteOptionsAsync(uncompressedSource, compressedTarget, options, cancellationToken).DynamicContext();
+        }
+
+        /// <summary>
+        /// Read the options
+        /// </summary>
+        /// <param name="compressedSource">Source stream</param>
+        /// <param name="uncompressedTarget">Target stream</param>
+        /// <param name="options">Options</param>
+        /// <returns>Red options, serializer version and the uncompressed data length</returns>
+        public static (CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength) ReadOptions(
+            Stream compressedSource,
+            Stream uncompressedTarget,
+            CompressionOptions? options = null
+            )
+        {
+            options = GetDefaultOptions(options);
+            return GetAlgorithm(options.Algorithm!).ReadOptions(compressedSource, uncompressedTarget, options);
+        }
+
+        /// <summary>
+        /// Read the options
+        /// </summary>
+        /// <param name="compressedSource">Source stream</param>
+        /// <param name="uncompressedTarget">Target stream</param>
+        /// <param name="options">Options</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>Red options, serializer version and the uncompressed data length</returns>
+        public static async Task<(CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength)> ReadOptionsAsync(
+            Stream compressedSource,
+            Stream uncompressedTarget,
+            CompressionOptions? options = null,
+            CancellationToken cancellationToken = default
+            )
+        {
+            options = GetDefaultOptions(options);
+            return await GetAlgorithm(options.Algorithm!).ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext();
+        }
+
 
         /// <summary>
         /// Get the default options used by the compression helper
@@ -157,7 +226,6 @@ namespace wan24.Compression
             else
             {
                 options.Algorithm ??= DefaultAlgorithm.Name;
-                if (!Algorithms.TryGetValue(options.Algorithm, out _)) throw new ArgumentException("Invalid compression algorithm", nameof(options));
             }
             return options;
         }
@@ -180,5 +248,25 @@ namespace wan24.Compression
             => Algorithms.TryGetValue(algo, out CompressionAlgorithmBase? a)
                 ? a.Value
                 : throw new ArgumentException("Invalid algorithm", nameof(algo));
+
+        /// <summary>
+        /// Get an algorithm
+        /// </summary>
+        /// <param name="name">Algorithm name</param>
+        /// <returns>Algorithm</returns>
+        public static CompressionAlgorithmBase GetAlgorithm(string name)
+            => Algorithms.TryGetValue(name, out CompressionAlgorithmBase? algo)
+                ? algo
+                : throw new ArgumentException("Invalid algorithm", nameof(name));
+
+        /// <summary>
+        /// Get an algorithm
+        /// </summary>
+        /// <param name="value">Algorithm value</param>
+        /// <returns>Algorithm</returns>
+        public static CompressionAlgorithmBase GetAlgorithm(int value)
+            => Algorithms.TryGetValue(GetAlgorithmName(value), out CompressionAlgorithmBase? algo)
+                ? algo
+                : throw new ArgumentException("Invalid algorithm", nameof(value));
     }
 }

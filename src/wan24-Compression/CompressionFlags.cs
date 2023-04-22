@@ -19,8 +19,8 @@
         /// </summary>
         AlgorithmIncluded = 2,
         /// <summary>
-        /// Length in bytes included
+        /// Uncompressed data length in bytes included
         /// </summary>
-        LengthIncluded = 4
+        UncompressedLengthIncluded = 4
     }
 }

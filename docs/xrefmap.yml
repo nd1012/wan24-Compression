@@ -344,12 +344,6 @@ references:
   commentId: F:wan24.Compression.CompressionFlags.AlgorithmIncluded
   fullName: wan24.Compression.CompressionFlags.AlgorithmIncluded
   nameWithType: CompressionFlags.AlgorithmIncluded
-- uid: wan24.Compression.CompressionFlags.LengthIncluded
-  name: LengthIncluded
-  href: api/wan24.Compression.CompressionFlags.html#wan24_Compression_CompressionFlags_LengthIncluded
-  commentId: F:wan24.Compression.CompressionFlags.LengthIncluded
-  fullName: wan24.Compression.CompressionFlags.LengthIncluded
-  nameWithType: CompressionFlags.LengthIncluded
 - uid: wan24.Compression.CompressionFlags.None
   name: None
   href: api/wan24.Compression.CompressionFlags.html#wan24_Compression_CompressionFlags_None
@@ -362,6 +356,12 @@ references:
   commentId: F:wan24.Compression.CompressionFlags.SerializerVersionIncluded
   fullName: wan24.Compression.CompressionFlags.SerializerVersionIncluded
   nameWithType: CompressionFlags.SerializerVersionIncluded
+- uid: wan24.Compression.CompressionFlags.UncompressedLengthIncluded
+  name: UncompressedLengthIncluded
+  href: api/wan24.Compression.CompressionFlags.html#wan24_Compression_CompressionFlags_UncompressedLengthIncluded
+  commentId: F:wan24.Compression.CompressionFlags.UncompressedLengthIncluded
+  fullName: wan24.Compression.CompressionFlags.UncompressedLengthIncluded
+  nameWithType: CompressionFlags.UncompressedLengthIncluded
 - uid: wan24.Compression.CompressionHelper
   name: CompressionHelper
   href: api/wan24.Compression.CompressionHelper.html
@@ -439,6 +439,25 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionHelper.DefaultAlgorithm
   nameWithType: CompressionHelper.DefaultAlgorithm
+- uid: wan24.Compression.CompressionHelper.GetAlgorithm(System.Int32)
+  name: GetAlgorithm(Int32)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithm_System_Int32_
+  commentId: M:wan24.Compression.CompressionHelper.GetAlgorithm(System.Int32)
+  fullName: wan24.Compression.CompressionHelper.GetAlgorithm(System.Int32)
+  nameWithType: CompressionHelper.GetAlgorithm(Int32)
+- uid: wan24.Compression.CompressionHelper.GetAlgorithm(System.String)
+  name: GetAlgorithm(String)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithm_System_String_
+  commentId: M:wan24.Compression.CompressionHelper.GetAlgorithm(System.String)
+  fullName: wan24.Compression.CompressionHelper.GetAlgorithm(System.String)
+  nameWithType: CompressionHelper.GetAlgorithm(String)
+- uid: wan24.Compression.CompressionHelper.GetAlgorithm*
+  name: GetAlgorithm
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithm_
+  commentId: Overload:wan24.Compression.CompressionHelper.GetAlgorithm
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.GetAlgorithm
+  nameWithType: CompressionHelper.GetAlgorithm
 - uid: wan24.Compression.CompressionHelper.GetAlgorithmName(System.Int32)
   name: GetAlgorithmName(Int32)
   href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithmName_System_Int32_
@@ -504,6 +523,32 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionHelper.GetDefaultOptions
   nameWithType: CompressionHelper.GetDefaultOptions
+- uid: wan24.Compression.CompressionHelper.ReadOptions(Stream,Stream,wan24.Compression.CompressionOptions)
+  name: ReadOptions(Stream, Stream, CompressionOptions)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_ReadOptions_Stream_Stream_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionHelper.ReadOptions(Stream,Stream,wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionHelper.ReadOptions(Stream, Stream, wan24.Compression.CompressionOptions)
+  nameWithType: CompressionHelper.ReadOptions(Stream, Stream, CompressionOptions)
+- uid: wan24.Compression.CompressionHelper.ReadOptions*
+  name: ReadOptions
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_ReadOptions_
+  commentId: Overload:wan24.Compression.CompressionHelper.ReadOptions
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.ReadOptions
+  nameWithType: CompressionHelper.ReadOptions
+- uid: wan24.Compression.CompressionHelper.ReadOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)
+  name: ReadOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_ReadOptionsAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_
+  commentId: M:wan24.Compression.CompressionHelper.ReadOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)
+  fullName: wan24.Compression.CompressionHelper.ReadOptionsAsync(Stream, Stream, wan24.Compression.CompressionOptions, CancellationToken)
+  nameWithType: CompressionHelper.ReadOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)
+- uid: wan24.Compression.CompressionHelper.ReadOptionsAsync*
+  name: ReadOptionsAsync
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_ReadOptionsAsync_
+  commentId: Overload:wan24.Compression.CompressionHelper.ReadOptionsAsync
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.ReadOptionsAsync
+  nameWithType: CompressionHelper.ReadOptionsAsync
 - uid: wan24.Compression.CompressionHelper.SyncObject
   name: SyncObject
   href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_SyncObject
@@ -517,6 +562,32 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionHelper.SyncObject
   nameWithType: CompressionHelper.SyncObject
+- uid: wan24.Compression.CompressionHelper.WriteOptions(Stream,Stream,wan24.Compression.CompressionOptions)
+  name: WriteOptions(Stream, Stream, CompressionOptions)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_WriteOptions_Stream_Stream_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionHelper.WriteOptions(Stream,Stream,wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionHelper.WriteOptions(Stream, Stream, wan24.Compression.CompressionOptions)
+  nameWithType: CompressionHelper.WriteOptions(Stream, Stream, CompressionOptions)
+- uid: wan24.Compression.CompressionHelper.WriteOptions*
+  name: WriteOptions
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_WriteOptions_
+  commentId: Overload:wan24.Compression.CompressionHelper.WriteOptions
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.WriteOptions
+  nameWithType: CompressionHelper.WriteOptions
+- uid: wan24.Compression.CompressionHelper.WriteOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)
+  name: WriteOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_WriteOptionsAsync_Stream_Stream_wan24_Compression_CompressionOptions_CancellationToken_
+  commentId: M:wan24.Compression.CompressionHelper.WriteOptionsAsync(Stream,Stream,wan24.Compression.CompressionOptions,CancellationToken)
+  fullName: wan24.Compression.CompressionHelper.WriteOptionsAsync(Stream, Stream, wan24.Compression.CompressionOptions, CancellationToken)
+  nameWithType: CompressionHelper.WriteOptionsAsync(Stream, Stream, CompressionOptions, CancellationToken)
+- uid: wan24.Compression.CompressionHelper.WriteOptionsAsync*
+  name: WriteOptionsAsync
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_WriteOptionsAsync_
+  commentId: Overload:wan24.Compression.CompressionHelper.WriteOptionsAsync
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.WriteOptionsAsync
+  nameWithType: CompressionHelper.WriteOptionsAsync
 - uid: wan24.Compression.CompressionOptions
   name: CompressionOptions
   href: api/wan24.Compression.CompressionOptions.html
@@ -575,6 +646,32 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.Clone
   nameWithType: CompressionOptions.Clone
+- uid: wan24.Compression.CompressionOptions.Deserialize(Stream,System.Int32)
+  name: Deserialize(Stream, Int32)
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Deserialize_Stream_System_Int32_
+  commentId: M:wan24.Compression.CompressionOptions.Deserialize(Stream,System.Int32)
+  fullName: wan24.Compression.CompressionOptions.Deserialize(Stream, System.Int32)
+  nameWithType: CompressionOptions.Deserialize(Stream, Int32)
+- uid: wan24.Compression.CompressionOptions.Deserialize*
+  name: Deserialize
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Deserialize_
+  commentId: Overload:wan24.Compression.CompressionOptions.Deserialize
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.Deserialize
+  nameWithType: CompressionOptions.Deserialize
+- uid: wan24.Compression.CompressionOptions.DeserializeAsync(Stream,System.Int32,CancellationToken)
+  name: DeserializeAsync(Stream, Int32, CancellationToken)
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_DeserializeAsync_Stream_System_Int32_CancellationToken_
+  commentId: M:wan24.Compression.CompressionOptions.DeserializeAsync(Stream,System.Int32,CancellationToken)
+  fullName: wan24.Compression.CompressionOptions.DeserializeAsync(Stream, System.Int32, CancellationToken)
+  nameWithType: CompressionOptions.DeserializeAsync(Stream, Int32, CancellationToken)
+- uid: wan24.Compression.CompressionOptions.DeserializeAsync*
+  name: DeserializeAsync
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_DeserializeAsync_
+  commentId: Overload:wan24.Compression.CompressionOptions.DeserializeAsync
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.DeserializeAsync
+  nameWithType: CompressionOptions.DeserializeAsync
 - uid: wan24.Compression.CompressionOptions.Flags
   name: Flags
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Flags
@@ -614,19 +711,6 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.LeaveOpen
   nameWithType: CompressionOptions.LeaveOpen
-- uid: wan24.Compression.CompressionOptions.LengthIncluded
-  name: LengthIncluded
-  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_LengthIncluded
-  commentId: P:wan24.Compression.CompressionOptions.LengthIncluded
-  fullName: wan24.Compression.CompressionOptions.LengthIncluded
-  nameWithType: CompressionOptions.LengthIncluded
-- uid: wan24.Compression.CompressionOptions.LengthIncluded*
-  name: LengthIncluded
-  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_LengthIncluded_
-  commentId: Overload:wan24.Compression.CompressionOptions.LengthIncluded
-  isSpec: "True"
-  fullName: wan24.Compression.CompressionOptions.LengthIncluded
-  nameWithType: CompressionOptions.LengthIncluded
 - uid: wan24.Compression.CompressionOptions.Level
   name: Level
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Level
@@ -640,6 +724,32 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.Level
   nameWithType: CompressionOptions.Level
+- uid: wan24.Compression.CompressionOptions.Serialize(Stream)
+  name: Serialize(Stream)
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Serialize_Stream_
+  commentId: M:wan24.Compression.CompressionOptions.Serialize(Stream)
+  fullName: wan24.Compression.CompressionOptions.Serialize(Stream)
+  nameWithType: CompressionOptions.Serialize(Stream)
+- uid: wan24.Compression.CompressionOptions.Serialize*
+  name: Serialize
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Serialize_
+  commentId: Overload:wan24.Compression.CompressionOptions.Serialize
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.Serialize
+  nameWithType: CompressionOptions.Serialize
+- uid: wan24.Compression.CompressionOptions.SerializeAsync(Stream,CancellationToken)
+  name: SerializeAsync(Stream, CancellationToken)
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializeAsync_Stream_CancellationToken_
+  commentId: M:wan24.Compression.CompressionOptions.SerializeAsync(Stream,CancellationToken)
+  fullName: wan24.Compression.CompressionOptions.SerializeAsync(Stream, CancellationToken)
+  nameWithType: CompressionOptions.SerializeAsync(Stream, CancellationToken)
+- uid: wan24.Compression.CompressionOptions.SerializeAsync*
+  name: SerializeAsync
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializeAsync_
+  commentId: Overload:wan24.Compression.CompressionOptions.SerializeAsync
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.SerializeAsync
+  nameWithType: CompressionOptions.SerializeAsync
 - uid: wan24.Compression.CompressionOptions.SerializerVersion
   name: SerializerVersion
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializerVersion
@@ -679,6 +789,25 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.UncompressedDataLength
   nameWithType: CompressionOptions.UncompressedDataLength
+- uid: wan24.Compression.CompressionOptions.UncompressedLengthIncluded
+  name: UncompressedLengthIncluded
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_UncompressedLengthIncluded
+  commentId: P:wan24.Compression.CompressionOptions.UncompressedLengthIncluded
+  fullName: wan24.Compression.CompressionOptions.UncompressedLengthIncluded
+  nameWithType: CompressionOptions.UncompressedLengthIncluded
+- uid: wan24.Compression.CompressionOptions.UncompressedLengthIncluded*
+  name: UncompressedLengthIncluded
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_UncompressedLengthIncluded_
+  commentId: Overload:wan24.Compression.CompressionOptions.UncompressedLengthIncluded
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.UncompressedLengthIncluded
+  nameWithType: CompressionOptions.UncompressedLengthIncluded
+- uid: wan24.Compression.CompressionOptions.VERSION
+  name: VERSION
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_VERSION
+  commentId: F:wan24.Compression.CompressionOptions.VERSION
+  fullName: wan24.Compression.CompressionOptions.VERSION
+  nameWithType: CompressionOptions.VERSION
 - uid: wan24.Compression.GZipCompressionAlgorithm
   name: GZipCompressionAlgorithm
   href: api/wan24.Compression.GZipCompressionAlgorithm.html

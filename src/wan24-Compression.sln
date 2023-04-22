@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression Docs", "w
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression Tests", "wan24-Compression Tests\wan24-Compression Tests.csproj", "{1012897F-CA96-47E8-806A-C9723D1DE904}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wan24-Compression Algorithms Tests", "wan24-Compression Algorithms Tests\wan24-Compression Algorithms Tests.csproj", "{00662B76-26F0-44EB-B20D-DDEB59F2E461}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00662B76-26F0-44EB-B20D-DDEB59F2E461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00662B76-26F0-44EB-B20D-DDEB59F2E461}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00662B76-26F0-44EB-B20D-DDEB59F2E461}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00662B76-26F0-44EB-B20D-DDEB59F2E461}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

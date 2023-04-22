@@ -34,20 +34,14 @@ namespace wan24.Compression
         /// <inheritdoc/>
         public override Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null)
         {
-            options ??= new()
-            {
-                AlgorithmIncluded = false
-            };
+            options ??= DefaultOptions;
             return new GZipStream(compressedTarget, options.Level, options.LeaveOpen);
         }
 
         /// <inheritdoc/>
         public override Stream GetDecompressionStream(Stream source, CompressionOptions? options = null)
         {
-            options ??= new()
-            {
-                AlgorithmIncluded = false
-            };
+            options ??= DefaultOptions;
             return new GZipStream(source, CompressionMode.Decompress, options.LeaveOpen);
         }
     }

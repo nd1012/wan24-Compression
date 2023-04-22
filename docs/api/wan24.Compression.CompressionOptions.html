@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Class CompressionOptions
-   | Streams </title>
+   | wan24-Compression </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class CompressionOptions
-   | Streams ">
+   | wan24-Compression ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -79,10 +79,66 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CompressionOptions</span></div>
+    <div class="level1"><span class="xref">wan24.ObjectValidation.ValidatableObject</span></div>
+    <div class="level2"><span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase</span></div>
+    <div class="level3"><span class="xref">CompressionOptions</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">wan24.ObjectValidation.IObjectValidatable</span></div>
+    <div><span class="xref">System.ComponentModel.DataAnnotations.IValidatableObject</span></div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.ComponentModel.DataAnnotations.ValidationResult</span>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">wan24.StreamSerializerExtensions.IStreamSerializerVersion</span></div>
+    <div><span class="xref">wan24.StreamSerializerExtensions.IStreamSerializer</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.Serialize(System.IO.Stream)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.SerializeAsync(System.IO.Stream, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.Deserialize(System.IO.Stream, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.DeserializeAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializer.Serialize(System.IO.Stream)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializer.SerializeAsync(System.IO.Stream, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializer.Deserialize(System.IO.Stream, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializer.DeserializeAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializerVersion.ObjectVersion</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializerVersion.SerializedObjectVersion</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.Validate(System.ComponentModel.DataAnnotations.ValidationContext)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.System.Collections.Generic.IEnumerable&lt;System.ComponentModel.DataAnnotations.ValidationResult&gt;.GetEnumerator()</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.System.Collections.IEnumerable.GetEnumerator()</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.System.ComponentModel.DataAnnotations.IValidatableObject.Validate(System.ComponentModel.DataAnnotations.ValidationContext)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.ObjectValidatable(wan24.ObjectValidation.IObjectValidatable)</span>
+    </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
     </div>
@@ -109,16 +165,16 @@
   <h6><strong>Assembly</strong>: wan24Compression.dll</h6>
   <h5 id="wan24_Compression_CompressionOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class CompressionOptions</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class CompressionOptions : StreamSerializerBase, IObjectValidatable, IValidatableObject, IEnumerable&lt;ValidationResult&gt;, IEnumerable, IStreamSerializerVersion, IStreamSerializer</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions__ctor.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions__ctor.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L13">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L21">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions__ctor_" data-uid="wan24.Compression.CompressionOptions.#ctor*"></a>
   <h4 id="wan24_Compression_CompressionOptions__ctor" data-uid="wan24.Compression.CompressionOptions.#ctor">CompressionOptions()</h4>
@@ -129,14 +185,46 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CompressionOptions()</code></pre>
   </div>
+  <h3 id="fields">Fields
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_VERSION.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.VERSION%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L16">View Source</a>
+  </span>
+  <h4 id="wan24_Compression_CompressionOptions_VERSION" data-uid="wan24.Compression.CompressionOptions.VERSION">VERSION</h4>
+  <div class="markdown level1 summary"><p>Object version</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int VERSION = 1</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_Algorithm.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Algorithm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Algorithm.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Algorithm%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L18">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L26">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_Algorithm_" data-uid="wan24.Compression.CompressionOptions.Algorithm*"></a>
   <h4 id="wan24_Compression_CompressionOptions_Algorithm" data-uid="wan24.Compression.CompressionOptions.Algorithm">Algorithm</h4>
@@ -145,7 +233,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Algorithm { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[StringLength(255)]
+public string Algorithm { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -164,10 +253,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_AlgorithmIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.AlgorithmIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_AlgorithmIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.AlgorithmIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L38">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L49">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_AlgorithmIncluded_" data-uid="wan24.Compression.CompressionOptions.AlgorithmIncluded*"></a>
   <h4 id="wan24_Compression_CompressionOptions_AlgorithmIncluded" data-uid="wan24.Compression.CompressionOptions.AlgorithmIncluded">AlgorithmIncluded</h4>
@@ -195,10 +284,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_Flags.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Flags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Flags.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Flags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L63">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L74">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_Flags_" data-uid="wan24.Compression.CompressionOptions.Flags*"></a>
   <h4 id="wan24_Compression_CompressionOptions_Flags" data-uid="wan24.Compression.CompressionOptions.Flags">Flags</h4>
@@ -226,10 +315,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_FlagsIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.FlagsIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_FlagsIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.FlagsIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L48">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L59">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_FlagsIncluded_" data-uid="wan24.Compression.CompressionOptions.FlagsIncluded*"></a>
   <h4 id="wan24_Compression_CompressionOptions_FlagsIncluded" data-uid="wan24.Compression.CompressionOptions.FlagsIncluded">FlagsIncluded</h4>
@@ -257,10 +346,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_LeaveOpen.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.LeaveOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_LeaveOpen.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.LeaveOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L58">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L69">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_LeaveOpen_" data-uid="wan24.Compression.CompressionOptions.LeaveOpen*"></a>
   <h4 id="wan24_Compression_CompressionOptions_LeaveOpen" data-uid="wan24.Compression.CompressionOptions.LeaveOpen">LeaveOpen</h4>
@@ -288,41 +377,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_LengthIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.LengthIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Level.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Level%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L43">View Source</a>
-  </span>
-  <a id="wan24_Compression_CompressionOptions_LengthIncluded_" data-uid="wan24.Compression.CompressionOptions.LengthIncluded*"></a>
-  <h4 id="wan24_Compression_CompressionOptions_LengthIncluded" data-uid="wan24.Compression.CompressionOptions.LengthIncluded">LengthIncluded</h4>
-  <div class="markdown level1 summary"><p>Length in bytes included?</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool LengthIncluded { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_Level.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Level%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L53">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L64">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_Level_" data-uid="wan24.Compression.CompressionOptions.Level*"></a>
   <h4 id="wan24_Compression_CompressionOptions_Level" data-uid="wan24.Compression.CompressionOptions.Level">Level</h4>
@@ -350,10 +408,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersion.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersion.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L23">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L32">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_SerializerVersion_" data-uid="wan24.Compression.CompressionOptions.SerializerVersion*"></a>
   <h4 id="wan24_Compression_CompressionOptions_SerializerVersion" data-uid="wan24.Compression.CompressionOptions.SerializerVersion">SerializerVersion</h4>
@@ -362,7 +420,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? SerializerVersion { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Range(1, 255)]
+public int? SerializerVersion { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -381,10 +440,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersionIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersionIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersionIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersionIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L33">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L44">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_SerializerVersionIncluded_" data-uid="wan24.Compression.CompressionOptions.SerializerVersionIncluded*"></a>
   <h4 id="wan24_Compression_CompressionOptions_SerializerVersionIncluded" data-uid="wan24.Compression.CompressionOptions.SerializerVersionIncluded">SerializerVersionIncluded</h4>
@@ -412,10 +471,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_UncompressedDataLength.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.UncompressedDataLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_UncompressedDataLength.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.UncompressedDataLength%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L28">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L38">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_UncompressedDataLength_" data-uid="wan24.Compression.CompressionOptions.UncompressedDataLength*"></a>
   <h4 id="wan24_Compression_CompressionOptions_UncompressedDataLength" data-uid="wan24.Compression.CompressionOptions.UncompressedDataLength">UncompressedDataLength</h4>
@@ -424,7 +483,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public long UncompressedDataLength { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[Range(-1, 9.2233720368547758E+18)]
+public long UncompressedDataLength { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -441,14 +501,45 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_UncompressedLengthIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.UncompressedLengthIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L54">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_UncompressedLengthIncluded_" data-uid="wan24.Compression.CompressionOptions.UncompressedLengthIncluded*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_UncompressedLengthIncluded" data-uid="wan24.Compression.CompressionOptions.UncompressedLengthIncluded">UncompressedLengthIncluded</h4>
+  <div class="markdown level1 summary"><p>Uncompressed data length in bytes included?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UncompressedLengthIncluded { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_Clone.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Clone.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L85">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L96">View Source</a>
   </span>
   <a id="wan24_Compression_CompressionOptions_Clone_" data-uid="wan24.Compression.CompressionOptions.Clone*"></a>
   <h4 id="wan24_Compression_CompressionOptions_Clone" data-uid="wan24.Compression.CompressionOptions.Clone">Clone()</h4>
@@ -474,6 +565,203 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Deserialize_Stream_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Deserialize(Stream%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L126">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_Deserialize_" data-uid="wan24.Compression.CompressionOptions.Deserialize*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_Deserialize_Stream_System_Int32_" data-uid="wan24.Compression.CompressionOptions.Deserialize(Stream,System.Int32)">Deserialize(Stream, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Deserialize(Stream stream, int version)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_DeserializeAsync_Stream_System_Int32_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.DeserializeAsync(Stream%2CSystem.Int32%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L136">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_DeserializeAsync_" data-uid="wan24.Compression.CompressionOptions.DeserializeAsync*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_DeserializeAsync_Stream_System_Int32_CancellationToken_" data-uid="wan24.Compression.CompressionOptions.DeserializeAsync(Stream,System.Int32,CancellationToken)">DeserializeAsync(Stream, Int32, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task DeserializeAsync(Stream stream, int version, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">version</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_Serialize_Stream_.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Serialize(Stream)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L106">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_Serialize_" data-uid="wan24.Compression.CompressionOptions.Serialize*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_Serialize_Stream_" data-uid="wan24.Compression.CompressionOptions.Serialize(Stream)">Serialize(Stream)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void Serialize(Stream stream)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializeAsync_Stream_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializeAsync(Stream%2CCancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L116">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_SerializeAsync_" data-uid="wan24.Compression.CompressionOptions.SerializeAsync*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_SerializeAsync_Stream_CancellationToken_" data-uid="wan24.Compression.CompressionOptions.SerializeAsync(Stream,CancellationToken)">SerializeAsync(Stream, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override async Task SerializeAsync(Stream stream, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">wan24.ObjectValidation.IObjectValidatable</span>
+  </div>
+  <div>
+      <span class="xref">System.ComponentModel.DataAnnotations.IValidatableObject</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
+  </div>
+  <div>
+      <span class="xref">wan24.StreamSerializerExtensions.IStreamSerializerVersion</span>
+  </div>
+  <div>
+      <span class="xref">wan24.StreamSerializerExtensions.IStreamSerializer</span>
+  </div>
 </article>
           </div>
           
@@ -482,10 +770,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_CompressionOptions.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L8" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/CompressionOptions.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
