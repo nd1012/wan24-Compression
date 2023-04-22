@@ -85,7 +85,10 @@
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><span class="xref">wan24.ObjectValidation.IObjectValidatable</span></div>
     <div><span class="xref">System.ComponentModel.DataAnnotations.IValidatableObject</span></div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.ComponentModel.DataAnnotations.ValidationResult</span>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
     <div><span class="xref">wan24.StreamSerializerExtensions.IStreamSerializerVersion</span></div>
     <div><span class="xref">wan24.StreamSerializerExtensions.IStreamSerializer</span></div>
   </div>
@@ -125,7 +128,16 @@
       <span class="xref">wan24.ObjectValidation.ValidatableObject.Validate(System.ComponentModel.DataAnnotations.ValidationContext)</span>
     </div>
     <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.System.Collections.Generic.IEnumerable&lt;System.ComponentModel.DataAnnotations.ValidationResult&gt;.GetEnumerator()</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.System.Collections.IEnumerable.GetEnumerator()</span>
+    </div>
+    <div>
       <span class="xref">wan24.ObjectValidation.ValidatableObject.System.ComponentModel.DataAnnotations.IValidatableObject.Validate(System.ComponentModel.DataAnnotations.ValidationContext)</span>
+    </div>
+    <div>
+      <span class="xref">wan24.ObjectValidation.ValidatableObject.ObjectValidatable(wan24.ObjectValidation.IObjectValidatable)</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object)</span>
@@ -153,7 +165,7 @@
   <h6><strong>Assembly</strong>: wan24Compression.dll</h6>
   <h5 id="wan24_Compression_CompressionOptions_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class CompressionOptions : StreamSerializerBase, IValidatableObject, IStreamSerializerVersion, IStreamSerializer</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class CompressionOptions : StreamSerializerBase, IObjectValidatable, IValidatableObject, IEnumerable&lt;ValidationResult&gt;, IEnumerable, IStreamSerializerVersion, IStreamSerializer</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -733,7 +745,16 @@ public long UncompressedDataLength { get; set; }</code></pre>
   </table>
   <h3 id="implements">Implements</h3>
   <div>
+      <span class="xref">wan24.ObjectValidation.IObjectValidatable</span>
+  </div>
+  <div>
       <span class="xref">System.ComponentModel.DataAnnotations.IValidatableObject</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
   </div>
   <div>
       <span class="xref">wan24.StreamSerializerExtensions.IStreamSerializerVersion</span>
