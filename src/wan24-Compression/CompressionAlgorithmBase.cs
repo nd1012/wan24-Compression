@@ -12,7 +12,7 @@ namespace wan24.Compression
         /// <summary>
         /// Default options
         /// </summary>
-        protected CompressionOptions _DefaultOptions = new();
+        protected readonly CompressionOptions _DefaultOptions = new();
 
         /// <summary>
         /// Constructor
@@ -65,8 +65,9 @@ namespace wan24.Compression
         public virtual async Task CompressAsync(Stream uncompressedSource, Stream compressedTarget, CompressionOptions? options = null, CancellationToken cancellationToken = default)
         {
             options = await WriteOptionsAsync(uncompressedSource, compressedTarget, options, cancellationToken).DynamicContext();
-            using Stream compression = GetCompressionStream(compressedTarget, options);
-            await uncompressedSource.CopyToAsync(compression, cancellationToken).DynamicContext();
+            Stream compression = GetCompressionStream(compressedTarget, options);
+            await using (compression.DynamicContext())
+                await uncompressedSource.CopyToAsync(compression, cancellationToken).DynamicContext();
         }
 
         /// <summary>
@@ -105,8 +106,9 @@ namespace wan24.Compression
         {
             (options, _, long len) = await ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext();
             long pos = len > -1 ? uncompressedTarget.Position : -1;
-            using Stream compression = GetDecompressionStream(compressedSource, options);
-            await compression.CopyToAsync(uncompressedTarget, cancellationToken).DynamicContext();
+            Stream compression = GetDecompressionStream(compressedSource, options);
+            await using (compression.DynamicContext())
+                await compression.CopyToAsync(uncompressedTarget, cancellationToken).DynamicContext();
             if (len > -1 && uncompressedTarget.Position - pos != len) throw new InvalidDataException($"Uncompressed data length mismatch (expected {len}, got {uncompressedTarget.Position - pos})");
         }
 
@@ -127,15 +129,11 @@ namespace wan24.Compression
         /// <returns>Written options</returns>
         public virtual CompressionOptions WriteOptions(Stream uncompressedSource, Stream compressedTarget, CompressionOptions? options = null)
         {
-            options ??= new()
-            {
-                AlgorithmIncluded = false,
-                LeaveOpen = false
-            };
+            options ??= DefaultOptions;
             if (options.FlagsIncluded) compressedTarget.Write((byte)options.Flags);
             if (options.SerializerVersionIncluded) compressedTarget.Write(StreamSerializer.VERSION.GetBytes());
             if (options.AlgorithmIncluded) compressedTarget.WriteNumber(Value);
-            if (options.LengthIncluded) compressedTarget.WriteNumber(uncompressedSource.Length - uncompressedSource.Position);
+            if (options.UncompressedLengthIncluded) compressedTarget.WriteNumber(uncompressedSource.Length - uncompressedSource.Position);
             return options;
         }
 
@@ -154,15 +152,11 @@ namespace wan24.Compression
             CancellationToken cancellationToken = default
             )
         {
-            options ??= new()
-            {
-                AlgorithmIncluded = false,
-                LeaveOpen = false
-            };
+            options ??= DefaultOptions;
             if (options.FlagsIncluded) await compressedTarget.WriteAsync((byte)options.Flags, cancellationToken).DynamicContext();
             if (options.SerializerVersionIncluded) await compressedTarget.WriteAsync(StreamSerializer.VERSION.GetBytes(), cancellationToken).DynamicContext();
             if (options.AlgorithmIncluded) await compressedTarget.WriteNumberAsync(Value, cancellationToken).DynamicContext();
-            if (options.LengthIncluded) await compressedTarget.WriteNumberAsync(uncompressedSource.Length - uncompressedSource.Position, cancellationToken).DynamicContext();
+            if (options.UncompressedLengthIncluded) await compressedTarget.WriteNumberAsync(uncompressedSource.Length - uncompressedSource.Position, cancellationToken).DynamicContext();
             return options;
         }
 
@@ -179,11 +173,7 @@ namespace wan24.Compression
             CompressionOptions? options = null
             )
         {
-            options = options?.Clone() ?? new()
-            {
-                AlgorithmIncluded = false,
-                LeaveOpen = false
-            };
+            options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
             int? serializerVersion = null;
             if (options.SerializerVersionIncluded)
@@ -203,10 +193,10 @@ namespace wan24.Compression
             }
             if (options.AlgorithmIncluded && compressedSource.ReadNumber<int>(serializerVersion) != Value) throw new InvalidDataException("Compression algorithm mismatch");
             long len = -1;
-            if (options.LengthIncluded)
+            if (options.UncompressedLengthIncluded)
             {
                 len = compressedSource.ReadNumber<long>(serializerVersion);
-                if (len < 1) throw new InvalidDataException("Invalid uncompressed data length");
+                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
                 options.UncompressedDataLength = len;
             }
             return (options, serializerVersion, len);
@@ -227,11 +217,7 @@ namespace wan24.Compression
             CancellationToken cancellationToken = default
             )
         {
-            options = options?.Clone() ?? new()
-            {
-                AlgorithmIncluded = false,
-                LeaveOpen = false
-            };
+            options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
             int? serializerVersion = null;
             if (options.SerializerVersionIncluded)
@@ -253,10 +239,10 @@ namespace wan24.Compression
             if (options.AlgorithmIncluded && await compressedSource.ReadNumberAsync<int>(serializerVersion, cancellationToken: cancellationToken).DynamicContext() != Value)
                 throw new InvalidDataException("Compression algorithm mismatch");
             long len = -1;
-            if (options.LengthIncluded)
+            if (options.UncompressedLengthIncluded)
             {
                 len = await compressedSource.ReadNumberAsync<long>(serializerVersion, cancellationToken: cancellationToken).DynamicContext();
-                if (len < 1) throw new InvalidDataException("Invalid uncompressed data length");
+                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
                 options.UncompressedDataLength = len;
             }
             return (options, serializerVersion, len);

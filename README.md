@@ -4,11 +4,18 @@ This library exports a generic compression API, which allows to use any
 implemented compression algorithm to be applied using a simple interface:
 
 ```cs
+// Compress memory
 byte[] compressed = uncompressed.Compress();
 uncompressed = compressed.Decompress();
-```
 
-There are extension methods for memory and streams.
+// Compress a stream
+uncompressedStream.Compress(compressedStream, new()
+{
+    LeaveOpen = true
+});
+uncompressedStream.SetLength(0);
+compressedStream.Decompress(uncompressedStream);
+```
 
 ## How to get it
 
