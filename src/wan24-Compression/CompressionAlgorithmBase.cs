@@ -12,7 +12,7 @@ namespace wan24.Compression
         /// <summary>
         /// Default options
         /// </summary>
-        protected readonly CompressionOptions _DefaultOptions = new();
+        protected readonly CompressionOptions _DefaultOptions;
 
         /// <summary>
         /// Constructor
@@ -23,6 +23,10 @@ namespace wan24.Compression
         {
             Name = name;
             Value = value;
+            _DefaultOptions = new()
+            {
+                Algorithm = name
+            };
         }
 
         /// <summary>
