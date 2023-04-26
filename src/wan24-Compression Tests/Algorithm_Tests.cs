@@ -27,7 +27,7 @@ namespace wan24_Compression_Tests
 
         public static void Sync_Tests(int algo)
         {
-            string name = CompressionHelper.GetAlgorithmName(algo);
+            string name = CompressionHelper.GetAlgorithm(algo).Name;
             // Default
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
@@ -61,7 +61,7 @@ namespace wan24_Compression_Tests
 
         public static async Task Async_Tests(int algo)
         {
-            string name = CompressionHelper.GetAlgorithmName(algo);
+            string name = CompressionHelper.GetAlgorithm(algo).Name;
             // Default
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
