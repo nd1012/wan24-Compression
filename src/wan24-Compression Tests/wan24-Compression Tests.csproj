@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\wan24-Compression Shared Tests\wan24-Compression Shared Tests.csproj" />
     <ProjectReference Include="..\wan24-Compression\wan24-Compression.csproj" />
   </ItemGroup>
 

@@ -1,17 +1,29 @@
-﻿using wan24.Compression;
-using wan24.Compression.Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace wan24_Compression_Tests
+namespace wan24.Compression.Tests
 {
-    [TestClass]
-    public class CompressionHelper_Tests
+    public static class AlgorithmTests
     {
-        [TestMethod]
-        public void Sync_Tests()
+        public static void TestAllAlgorithms()
         {
+            Assert.IsFalse(CompressionHelper.Algorithms.IsEmpty);
+            foreach (CompressionAlgorithmBase algo in CompressionHelper.Algorithms.Values) SyncAlgorithm_Tests(algo.Value);
+        }
+
+        public static async Task TestAllAlgorithmsAsync()
+        {
+            Assert.IsFalse(CompressionHelper.Algorithms.IsEmpty);
+            foreach (CompressionAlgorithmBase algo in CompressionHelper.Algorithms.Values) await AsyncAlgorithm_Tests(algo.Value);
+        }
+
+        public static void SyncAlgorithm_Tests(int algo)
+        {
+            Console.WriteLine($"Synchronous algorithm #{algo} tests");
+            string name = CompressionHelper.GetAlgorithm(algo).Name;
             // Default
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
+                options.Algorithm = name;
                 options.LeaveOpen = true;
                 using MemoryStream data = new(TestData.Data);
                 using MemoryStream compressed = new();
@@ -25,6 +37,7 @@ namespace wan24_Compression_Tests
             // Nothing included
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
+                options.Algorithm = name;
                 options.Flags = CompressionFlags.None;
                 options.LeaveOpen = true;
                 using MemoryStream data = new(TestData.Data);
@@ -38,12 +51,14 @@ namespace wan24_Compression_Tests
             }
         }
 
-        [TestMethod]
-        public async Task Async_Tests()
+        public static async Task AsyncAlgorithm_Tests(int algo)
         {
+            Console.WriteLine($"Asynchronous algorithm #{algo} tests");
+            string name = CompressionHelper.GetAlgorithm(algo).Name;
             // Default
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
+                options.Algorithm = name;
                 options.LeaveOpen = true;
                 using MemoryStream data = new(TestData.Data);
                 using MemoryStream compressed = new();
@@ -57,6 +72,7 @@ namespace wan24_Compression_Tests
             // Nothing included
             {
                 CompressionOptions options = CompressionHelper.GetDefaultOptions();
+                options.Algorithm = name;
                 options.Flags = CompressionFlags.None;
                 options.LeaveOpen = true;
                 using MemoryStream data = new(TestData.Data);
