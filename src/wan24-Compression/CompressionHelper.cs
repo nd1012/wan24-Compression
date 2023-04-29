@@ -101,7 +101,7 @@ namespace wan24.Compression
         {
             options = GetDefaultOptions(options);
             CompressionAlgorithmBase algo = GetAlgorithm(options.Algorithm!);
-            options = algo.ReadOptions(compressedSource, uncompressedTarget, options).Options;
+            options = algo.ReadOptions(compressedSource, uncompressedTarget, options);
             options = GetDefaultOptions(options);
             algo = GetAlgorithm(options.Algorithm!);
             options.Flags = CompressionFlags.None;
@@ -120,7 +120,7 @@ namespace wan24.Compression
         {
             options = GetDefaultOptions(options);
             CompressionAlgorithmBase algo = GetAlgorithm(options.Algorithm!);
-            options = (await algo.ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext()).Options;
+            options = (await algo.ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext());
             options = GetDefaultOptions(options);
             algo = GetAlgorithm(options.Algorithm!);
             options.Flags = CompressionFlags.None;
@@ -178,12 +178,8 @@ namespace wan24.Compression
         /// <param name="compressedSource">Source stream</param>
         /// <param name="uncompressedTarget">Target stream</param>
         /// <param name="options">Options</param>
-        /// <returns>Red options, serializer version and the uncompressed data length</returns>
-        public static (CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength) ReadOptions(
-            Stream compressedSource,
-            Stream uncompressedTarget,
-            CompressionOptions? options = null
-            )
+        /// <returns>Red options</returns>
+        public static CompressionOptions ReadOptions(Stream compressedSource, Stream uncompressedTarget, CompressionOptions? options = null)
         {
             options = GetDefaultOptions(options);
             return GetAlgorithm(options.Algorithm!).ReadOptions(compressedSource, uncompressedTarget, options);
@@ -196,8 +192,8 @@ namespace wan24.Compression
         /// <param name="uncompressedTarget">Target stream</param>
         /// <param name="options">Options</param>
         /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>Red options, serializer version and the uncompressed data length</returns>
-        public static async Task<(CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength)> ReadOptionsAsync(
+        /// <returns>Red options</returns>
+        public static async Task<CompressionOptions> ReadOptionsAsync(
             Stream compressedSource,
             Stream uncompressedTarget,
             CompressionOptions? options = null,
@@ -219,9 +215,6 @@ namespace wan24.Compression
             if (options == null)
             {
                 options = DefaultAlgorithm.DefaultOptions;
-                options.Algorithm = DefaultAlgorithm.Name;
-                options.AlgorithmIncluded = true;
-                options.LeaveOpen = false;
             }
             else
             {
