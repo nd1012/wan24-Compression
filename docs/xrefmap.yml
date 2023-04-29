@@ -458,32 +458,6 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionHelper.GetAlgorithm
   nameWithType: CompressionHelper.GetAlgorithm
-- uid: wan24.Compression.CompressionHelper.GetAlgorithmName(System.Int32)
-  name: GetAlgorithmName(Int32)
-  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithmName_System_Int32_
-  commentId: M:wan24.Compression.CompressionHelper.GetAlgorithmName(System.Int32)
-  fullName: wan24.Compression.CompressionHelper.GetAlgorithmName(System.Int32)
-  nameWithType: CompressionHelper.GetAlgorithmName(Int32)
-- uid: wan24.Compression.CompressionHelper.GetAlgorithmName*
-  name: GetAlgorithmName
-  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithmName_
-  commentId: Overload:wan24.Compression.CompressionHelper.GetAlgorithmName
-  isSpec: "True"
-  fullName: wan24.Compression.CompressionHelper.GetAlgorithmName
-  nameWithType: CompressionHelper.GetAlgorithmName
-- uid: wan24.Compression.CompressionHelper.GetAlgorithmValue(System.String)
-  name: GetAlgorithmValue(String)
-  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithmValue_System_String_
-  commentId: M:wan24.Compression.CompressionHelper.GetAlgorithmValue(System.String)
-  fullName: wan24.Compression.CompressionHelper.GetAlgorithmValue(System.String)
-  nameWithType: CompressionHelper.GetAlgorithmValue(String)
-- uid: wan24.Compression.CompressionHelper.GetAlgorithmValue*
-  name: GetAlgorithmValue
-  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetAlgorithmValue_
-  commentId: Overload:wan24.Compression.CompressionHelper.GetAlgorithmValue
-  isSpec: "True"
-  fullName: wan24.Compression.CompressionHelper.GetAlgorithmValue
-  nameWithType: CompressionHelper.GetAlgorithmValue
 - uid: wan24.Compression.CompressionHelper.GetCompressionStream(Stream,wan24.Compression.CompressionOptions)
   name: GetCompressionStream(Stream, CompressionOptions)
   href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_GetCompressionStream_Stream_wan24_Compression_CompressionOptions_
@@ -724,6 +698,44 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.Level
   nameWithType: CompressionOptions.Level
+- uid: wan24.Compression.CompressionOptions.op_Explicit(System.Byte[])~wan24.Compression.CompressionOptions
+  name: Explicit(Byte[] to CompressionOptions)
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_op_Explicit_System_Byte____wan24_Compression_CompressionOptions
+  commentId: M:wan24.Compression.CompressionOptions.op_Explicit(System.Byte[])~wan24.Compression.CompressionOptions
+  name.vb: Narrowing(Byte() to CompressionOptions)
+  fullName: wan24.Compression.CompressionOptions.Explicit(System.Byte[] to wan24.Compression.CompressionOptions)
+  fullName.vb: wan24.Compression.CompressionOptions.Narrowing(System.Byte() to wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptions.Explicit(Byte[] to CompressionOptions)
+  nameWithType.vb: CompressionOptions.Narrowing(Byte() to CompressionOptions)
+- uid: wan24.Compression.CompressionOptions.op_Explicit*
+  name: Explicit
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_op_Explicit_
+  commentId: Overload:wan24.Compression.CompressionOptions.op_Explicit
+  isSpec: "True"
+  name.vb: Narrowing
+  fullName: wan24.Compression.CompressionOptions.Explicit
+  fullName.vb: wan24.Compression.CompressionOptions.Narrowing
+  nameWithType: CompressionOptions.Explicit
+  nameWithType.vb: CompressionOptions.Narrowing
+- uid: wan24.Compression.CompressionOptions.op_Implicit(wan24.Compression.CompressionOptions)~System.Byte[]
+  name: Implicit(CompressionOptions to Byte[])
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_op_Implicit_wan24_Compression_CompressionOptions__System_Byte__
+  commentId: M:wan24.Compression.CompressionOptions.op_Implicit(wan24.Compression.CompressionOptions)~System.Byte[]
+  name.vb: Widening(CompressionOptions to Byte())
+  fullName: wan24.Compression.CompressionOptions.Implicit(wan24.Compression.CompressionOptions to System.Byte[])
+  fullName.vb: wan24.Compression.CompressionOptions.Widening(wan24.Compression.CompressionOptions to System.Byte())
+  nameWithType: CompressionOptions.Implicit(CompressionOptions to Byte[])
+  nameWithType.vb: CompressionOptions.Widening(CompressionOptions to Byte())
+- uid: wan24.Compression.CompressionOptions.op_Implicit*
+  name: Implicit
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_op_Implicit_
+  commentId: Overload:wan24.Compression.CompressionOptions.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: wan24.Compression.CompressionOptions.Implicit
+  fullName.vb: wan24.Compression.CompressionOptions.Widening
+  nameWithType: CompressionOptions.Implicit
+  nameWithType.vb: CompressionOptions.Widening
 - uid: wan24.Compression.CompressionOptions.Serialize(Stream)
   name: Serialize(Stream)
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Serialize_Stream_
