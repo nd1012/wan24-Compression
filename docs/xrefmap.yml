@@ -820,6 +820,144 @@ references:
   commentId: F:wan24.Compression.CompressionOptions.VERSION
   fullName: wan24.Compression.CompressionOptions.VERSION
   nameWithType: CompressionOptions.VERSION
+- uid: wan24.Compression.CompressionOptionsFluidExtensions
+  name: CompressionOptionsFluidExtensions
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html
+  commentId: T:wan24.Compression.CompressionOptionsFluidExtensions
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions
+  nameWithType: CompressionOptionsFluidExtensions
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags(wan24.Compression.CompressionOptions,wan24.Compression.CompressionFlags[])
+  name: WithAdditionalFlags(CompressionOptions, CompressionFlags[])
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithAdditionalFlags_wan24_Compression_CompressionOptions_wan24_Compression_CompressionFlags___
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags(wan24.Compression.CompressionOptions,wan24.Compression.CompressionFlags[])
+  name.vb: WithAdditionalFlags(CompressionOptions, CompressionFlags())
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags(wan24.Compression.CompressionOptions, wan24.Compression.CompressionFlags[])
+  fullName.vb: wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags(wan24.Compression.CompressionOptions, wan24.Compression.CompressionFlags())
+  nameWithType: CompressionOptionsFluidExtensions.WithAdditionalFlags(CompressionOptions, CompressionFlags[])
+  nameWithType.vb: CompressionOptionsFluidExtensions.WithAdditionalFlags(CompressionOptions, CompressionFlags())
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags*
+  name: WithAdditionalFlags
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithAdditionalFlags_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithAdditionalFlags
+  nameWithType: CompressionOptionsFluidExtensions.WithAdditionalFlags
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions,System.Int32,System.IO.Compression.CompressionLevel,System.Boolean)
+  name: WithAlgorithm(CompressionOptions, Int32, CompressionLevel, Boolean)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithAlgorithm_wan24_Compression_CompressionOptions_System_Int32_System_IO_Compression_CompressionLevel_System_Boolean_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions,System.Int32,System.IO.Compression.CompressionLevel,System.Boolean)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions, System.Int32, System.IO.Compression.CompressionLevel, System.Boolean)
+  nameWithType: CompressionOptionsFluidExtensions.WithAlgorithm(CompressionOptions, Int32, CompressionLevel, Boolean)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions,System.String,System.IO.Compression.CompressionLevel,System.Boolean)
+  name: WithAlgorithm(CompressionOptions, String, CompressionLevel, Boolean)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithAlgorithm_wan24_Compression_CompressionOptions_System_String_System_IO_Compression_CompressionLevel_System_Boolean_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions,System.String,System.IO.Compression.CompressionLevel,System.Boolean)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm(wan24.Compression.CompressionOptions, System.String, System.IO.Compression.CompressionLevel, System.Boolean)
+  nameWithType: CompressionOptionsFluidExtensions.WithAlgorithm(CompressionOptions, String, CompressionLevel, Boolean)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm*
+  name: WithAlgorithm
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithAlgorithm_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithAlgorithm
+  nameWithType: CompressionOptionsFluidExtensions.WithAlgorithm
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded(wan24.Compression.CompressionOptions,System.Nullable{wan24.Compression.CompressionFlags})
+  name: WithFlagsIncluded(CompressionOptions, Nullable<CompressionFlags>)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithFlagsIncluded_wan24_Compression_CompressionOptions_System_Nullable_wan24_Compression_CompressionFlags__
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded(wan24.Compression.CompressionOptions,System.Nullable{wan24.Compression.CompressionFlags})
+  name.vb: WithFlagsIncluded(CompressionOptions, Nullable(Of CompressionFlags))
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded(wan24.Compression.CompressionOptions, System.Nullable<wan24.Compression.CompressionFlags>)
+  fullName.vb: wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded(wan24.Compression.CompressionOptions, System.Nullable(Of wan24.Compression.CompressionFlags))
+  nameWithType: CompressionOptionsFluidExtensions.WithFlagsIncluded(CompressionOptions, Nullable<CompressionFlags>)
+  nameWithType.vb: CompressionOptionsFluidExtensions.WithFlagsIncluded(CompressionOptions, Nullable(Of CompressionFlags))
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded*
+  name: WithFlagsIncluded
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithFlagsIncluded_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithFlagsIncluded
+  nameWithType: CompressionOptionsFluidExtensions.WithFlagsIncluded
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags(wan24.Compression.CompressionOptions,wan24.Compression.CompressionFlags[])
+  name: WithoutFlags(CompressionOptions, CompressionFlags[])
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutFlags_wan24_Compression_CompressionOptions_wan24_Compression_CompressionFlags___
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags(wan24.Compression.CompressionOptions,wan24.Compression.CompressionFlags[])
+  name.vb: WithoutFlags(CompressionOptions, CompressionFlags())
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags(wan24.Compression.CompressionOptions, wan24.Compression.CompressionFlags[])
+  fullName.vb: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags(wan24.Compression.CompressionOptions, wan24.Compression.CompressionFlags())
+  nameWithType: CompressionOptionsFluidExtensions.WithoutFlags(CompressionOptions, CompressionFlags[])
+  nameWithType.vb: CompressionOptionsFluidExtensions.WithoutFlags(CompressionOptions, CompressionFlags())
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags*
+  name: WithoutFlags
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutFlags_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlags
+  nameWithType: CompressionOptionsFluidExtensions.WithoutFlags
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded(wan24.Compression.CompressionOptions)
+  name: WithoutFlagsIncluded(CompressionOptions)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutFlagsIncluded_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded(wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded(wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptionsFluidExtensions.WithoutFlagsIncluded(CompressionOptions)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded*
+  name: WithoutFlagsIncluded
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutFlagsIncluded_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutFlagsIncluded
+  nameWithType: CompressionOptionsFluidExtensions.WithoutFlagsIncluded
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion(wan24.Compression.CompressionOptions)
+  name: WithoutSerializerVersion(CompressionOptions)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutSerializerVersion_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion(wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion(wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptionsFluidExtensions.WithoutSerializerVersion(CompressionOptions)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion*
+  name: WithoutSerializerVersion
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutSerializerVersion_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutSerializerVersion
+  nameWithType: CompressionOptionsFluidExtensions.WithoutSerializerVersion
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength(wan24.Compression.CompressionOptions)
+  name: WithoutUncompressedDataLength(CompressionOptions)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutUncompressedDataLength_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength(wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength(wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptionsFluidExtensions.WithoutUncompressedDataLength(CompressionOptions)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength*
+  name: WithoutUncompressedDataLength
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithoutUncompressedDataLength_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithoutUncompressedDataLength
+  nameWithType: CompressionOptionsFluidExtensions.WithoutUncompressedDataLength
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion(wan24.Compression.CompressionOptions)
+  name: WithSerializerVersion(CompressionOptions)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithSerializerVersion_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion(wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion(wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptionsFluidExtensions.WithSerializerVersion(CompressionOptions)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion*
+  name: WithSerializerVersion
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithSerializerVersion_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithSerializerVersion
+  nameWithType: CompressionOptionsFluidExtensions.WithSerializerVersion
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength(wan24.Compression.CompressionOptions)
+  name: WithUncompressedDataLength(CompressionOptions)
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithUncompressedDataLength_wan24_Compression_CompressionOptions_
+  commentId: M:wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength(wan24.Compression.CompressionOptions)
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength(wan24.Compression.CompressionOptions)
+  nameWithType: CompressionOptionsFluidExtensions.WithUncompressedDataLength(CompressionOptions)
+- uid: wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength*
+  name: WithUncompressedDataLength
+  href: api/wan24.Compression.CompressionOptionsFluidExtensions.html#wan24_Compression_CompressionOptionsFluidExtensions_WithUncompressedDataLength_
+  commentId: Overload:wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptionsFluidExtensions.WithUncompressedDataLength
+  nameWithType: CompressionOptionsFluidExtensions.WithUncompressedDataLength
 - uid: wan24.Compression.GZipCompressionAlgorithm
   name: GZipCompressionAlgorithm
   href: api/wan24.Compression.GZipCompressionAlgorithm.html
