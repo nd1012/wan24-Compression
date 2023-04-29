@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "QbkHe2mzvKzqpf2mOgK3T0jJrDXA+f3y5/Iih8mGDZ8="
+          "hash": "pBIGKdXzg++LGYujpqeRQC9AU5hN0y1o6gfscJDwr54="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionOptions.html",
-          "hash": "1HI3bcbhsm7MUUIHCtWPBi320EFXmEOLd1sPrlOq2u0="
+          "hash": "wnLmqUUQB0gwaBT2qPdis5FgA1oySdJ1EpuNCw5MOOI="
         }
       },
       "is_incremental": false,
@@ -101,11 +101,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/wan24.Compression.CompressionOptionsFluidExtensions.yml",
+      "source_relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionOptionsFluidExtensions.html",
-          "hash": "dZicQUhVEVjZ3YLDV2jAl7B75sBhg4KAbtDbgF5VQZI="
+          "relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.html",
+          "hash": "T0DKfVamxACkq4rl9iN06DjqeqecGxVVYKmHbIlJA4w="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.html",
-          "hash": "JxNdDLyDh9HhhGZBqfpqQNSvoUz3F+BwKoLi+LwNsFA="
+          "hash": "/mAph9CR9iK9T0AXRqi+kx7ZU2mJUpOrZrWGvtwScBY="
         }
       },
       "is_incremental": false,
