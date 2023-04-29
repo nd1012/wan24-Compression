@@ -99,6 +99,8 @@ namespace wan24.Compression
             FlagsIncluded = FlagsIncluded,
             Flags = Flags,
             Level = Level,
+            SerializerVersion = SerializerVersion,
+            UncompressedDataLength = UncompressedDataLength,
             LeaveOpen = LeaveOpen
         };
 
@@ -107,9 +109,7 @@ namespace wan24.Compression
         {
             stream.WriteStringNullable(Algorithm)
                 .Write(FlagsIncluded)
-                .WriteEnum(Flags)
-                .WriteEnum(Level)
-                .Write(LeaveOpen);
+                .WriteEnum(Flags);
         }
 
         /// <inheritdoc/>
@@ -118,8 +118,6 @@ namespace wan24.Compression
             await stream.WriteStringNullableAsync(Algorithm, cancellationToken).DynamicContext();
             await stream.WriteAsync(FlagsIncluded, cancellationToken).DynamicContext();
             await stream.WriteEnumAsync(Flags, cancellationToken).DynamicContext();
-            await stream.WriteEnumAsync(Level, cancellationToken).DynamicContext();
-            await stream.WriteAsync(LeaveOpen, cancellationToken).DynamicContext();
         }
 
         /// <inheritdoc/>
@@ -128,8 +126,6 @@ namespace wan24.Compression
             Algorithm = stream.ReadStringNullable(version, minLen: 1, maxLen: byte.MaxValue);
             FlagsIncluded = stream.ReadBool(version);
             Flags = stream.ReadEnum<CompressionFlags>(version);
-            Level = stream.ReadEnum<CompressionLevel>(version);
-            LeaveOpen = stream.ReadBool(version);
         }
 
         /// <inheritdoc/>
@@ -138,8 +134,18 @@ namespace wan24.Compression
             Algorithm = await stream.ReadStringNullableAsync(version, minLen: 1, maxLen: byte.MaxValue, cancellationToken: cancellationToken).DynamicContext();
             FlagsIncluded = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();
             Flags = await stream.ReadEnumAsync<CompressionFlags>(version, cancellationToken: cancellationToken).DynamicContext();
-            Level = await stream.ReadEnumAsync<CompressionLevel>(version, cancellationToken: cancellationToken).DynamicContext();
-            LeaveOpen = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();
         }
+
+        /// <summary>
+        /// Cast as serialized data
+        /// </summary>
+        /// <param name="options">Options</param>
+        public static implicit operator byte[](CompressionOptions options) => options.ToBytes();
+
+        /// <summary>
+        /// Cast from serialized data
+        /// </summary>
+        /// <param name="data">Data</param>
+        public static explicit operator CompressionOptions(byte[] data) => data.ToObject<CompressionOptions>();
     }
 }

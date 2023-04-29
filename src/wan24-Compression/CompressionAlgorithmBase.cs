@@ -91,11 +91,12 @@ namespace wan24.Compression
         /// <returns>Target</returns>
         public virtual Stream Decompress(Stream compressedSource, Stream uncompressedTarget, CompressionOptions? options = null)
         {
-            (options, _, long len) = ReadOptions(compressedSource, uncompressedTarget, options);
-            long pos = len > -1 ? uncompressedTarget.Position : -1;
+            options = ReadOptions(compressedSource, uncompressedTarget, options);
+            long pos = options.UncompressedDataLength > -1 ? uncompressedTarget.Position : -1;
             using Stream compression = GetDecompressionStream(compressedSource, options);
             compression.CopyTo(uncompressedTarget);
-            if (len > -1 && uncompressedTarget.Position - pos != len) throw new InvalidDataException($"Uncompressed data length mismatch (expected {len}, got {uncompressedTarget.Position - pos})");
+            if (options.UncompressedDataLength > -1 && uncompressedTarget.Position - pos != options.UncompressedDataLength)
+                throw new InvalidDataException($"Uncompressed data length mismatch (expected {options.UncompressedDataLength}, got {uncompressedTarget.Position - pos})");
             return uncompressedTarget;
         }
 
@@ -108,12 +109,13 @@ namespace wan24.Compression
         /// <param name="cancellationToken">Cancellation token</param>
         public virtual async Task DecompressAsync(Stream compressedSource, Stream uncompressedTarget, CompressionOptions? options = null, CancellationToken cancellationToken = default)
         {
-            (options, _, long len) = await ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext();
-            long pos = len > -1 ? uncompressedTarget.Position : -1;
+            options = await ReadOptionsAsync(compressedSource, uncompressedTarget, options, cancellationToken).DynamicContext();
+            long pos = options.UncompressedDataLength > -1 ? uncompressedTarget.Position : -1;
             Stream compression = GetDecompressionStream(compressedSource, options);
             await using (compression.DynamicContext())
                 await compression.CopyToAsync(uncompressedTarget, cancellationToken).DynamicContext();
-            if (len > -1 && uncompressedTarget.Position - pos != len) throw new InvalidDataException($"Uncompressed data length mismatch (expected {len}, got {uncompressedTarget.Position - pos})");
+            if (options.UncompressedDataLength > -1 && uncompressedTarget.Position - pos != options.UncompressedDataLength)
+                throw new InvalidDataException($"Uncompressed data length mismatch (expected {options.UncompressedDataLength}, got {uncompressedTarget.Position - pos})");
         }
 
         /// <summary>
@@ -135,7 +137,7 @@ namespace wan24.Compression
         {
             options ??= DefaultOptions;
             if (options.FlagsIncluded) compressedTarget.Write((byte)options.Flags);
-            if (options.SerializerVersionIncluded) compressedTarget.Write(StreamSerializer.VERSION.GetBytes());
+            if (options.SerializerVersionIncluded) compressedTarget.WriteSerializerVersion();
             if (options.AlgorithmIncluded) compressedTarget.WriteNumber(Value);
             if (options.UncompressedLengthIncluded) compressedTarget.WriteNumber(uncompressedSource.Length - uncompressedSource.Position);
             return options;
@@ -158,7 +160,7 @@ namespace wan24.Compression
         {
             options ??= DefaultOptions;
             if (options.FlagsIncluded) await compressedTarget.WriteAsync((byte)options.Flags, cancellationToken).DynamicContext();
-            if (options.SerializerVersionIncluded) await compressedTarget.WriteAsync(StreamSerializer.VERSION.GetBytes(), cancellationToken).DynamicContext();
+            if (options.SerializerVersionIncluded) await compressedTarget.WriteSerializerVersionAsync(cancellationToken).DynamicContext();
             if (options.AlgorithmIncluded) await compressedTarget.WriteNumberAsync(Value, cancellationToken).DynamicContext();
             if (options.UncompressedLengthIncluded) await compressedTarget.WriteNumberAsync(uncompressedSource.Length - uncompressedSource.Position, cancellationToken).DynamicContext();
             return options;
@@ -170,8 +172,8 @@ namespace wan24.Compression
         /// <param name="compressedSource">Source stream</param>
         /// <param name="uncompressedTarget">Target stream</param>
         /// <param name="options">Options</param>
-        /// <returns>Red options, serializer version and the uncompressed data length</returns>
-        public virtual (CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength) ReadOptions(
+        /// <returns>Red options</returns>
+        public virtual CompressionOptions ReadOptions(
             Stream compressedSource, 
             Stream uncompressedTarget, 
             CompressionOptions? options = null
@@ -179,31 +181,14 @@ namespace wan24.Compression
         {
             options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
-            int? serializerVersion = null;
-            if (options.SerializerVersionIncluded)
-            {
-                byte[] buffer = ArrayPool<byte>.Shared.Rent(sizeof(int));
-                try
-                {
-                    if (compressedSource.Read(buffer.AsSpan(0, sizeof(int))) != sizeof(int)) throw new IOException("Failed to read serializer version number");
-                    serializerVersion = buffer.AsSpan(0, sizeof(int)).ToInt();
-                }
-                finally
-                {
-                    ArrayPool<byte>.Shared.Return(buffer);
-                }
-                if (serializerVersion < 1 || serializerVersion > StreamSerializer.VERSION) throw new InvalidDataException($"Unsupported serializer version #{serializerVersion}");
-                options.SerializerVersion = serializerVersion;
-            }
+            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = compressedSource.ReadSerializerVersion() : null;
             if (options.AlgorithmIncluded && compressedSource.ReadNumber<int>(serializerVersion) != Value) throw new InvalidDataException("Compression algorithm mismatch");
-            long len = -1;
             if (options.UncompressedLengthIncluded)
             {
-                len = compressedSource.ReadNumber<long>(serializerVersion);
-                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
-                options.UncompressedDataLength = len;
+                options.UncompressedDataLength = compressedSource.ReadNumber<long>(serializerVersion);
+                if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
             }
-            return (options, serializerVersion, len);
+            return options;
         }
 
         /// <summary>
@@ -213,8 +198,8 @@ namespace wan24.Compression
         /// <param name="uncompressedTarget">Target stream</param>
         /// <param name="options">Options</param>
         /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>Red options, serializer version and the uncompressed data length</returns>
-        public virtual async Task<(CompressionOptions Options, int? SerializerVersion, long UncompressedDataLength)> ReadOptionsAsync(
+        /// <returns>Red options</returns>
+        public virtual async Task<CompressionOptions> ReadOptionsAsync(
             Stream compressedSource, 
             Stream uncompressedTarget, 
             CompressionOptions? options = null,
@@ -223,33 +208,15 @@ namespace wan24.Compression
         {
             options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
-            int? serializerVersion = null;
-            if (options.SerializerVersionIncluded)
-            {
-                byte[] buffer = ArrayPool<byte>.Shared.Rent(sizeof(int));
-                try
-                {
-                    if (await compressedSource.ReadAsync(buffer.AsMemory(0, sizeof(int)), cancellationToken).DynamicContext() != sizeof(int))
-                        throw new IOException("Failed to read serializer version number");
-                    serializerVersion = buffer.AsSpan(0, sizeof(int)).ToInt();
-                }
-                finally
-                {
-                    ArrayPool<byte>.Shared.Return(buffer);
-                }
-                if (serializerVersion < 1 || serializerVersion > StreamSerializer.VERSION) throw new InvalidDataException($"Unsupported serializer version #{serializerVersion}");
-                options.SerializerVersion = serializerVersion;
-            }
+            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext() : null;
             if (options.AlgorithmIncluded && await compressedSource.ReadNumberAsync<int>(serializerVersion, cancellationToken: cancellationToken).DynamicContext() != Value)
                 throw new InvalidDataException("Compression algorithm mismatch");
-            long len = -1;
             if (options.UncompressedLengthIncluded)
             {
-                len = await compressedSource.ReadNumberAsync<long>(serializerVersion, cancellationToken: cancellationToken).DynamicContext();
-                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
-                options.UncompressedDataLength = len;
+                options.UncompressedDataLength = await compressedSource.ReadNumberAsync<long>(serializerVersion, cancellationToken: cancellationToken).DynamicContext();
+                if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
             }
-            return (options, serializerVersion, len);
+            return options;
         }
     }
 }
