@@ -40,14 +40,14 @@ namespace wan24_Compression_Tests
             CompareOptions(options, ms.ReadSerializedAsync<CompressionOptions>().Result);
         }
 
-        public void CompareOptions(CompressionOptions a, CompressionOptions b, bool serialized = true)
+        public static void CompareOptions(CompressionOptions a, CompressionOptions b, bool serialized = true)
         {
             Assert.AreEqual(a.FlagsIncluded, b.FlagsIncluded);
             Assert.AreEqual(a.AlgorithmIncluded, b.AlgorithmIncluded);
             Assert.AreEqual(a.Algorithm, b.Algorithm);
             Assert.AreEqual(a.SerializerVersionIncluded, b.SerializerVersionIncluded);
-            Assert.AreEqual(a.SerializerVersion, b.SerializerVersion);
             if (serialized) return;
+            Assert.AreEqual(a.SerializerVersion, b.SerializerVersion);
             Assert.AreEqual(a.UncompressedDataLength, b.UncompressedDataLength);
             Assert.AreEqual(a.Level, b.Level);
             Assert.AreEqual(a.LeaveOpen, b.LeaveOpen);

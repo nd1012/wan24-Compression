@@ -183,11 +183,10 @@ namespace wan24.Compression
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
             int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = compressedSource.ReadSerializerVersion() : null;
             if (options.AlgorithmIncluded && compressedSource.ReadNumber<int>(serializerVersion) != Value) throw new InvalidDataException("Compression algorithm mismatch");
-            long len = -1;
             if (options.UncompressedLengthIncluded)
             {
                 options.UncompressedDataLength = compressedSource.ReadNumber<long>(serializerVersion);
-                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
+                if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
             }
             return options;
         }
@@ -209,14 +208,13 @@ namespace wan24.Compression
         {
             options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
-            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicCOntext() : null;
+            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext() : null;
             if (options.AlgorithmIncluded && await compressedSource.ReadNumberAsync<int>(serializerVersion, cancellationToken: cancellationToken).DynamicContext() != Value)
                 throw new InvalidDataException("Compression algorithm mismatch");
-            long len = -1;
             if (options.UncompressedLengthIncluded)
             {
                 options.UncompressedDataLength = await compressedSource.ReadNumberAsync<long>(serializerVersion, cancellationToken: cancellationToken).DynamicContext();
-                if (len < 0) throw new InvalidDataException($"Invalid uncompressed data length ({len})");
+                if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
             }
             return options;
         }
