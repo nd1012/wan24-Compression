@@ -141,5 +141,17 @@ namespace wan24.Compression
             Level = await stream.ReadEnumAsync<CompressionLevel>(version, cancellationToken: cancellationToken).DynamicContext();
             LeaveOpen = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();
         }
+
+        /// <summary>
+        /// Cast as serialized data
+        /// </summary>
+        /// <param name="options">Options</param>
+        public static implicit operator byte[](CompressionOptions options) => options.ToBytes();
+
+        /// <summary>
+        /// Cast from serialized data
+        /// </summary>
+        /// <param name="data">Data</param>
+        public static explicit operator CompressionOptions(byte[] data) => data.ToObject<CompressionOptions>();
     }
 }
