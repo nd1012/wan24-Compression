@@ -3,9 +3,9 @@
 namespace wan24.Compression
 {
     /// <summary>
-    /// <see cref="CompressionOptions"/> fluid extensions
+    /// <see cref="CompressionOptions"/> fluent extensions
     /// </summary>
-    public static class CompressionOptionsFluidExtensions
+    public static class CompressionOptionsFluentExtensions
     {
         /// <summary>
         /// Set compression algorithm options
