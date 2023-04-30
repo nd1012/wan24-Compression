@@ -92,10 +92,12 @@ namespace wan24.Compression
         /// <summary>
         /// Include nothing
         /// </summary>
-        public void IncludeNothing()
+        /// <returns>This</returns>
+        public CompressionOptions IncludeNothing()
         {
             Flags = CompressionFlags.None;
             FlagsIncluded = false;
+            return this;
         }
 
         /// <summary>
