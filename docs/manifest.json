@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "FqpCPqhYfJ3r+FO5NhtU+X2rnSTx7bpcBwHNoYH7I3I="
+          "hash": "jzp2FGPX+UpBALDsgEcWm2b1GY2w03OX/aqaVGHnvxs="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "dgYMDV/x0Wts/K5LR7ck0F+e8pGpDuiZ8W5KpdDlBFo="
+          "hash": "pBIGKdXzg++LGYujpqeRQC9AU5hN0y1o6gfscJDwr54="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.html",
-          "hash": "IF5uC2RJj09j3xplxkmT6XdHwTwR73k8r/gbC41IHIo="
+          "hash": "g6Uwl9QQ0M4uMLqBHC9TRVVNHfNq9XYP7qDF2T8nwp8="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionAlgorithmBase.html",
-          "hash": "L8Buy4zOkMD5Gna74DmBiGLCwy12MGV0bhei0rHGBJE="
+          "hash": "hyf1gIj4eucSB0wR2Cp4sVYKEqAb97URwbtMgYpcagg="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionExtensions.html",
-          "hash": "YUIWciDp7xeGsmRXfhXmg/4VCfVSqtNQBH5wIjJZHHE="
+          "hash": "ENNsapyEwJdmwJBFLwobtrHROUOd6EokZQfplNNMI1o="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionFlags.html",
-          "hash": "no/ieIeQWBvwx2IQjHiy6jSI7S4wYIR8IrX1kZ1E5jI="
+          "hash": "i5dduIeYzd1c0EmIdjGBrWSJJAW5I4B7+OsHfMye7Dk="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionHelper.html",
-          "hash": "VMLt/PByzxn+oPXQ98bMVmDsQwRfBV8fjW5O3Jk9RjY="
+          "hash": "bB8CjIGl3kzdoEFzJjEiCkJw3XMjRZhTJaWppdnRUq4="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,19 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionOptions.html",
-          "hash": "PkN8NlFBQXWI/HN6bL1r5qm+Am/CHGMUV6CfS/G7ROU="
+          "hash": "wnLmqUUQB0gwaBT2qPdis5FgA1oySdJ1EpuNCw5MOOI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.html",
+          "hash": "T0DKfVamxACkq4rl9iN06DjqeqecGxVVYKmHbIlJA4w="
         }
       },
       "is_incremental": false,
@@ -105,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.html",
-          "hash": "STVheRc6MRSGdxrRoQ/EqfBsfXlqcqB7XgCnnLaIzWE="
+          "hash": "lvZBoJMfyhzbZSL3q6DcgB9zxqMJMdI/xXowVZ24yt4="
         }
       },
       "is_incremental": false,
@@ -117,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.html",
-          "hash": "kfPgGuSIR8uzlAFYaS54OFQKz+B26vagp7FO6e6fRUY="
+          "hash": "/mAph9CR9iK9T0AXRqi+kx7ZU2mJUpOrZrWGvtwScBY="
         }
       },
       "is_incremental": false,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "9Pqqy1byvs1XkXpjKCiumxyzYNXwPtyVnBEw/43EN6k="
+          "hash": "uqiLJ6i1qSUN+c79UjDvHXUV/94a7SIjulT1EZ1Cpxg="
         }
       },
       "is_incremental": false,
@@ -153,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "rPT43iT2uveeDAXwmsVNh2zpMZT7dpcJkjSL9VQe0e8="
+          "hash": "Zp9sgsaoA8yEl4ifbafB3CKHa4YjU9FhnnmyZ3pz7WE="
         }
       },
       "is_incremental": false,
@@ -165,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "WSuRrYiGwKKMbtdG9z8W9fXmLoCyTnGg9AxbPKLXm2Y="
+          "hash": "s+UecGKJLe11K3w4+MJjx6QoiqktkO8teeQG06lk8L0="
         }
       },
       "is_incremental": false,
@@ -192,7 +204,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 8,
+          "total_file_count": 9,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
