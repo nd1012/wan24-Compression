@@ -90,6 +90,15 @@ namespace wan24.Compression
         }
 
         /// <summary>
+        /// Include nothing
+        /// </summary>
+        public void IncludeNothing()
+        {
+            Flags = CompressionFlags.None;
+            FlagsIncluded = false;
+        }
+
+        /// <summary>
         /// Get a clone
         /// </summary>
         /// <returns></returns>
