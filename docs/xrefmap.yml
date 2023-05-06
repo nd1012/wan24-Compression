@@ -672,6 +672,19 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.FlagsIncluded
   nameWithType: CompressionOptions.FlagsIncluded
+- uid: wan24.Compression.CompressionOptions.IncludeNothing
+  name: IncludeNothing()
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_IncludeNothing
+  commentId: M:wan24.Compression.CompressionOptions.IncludeNothing
+  fullName: wan24.Compression.CompressionOptions.IncludeNothing()
+  nameWithType: CompressionOptions.IncludeNothing()
+- uid: wan24.Compression.CompressionOptions.IncludeNothing*
+  name: IncludeNothing
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_IncludeNothing_
+  commentId: Overload:wan24.Compression.CompressionOptions.IncludeNothing
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.IncludeNothing
+  nameWithType: CompressionOptions.IncludeNothing
 - uid: wan24.Compression.CompressionOptions.LeaveOpen
   name: LeaveOpen
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_LeaveOpen
