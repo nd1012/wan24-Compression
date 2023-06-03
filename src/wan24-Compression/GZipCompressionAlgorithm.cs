@@ -15,6 +15,10 @@ namespace wan24.Compression
         /// Algorithm value
         /// </summary>
         public const int ALGORITHM_VALUE = 0;
+        /// <summary>
+        /// GZip raw (without header) profile key
+        /// </summary>
+        public const string PROFILE_GZIP_RAW = "GZIP_RAW";
 
         /// <summary>
         /// Static constructor
