@@ -64,6 +64,12 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.BrotliCompressionAlgorithm.Instance
   nameWithType: BrotliCompressionAlgorithm.Instance
+- uid: wan24.Compression.BrotliCompressionAlgorithm.PROFILE_BROTLI_RAW
+  name: PROFILE_BROTLI_RAW
+  href: api/wan24.Compression.BrotliCompressionAlgorithm.html#wan24_Compression_BrotliCompressionAlgorithm_PROFILE_BROTLI_RAW
+  commentId: F:wan24.Compression.BrotliCompressionAlgorithm.PROFILE_BROTLI_RAW
+  fullName: wan24.Compression.BrotliCompressionAlgorithm.PROFILE_BROTLI_RAW
+  nameWithType: BrotliCompressionAlgorithm.PROFILE_BROTLI_RAW
 - uid: wan24.Compression.CompressionAlgorithmBase
   name: CompressionAlgorithmBase
   href: api/wan24.Compression.CompressionAlgorithmBase.html
@@ -971,6 +977,31 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptionsFluentExtensions.WithUncompressedDataLength
   nameWithType: CompressionOptionsFluentExtensions.WithUncompressedDataLength
+- uid: wan24.Compression.CompressionProfiles
+  name: CompressionProfiles
+  href: api/wan24.Compression.CompressionProfiles.html
+  commentId: T:wan24.Compression.CompressionProfiles
+  fullName: wan24.Compression.CompressionProfiles
+  nameWithType: CompressionProfiles
+- uid: wan24.Compression.CompressionProfiles.GetProfile(System.String)
+  name: GetProfile(String)
+  href: api/wan24.Compression.CompressionProfiles.html#wan24_Compression_CompressionProfiles_GetProfile_System_String_
+  commentId: M:wan24.Compression.CompressionProfiles.GetProfile(System.String)
+  fullName: wan24.Compression.CompressionProfiles.GetProfile(System.String)
+  nameWithType: CompressionProfiles.GetProfile(String)
+- uid: wan24.Compression.CompressionProfiles.GetProfile*
+  name: GetProfile
+  href: api/wan24.Compression.CompressionProfiles.html#wan24_Compression_CompressionProfiles_GetProfile_
+  commentId: Overload:wan24.Compression.CompressionProfiles.GetProfile
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionProfiles.GetProfile
+  nameWithType: CompressionProfiles.GetProfile
+- uid: wan24.Compression.CompressionProfiles.Registered
+  name: Registered
+  href: api/wan24.Compression.CompressionProfiles.html#wan24_Compression_CompressionProfiles_Registered
+  commentId: F:wan24.Compression.CompressionProfiles.Registered
+  fullName: wan24.Compression.CompressionProfiles.Registered
+  nameWithType: CompressionProfiles.Registered
 - uid: wan24.Compression.GZipCompressionAlgorithm
   name: GZipCompressionAlgorithm
   href: api/wan24.Compression.GZipCompressionAlgorithm.html
@@ -1028,3 +1059,9 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.GZipCompressionAlgorithm.Instance
   nameWithType: GZipCompressionAlgorithm.Instance
+- uid: wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW
+  name: PROFILE_GZIP_RAW
+  href: api/wan24.Compression.GZipCompressionAlgorithm.html#wan24_Compression_GZipCompressionAlgorithm_PROFILE_GZIP_RAW
+  commentId: F:wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW
+  fullName: wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW
+  nameWithType: GZipCompressionAlgorithm.PROFILE_GZIP_RAW
