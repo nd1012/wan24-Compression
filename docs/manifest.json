@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "pBIGKdXzg++LGYujpqeRQC9AU5hN0y1o6gfscJDwr54="
+          "hash": "H5tf7qjgn/ECjb+NROLZCKFxr99XoKAMzeTThvGqjog="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.html",
-          "hash": "g6Uwl9QQ0M4uMLqBHC9TRVVNHfNq9XYP7qDF2T8nwp8="
+          "hash": "GeKGeNBMovtXRcwwGT84P91TpUipuoXetU4jgeCiQAo="
         }
       },
       "is_incremental": false,
@@ -113,11 +113,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionProfiles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionProfiles.html",
+          "hash": "EnC4oNaxPGNPKcPxg6UgMjKH8bn0K504K6oGSTi3nZM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.yml",
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.html",
-          "hash": "lvZBoJMfyhzbZSL3q6DcgB9zxqMJMdI/xXowVZ24yt4="
+          "hash": "PWjPYKfDUgd4v2mmcTtgLosS53ZgAlASsweTmyF4CzY="
         }
       },
       "is_incremental": false,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.html",
-          "hash": "/mAph9CR9iK9T0AXRqi+kx7ZU2mJUpOrZrWGvtwScBY="
+          "hash": "wHS6NraELEMwiqzXbByZVhzqqjcnEuU+VLYz2+jXwGI="
         }
       },
       "is_incremental": false,
@@ -165,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Zp9sgsaoA8yEl4ifbafB3CKHa4YjU9FhnnmyZ3pz7WE="
+          "hash": "tfACxLlkGdYoZDcgkKa+MY1sNSnWKLbMAiwdD8nrhIw="
         }
       },
       "is_incremental": false,
@@ -204,7 +216,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 9,
+          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

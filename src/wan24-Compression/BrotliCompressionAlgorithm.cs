@@ -15,6 +15,10 @@ namespace wan24.Compression
         /// Algorithm value
         /// </summary>
         public const int ALGORITHM_VALUE = 1;
+        /// <summary>
+        /// Brotli raw (without header) profile key
+        /// </summary>
+        public const string PROFILE_BROTLI_RAW = "BROTLI_RAW";
 
         /// <summary>
         /// Static constructor
