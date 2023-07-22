@@ -1,0 +1,601 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class BitCompressor
+   | wan24-Compression </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class BitCompressor
+   | wan24-Compression ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="wan24.Compression.BitCompressor">
+  
+  
+  <h1 id="wan24_Compression_BitCompressor" data-uid="wan24.Compression.BitCompressor" class="text-break">Class BitCompressor
+  </h1>
+  <div class="markdown level0 summary"><p>Bit compressor (works only well, if bytes start/end with <code>0000</code>, <code>0101</code> or <code>1111</code> often)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">BitCompressor</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.Compression.html">wan24.Compression</a></h6>
+  <h6><strong>Assembly</strong>: wan24Compression.dll</h6>
+  <h5 id="wan24_Compression_BitCompressor_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class BitCompressor</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor__ctor_wan24_Compression_BitCompressor_CompressionOutput_Delegate_.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.%23ctor(wan24.Compression.BitCompressor.CompressionOutput_Delegate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L45">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor__ctor_" data-uid="wan24.Compression.BitCompressor.#ctor*"></a>
+  <h4 id="wan24_Compression_BitCompressor__ctor_wan24_Compression_BitCompressor_CompressionOutput_Delegate_" data-uid="wan24.Compression.BitCompressor.#ctor(wan24.Compression.BitCompressor.CompressionOutput_Delegate)">BitCompressor(BitCompressor.CompressionOutput_Delegate)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BitCompressor(BitCompressor.CompressionOutput_Delegate output)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.BitCompressor.CompressionOutput_Delegate.html">BitCompressor.CompressionOutput_Delegate</a></td>
+        <td><span class="parametername">output</span></td>
+        <td><p>Output delegate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor__ctor_wan24_Compression_BitCompressor_DecompressionInput_Delegate_.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.%23ctor(wan24.Compression.BitCompressor.DecompressionInput_Delegate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L56">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor__ctor_" data-uid="wan24.Compression.BitCompressor.#ctor*"></a>
+  <h4 id="wan24_Compression_BitCompressor__ctor_wan24_Compression_BitCompressor_DecompressionInput_Delegate_" data-uid="wan24.Compression.BitCompressor.#ctor(wan24.Compression.BitCompressor.DecompressionInput_Delegate)">BitCompressor(BitCompressor.DecompressionInput_Delegate)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public BitCompressor(BitCompressor.DecompressionInput_Delegate input)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Compression.BitCompressor.DecompressionInput_Delegate.html">BitCompressor.DecompressionInput_Delegate</a></td>
+        <td><span class="parametername">input</span></td>
+        <td><p>Input delegate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_CanFlush.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.CanFlush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L84">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_CanFlush_" data-uid="wan24.Compression.BitCompressor.CanFlush*"></a>
+  <h4 id="wan24_Compression_BitCompressor_CanFlush" data-uid="wan24.Compression.BitCompressor.CanFlush">CanFlush</h4>
+  <div class="markdown level1 summary"><p>Can flush final bits?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool CanFlush { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_CompressionRatio.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.CompressionRatio%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L74">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_CompressionRatio_" data-uid="wan24.Compression.BitCompressor.CompressionRatio*"></a>
+  <h4 id="wan24_Compression_BitCompressor_CompressionRatio" data-uid="wan24.Compression.BitCompressor.CompressionRatio">CompressionRatio</h4>
+  <div class="markdown level1 summary"><p>Current compression ratio in %</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CompressionRatio { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_EndOfInput.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.EndOfInput%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L79">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_EndOfInput_" data-uid="wan24.Compression.BitCompressor.EndOfInput*"></a>
+  <h4 id="wan24_Compression_BitCompressor_EndOfInput" data-uid="wan24.Compression.BitCompressor.EndOfInput">EndOfInput</h4>
+  <div class="markdown level1 summary"><p>Is no more input left? (only when decompressing)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EndOfInput { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_IsFlushed.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.IsFlushed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L89">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_IsFlushed_" data-uid="wan24.Compression.BitCompressor.IsFlushed*"></a>
+  <h4 id="wan24_Compression_BitCompressor_IsFlushed" data-uid="wan24.Compression.BitCompressor.IsFlushed">IsFlushed</h4>
+  <div class="markdown level1 summary"><p>Are the final bits flushed already?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsFlushed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_Processed.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.Processed%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L69">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_Processed_" data-uid="wan24.Compression.BitCompressor.Processed*"></a>
+  <h4 id="wan24_Compression_BitCompressor_Processed" data-uid="wan24.Compression.BitCompressor.Processed">Processed</h4>
+  <div class="markdown level1 summary"><p>Number of processed bytes (encoded input or decoded output)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Processed { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_Compress_ReadOnlySpan_System_Byte__.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.Compress(ReadOnlySpan%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.Compression.cs/#L13">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_Compress_" data-uid="wan24.Compression.BitCompressor.Compress*"></a>
+  <h4 id="wan24_Compression_BitCompressor_Compress_ReadOnlySpan_System_Byte__" data-uid="wan24.Compression.BitCompressor.Compress(ReadOnlySpan{System.Byte})">Compress(ReadOnlySpan&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Compress bits</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Compress(ReadOnlySpan&lt;byte&gt; data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ReadOnlySpan</span>&lt;<span class="xref">System.Byte</span>&gt;</td>
+        <td><span class="parametername">data</span></td>
+        <td><p>Data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p>Need to flush the final bits, if this was the last data chunk to compress?</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_Decompress_Span_System_Byte__.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.Decompress(Span%7BSystem.Byte%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.Decompression.cs/#L13">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_Decompress_" data-uid="wan24.Compression.BitCompressor.Decompress*"></a>
+  <h4 id="wan24_Compression_BitCompressor_Decompress_Span_System_Byte__" data-uid="wan24.Compression.BitCompressor.Decompress(Span{System.Byte})">Decompress(Span&lt;Byte&gt;)</h4>
+  <div class="markdown level1 summary"><p>Decompress bits (final bits will be flushed automatic)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Decompress(Span&lt;byte&gt; buffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Span</span>&lt;<span class="xref">System.Byte</span>&gt;</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>Buffer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Number of bytes written to the buffer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_FlushFinalBits.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.FlushFinalBits%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L96">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_FlushFinalBits_" data-uid="wan24.Compression.BitCompressor.FlushFinalBits*"></a>
+  <h4 id="wan24_Compression_BitCompressor_FlushFinalBits" data-uid="wan24.Compression.BitCompressor.FlushFinalBits">FlushFinalBits()</h4>
+  <div class="markdown level1 summary"><p>Flush the final bits (when compressing a last byte may be processed, when decompressing a checksum may be validated)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void FlushFinalBits()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_GetMaxCompressedLength_System_Int64_.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.GetMaxCompressedLength(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L133">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_GetMaxCompressedLength_" data-uid="wan24.Compression.BitCompressor.GetMaxCompressedLength*"></a>
+  <h4 id="wan24_Compression_BitCompressor_GetMaxCompressedLength_System_Int64_" data-uid="wan24.Compression.BitCompressor.GetMaxCompressedLength(System.Int64)">GetMaxCompressedLength(Int64)</h4>
+  <div class="markdown level1 summary"><p>Get the maximum compressed length</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long GetMaxCompressedLength(long len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">len</span></td>
+        <td><p>Raw data length in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Maximum length in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor_GetMaxDecompressedLength_System_Int64_.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor.GetMaxDecompressedLength(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.cs/#L147">View Source</a>
+  </span>
+  <a id="wan24_Compression_BitCompressor_GetMaxDecompressedLength_" data-uid="wan24.Compression.BitCompressor.GetMaxDecompressedLength*"></a>
+  <h4 id="wan24_Compression_BitCompressor_GetMaxDecompressedLength_System_Int64_" data-uid="wan24.Compression.BitCompressor.GetMaxDecompressedLength(System.Int64)">GetMaxDecompressedLength(Int64)</h4>
+  <div class="markdown level1 summary"><p>Get the maximum decompressed length</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long GetMaxDecompressedLength(long len)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">len</span></td>
+        <td><p>Compressed data length in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Maximum length in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/nd1012/wan24-Compression/new/dev/apiSpec/new?filename=wan24_Compression_BitCompressor.md&amp;value=---%0Auid%3A%20wan24.Compression.BitCompressor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/nd1012/wan24-Compression/blob/dev/src/wan24-Compression/BitCompressor.Decompression.cs/#L4" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            (c) 2023 Andreas Zimmermann, wan24.de
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
