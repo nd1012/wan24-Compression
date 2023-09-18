@@ -88,7 +88,7 @@ namespace wan24.Compression
         public static CompressionOptions WithFlagsIncluded(this CompressionOptions options, CompressionFlags? flags = null)
         {
             options.FlagsIncluded = true;
-            if (flags != null) options.Flags = flags.Value;
+            if (flags is not null) options.Flags = flags.Value;
             return options;
         }
 

@@ -212,7 +212,7 @@ namespace wan24.Compression
         /// <returns>Options</returns>
         public static CompressionOptions GetDefaultOptions(CompressionOptions? options = null)
         {
-            if (options == null)
+            if (options is null)
             {
                 options = DefaultAlgorithm.DefaultOptions;
             }
