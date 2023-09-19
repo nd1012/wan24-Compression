@@ -13,7 +13,7 @@ namespace wan24.Compression
         /// <summary>
         /// Object version
         /// </summary>
-        public const int VERSION = 1;
+        public const int VERSION = 2;
 
         /// <summary>
         /// Constructor
@@ -37,6 +37,12 @@ namespace wan24.Compression
         /// </summary>
         [Range(-1, long.MaxValue)]
         public long UncompressedDataLength { get; set; } = -1;
+
+        /// <summary>
+        /// Maximum uncompressed data length in bytes (or <c>-1</c> for no limit)
+        /// </summary>
+        [Range(-1, long.MaxValue)]
+        public long MaxUncompressedDataLength { get; set; } = -1;
 
         /// <summary>
         /// Serializer version included?
@@ -112,6 +118,7 @@ namespace wan24.Compression
             Level = Level,
             SerializerVersion = SerializerVersion,
             UncompressedDataLength = UncompressedDataLength,
+            MaxUncompressedDataLength = MaxUncompressedDataLength,
             LeaveOpen = LeaveOpen
         };
 
@@ -119,6 +126,7 @@ namespace wan24.Compression
         protected override void Serialize(Stream stream)
         {
             stream.WriteStringNullable(Algorithm)
+                .Write(MaxUncompressedDataLength)
                 .Write(FlagsIncluded)
                 .WriteEnum(Flags);
         }
@@ -127,6 +135,7 @@ namespace wan24.Compression
         protected override async Task SerializeAsync(Stream stream, CancellationToken cancellationToken)
         {
             await stream.WriteStringNullableAsync(Algorithm, cancellationToken).DynamicContext();
+            await stream.WriteAsync(MaxUncompressedDataLength, cancellationToken).DynamicContext();
             await stream.WriteAsync(FlagsIncluded, cancellationToken).DynamicContext();
             await stream.WriteEnumAsync(Flags, cancellationToken).DynamicContext();
         }
@@ -135,6 +144,12 @@ namespace wan24.Compression
         protected override void Deserialize(Stream stream, int version)
         {
             Algorithm = stream.ReadStringNullable(version, minLen: 1, maxLen: byte.MaxValue);
+            switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
+            {
+                case 2:
+                    MaxUncompressedDataLength = stream.ReadLong(version);
+                    break;
+            }
             FlagsIncluded = stream.ReadBool(version);
             Flags = stream.ReadEnum<CompressionFlags>(version);
         }
@@ -143,6 +158,12 @@ namespace wan24.Compression
         protected override async Task DeserializeAsync(Stream stream, int version, CancellationToken cancellationToken)
         {
             Algorithm = await stream.ReadStringNullableAsync(version, minLen: 1, maxLen: byte.MaxValue, cancellationToken: cancellationToken).DynamicContext();
+            switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
+            {
+                case 2:
+                    MaxUncompressedDataLength = await stream.ReadLongAsync(version, cancellationToken: cancellationToken).DynamicContext();
+                    break;
+            }
             FlagsIncluded = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();
             Flags = await stream.ReadEnumAsync<CompressionFlags>(version, cancellationToken: cancellationToken).DynamicContext();
         }

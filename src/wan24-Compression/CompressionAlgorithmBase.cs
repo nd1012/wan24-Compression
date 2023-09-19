@@ -80,7 +80,7 @@ namespace wan24.Compression
         /// <param name="compressedTarget">Target stream</param>
         /// <param name="options">Options</param>
         /// <returns>Compression stream</returns>
-        public abstract Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null);
+        public Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null) => CreateCompressionStream(compressedTarget, options ?? new());
 
         /// <summary>
         /// Decompress a stream
@@ -124,7 +124,16 @@ namespace wan24.Compression
         /// <param name="compressedSource">Source stream</param>
         /// <param name="options">Options</param>
         /// <returns>Decompression stream</returns>
-        public abstract Stream GetDecompressionStream(Stream compressedSource, CompressionOptions? options = null);
+        public Stream GetDecompressionStream(Stream compressedSource, CompressionOptions? options = null)
+        {
+            options ??= new();
+            Stream res = CreateDecompressionStream(compressedSource, options);
+            if (options.MaxUncompressedDataLength > 0) res = new LimitedLengthStream(res, options.MaxUncompressedDataLength)
+            {
+                ThrowOnReadOverflow = true
+            };
+            return res;
+        }
 
         /// <summary>
         /// Write the options
@@ -187,6 +196,8 @@ namespace wan24.Compression
             {
                 options.UncompressedDataLength = compressedSource.ReadNumber<long>(serializerVersion);
                 if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
+                if (options.MaxUncompressedDataLength > 0 && options.UncompressedDataLength > options.MaxUncompressedDataLength)
+                    throw new InvalidDataException($"Uncompressed data length {options.UncompressedDataLength} byte exceeds the maximum of {options.MaxUncompressedDataLength} byte");
             }
             return options;
         }
@@ -215,8 +226,26 @@ namespace wan24.Compression
             {
                 options.UncompressedDataLength = await compressedSource.ReadNumberAsync<long>(serializerVersion, cancellationToken: cancellationToken).DynamicContext();
                 if (options.UncompressedDataLength < 0) throw new InvalidDataException($"Invalid uncompressed data length ({options.UncompressedDataLength})");
+                if (options.MaxUncompressedDataLength > 0 && options.UncompressedDataLength > options.MaxUncompressedDataLength)
+                    throw new InvalidDataException($"Uncompressed data length {options.UncompressedDataLength} byte exceeds the maximum of {options.MaxUncompressedDataLength} byte");
             }
             return options;
         }
+
+        /// <summary>
+        /// Create a compression stream
+        /// </summary>
+        /// <param name="compressedTarget">Target stream</param>
+        /// <param name="options">Options</param>
+        /// <returns>Compression stream</returns>
+        protected abstract Stream CreateCompressionStream(Stream compressedTarget, CompressionOptions options);
+
+        /// <summary>
+        /// Create a decompression stream
+        /// </summary>
+        /// <param name="compressedSource">Source stream</param>
+        /// <param name="options">Options</param>
+        /// <returns>Decompression stream</returns>
+        protected abstract Stream CreateDecompressionStream(Stream compressedSource, CompressionOptions options);
     }
 }

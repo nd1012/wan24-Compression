@@ -36,17 +36,11 @@ namespace wan24.Compression
         public static BrotliCompressionAlgorithm Instance { get; }
 
         /// <inheritdoc/>
-        public override Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null)
-        {
-            options ??= DefaultOptions;
-            return new BrotliStream(compressedTarget, options.Level, options.LeaveOpen);
-        }
+        protected override Stream CreateCompressionStream(Stream compressedTarget, CompressionOptions options)
+            => new BrotliStream(compressedTarget, options.Level, options.LeaveOpen);
 
         /// <inheritdoc/>
-        public override Stream GetDecompressionStream(Stream source, CompressionOptions? options = null)
-        {
-            options ??= DefaultOptions;
-            return new BrotliStream(source, CompressionMode.Decompress, options.LeaveOpen);
-        }
+        protected override Stream CreateDecompressionStream(Stream source, CompressionOptions options)
+            => new BrotliStream(source, CompressionMode.Decompress, options.LeaveOpen);
     }
 }
