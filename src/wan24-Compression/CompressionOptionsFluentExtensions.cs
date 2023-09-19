@@ -80,6 +80,29 @@ namespace wan24.Compression
         }
 
         /// <summary>
+        /// Use maximum uncompressed data length
+        /// </summary>
+        /// <param name="options">Options</param>
+        /// <param name="len">Maximum uncompressed data length in bytes</param>
+        /// <returns>Options</returns>
+        public static CompressionOptions WithMaxUncompressedDataLength(this CompressionOptions options, long len)
+        {
+            options.MaxUncompressedDataLength = len;
+            return options;
+        }
+
+        /// <summary>
+        /// Disable the maximum uncompressed data length
+        /// </summary>
+        /// <param name="options">Options</param>
+        /// <returns>Options</returns>
+        public static CompressionOptions WithoutMaxUncompressedDataLength(this CompressionOptions options)
+        {
+            options.MaxUncompressedDataLength = -1;
+            return options;
+        }
+
+        /// <summary>
         /// Include (and set) the compression flags
         /// </summary>
         /// <param name="options">Options</param>

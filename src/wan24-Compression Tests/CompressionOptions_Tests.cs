@@ -40,6 +40,17 @@ namespace wan24_Compression_Tests
             CompareOptions(options, ms.ReadSerializedAsync<CompressionOptions>().Result);
         }
 
+        [TestMethod]
+        public void MaxUncompressedDataLength_Tests()
+        {
+            CompressionOptions options = new();
+            options.WithFlagsIncluded(CompressionFlags.FLAGS)
+                .WithMaxUncompressedDataLength(1);
+            byte[] data = new byte[] { 1, 2 },
+                compressed = data.Compress(options);
+            Assert.ThrowsException<InvalidDataException>(() => compressed.Decompress(options));
+        }
+
         public static void CompareOptions(CompressionOptions a, CompressionOptions b, bool serialized = true)
         {
             Assert.AreEqual(a.FlagsIncluded, b.FlagsIncluded);

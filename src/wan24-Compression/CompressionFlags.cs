@@ -21,6 +21,10 @@
         /// <summary>
         /// Uncompressed data length in bytes included
         /// </summary>
-        UncompressedLengthIncluded = 4
+        UncompressedLengthIncluded = 4,
+        /// <summary>
+        /// All flags
+        /// </summary>
+        FLAGS = SerializerVersionIncluded | AlgorithmIncluded | UncompressedLengthIncluded
     }
 }

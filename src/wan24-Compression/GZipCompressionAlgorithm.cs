@@ -36,17 +36,11 @@ namespace wan24.Compression
         public static GZipCompressionAlgorithm Instance { get; }
 
         /// <inheritdoc/>
-        public override Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null)
-        {
-            options ??= DefaultOptions;
-            return new GZipStream(compressedTarget, options.Level, options.LeaveOpen);
-        }
+        protected override Stream CreateCompressionStream(Stream compressedTarget, CompressionOptions options)
+            => new GZipStream(compressedTarget, options.Level, options.LeaveOpen);
 
         /// <inheritdoc/>
-        public override Stream GetDecompressionStream(Stream source, CompressionOptions? options = null)
-        {
-            options ??= DefaultOptions;
-            return new GZipStream(source, CompressionMode.Decompress, options.LeaveOpen);
-        }
+        protected override Stream CreateDecompressionStream(Stream source, CompressionOptions options)
+            => new GZipStream(source, CompressionMode.Decompress, options.LeaveOpen);
     }
 }
