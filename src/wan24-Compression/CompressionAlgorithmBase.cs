@@ -80,7 +80,7 @@ namespace wan24.Compression
         /// <param name="compressedTarget">Target stream</param>
         /// <param name="options">Options</param>
         /// <returns>Compression stream</returns>
-        public Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null) => CreateCompressionStream(compressedTarget, options ?? new());
+        public Stream GetCompressionStream(Stream compressedTarget, CompressionOptions? options = null) => CreateCompressionStream(compressedTarget, options ?? DefaultOptions);
 
         /// <summary>
         /// Decompress a stream
@@ -126,7 +126,7 @@ namespace wan24.Compression
         /// <returns>Decompression stream</returns>
         public Stream GetDecompressionStream(Stream compressedSource, CompressionOptions? options = null)
         {
-            options ??= new();
+            options ??= DefaultOptions;
             Stream res = CreateDecompressionStream(compressedSource, options);
             if (options.MaxUncompressedDataLength > 0) res = new LimitedLengthStream(res, options.MaxUncompressedDataLength)
             {
