@@ -39,7 +39,7 @@ namespace wan24.Compression
         public long UncompressedDataLength { get; set; } = -1;
 
         /// <summary>
-        /// Maximum uncompressed data length in bytes
+        /// Maximum uncompressed data length in bytes (or <c>-1</c> for no limit)
         /// </summary>
         [Range(-1, long.MaxValue)]
         public long MaxUncompressedDataLength { get; set; } = -1;
