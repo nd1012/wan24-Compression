@@ -126,7 +126,7 @@ namespace wan24.Compression
         protected override void Serialize(Stream stream)
         {
             stream.WriteStringNullable(Algorithm)
-                .WriteNumber(MaxUncompressedDataLength)
+                .Write(MaxUncompressedDataLength)
                 .Write(FlagsIncluded)
                 .WriteEnum(Flags);
         }
@@ -135,7 +135,7 @@ namespace wan24.Compression
         protected override async Task SerializeAsync(Stream stream, CancellationToken cancellationToken)
         {
             await stream.WriteStringNullableAsync(Algorithm, cancellationToken).DynamicContext();
-            await stream.WriteNumberAsync(MaxUncompressedDataLength, cancellationToken).DynamicContext();
+            await stream.WriteAsync(MaxUncompressedDataLength, cancellationToken).DynamicContext();
             await stream.WriteAsync(FlagsIncluded, cancellationToken).DynamicContext();
             await stream.WriteEnumAsync(Flags, cancellationToken).DynamicContext();
         }
@@ -147,7 +147,7 @@ namespace wan24.Compression
             switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
             {
                 case 2:
-                    MaxUncompressedDataLength = stream.ReadNumber<long>(version);
+                    MaxUncompressedDataLength = stream.ReadLong(version);
                     break;
             }
             FlagsIncluded = stream.ReadBool(version);
@@ -161,7 +161,7 @@ namespace wan24.Compression
             switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
             {
                 case 2:
-                    MaxUncompressedDataLength = await stream.ReadNumberAsync<long>(version, cancellationToken: cancellationToken).DynamicContext();
+                    MaxUncompressedDataLength = await stream.ReadLongAsync(version, cancellationToken: cancellationToken).DynamicContext();
                     break;
             }
             FlagsIncluded = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();

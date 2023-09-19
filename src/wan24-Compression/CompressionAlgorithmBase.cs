@@ -128,7 +128,10 @@ namespace wan24.Compression
         {
             options ??= new();
             Stream res = CreateDecompressionStream(compressedSource, options);
-            //TODO Length limited stream
+            if (options.MaxUncompressedDataLength > 0) res = new LimitedLengthStream(res, options.MaxUncompressedDataLength)
+            {
+                ThrowOnReadOverflow = true
+            };
             return res;
         }
 

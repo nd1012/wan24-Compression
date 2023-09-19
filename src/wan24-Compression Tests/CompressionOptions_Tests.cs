@@ -59,7 +59,7 @@ namespace wan24_Compression_Tests
             compressed = data.Compress(options);
             Assert.AreNotEqual(0, compressed.Length);
             decompressed = Array.Empty<byte>();
-            Assert.ThrowsException<InvalidDataException>(() => decompressed = compressed.Decompress(options), $"Decompressed length: {decompressed.Length}");
+            Assert.ThrowsException<OverflowException>(() => decompressed = compressed.Decompress(options), $"Decompressed length: {decompressed.Length}");
         }
 
         public static void CompareOptions(CompressionOptions a, CompressionOptions b, bool serialized = true)
