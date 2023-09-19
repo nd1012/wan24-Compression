@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.html",
-          "hash": "xw5BZY9QHqaGowTyQmxHPjrmteKz6ynXjcP3By31VY8="
+          "hash": "FPAWgnyKnMK/MmV3EYARcMFDxHbQ9Qlx7T408seegqk="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionAlgorithmBase.html",
-          "hash": "L8Buy4zOkMD5Gna74DmBiGLCwy12MGV0bhei0rHGBJE="
+          "hash": "63jRVHEZDCc4uNkkVPsBqEjPx2nIXRYFk8hYrCM3DSs="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionFlags.html",
-          "hash": "no/ieIeQWBvwx2IQjHiy6jSI7S4wYIR8IrX1kZ1E5jI="
+          "hash": "v/MNaSo99igFs817IRaRPL59OToxdLQvN4mkzW1yLmk="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionOptions.html",
-          "hash": "B8Yg7ZSh404k8fslz8FmJ9XAciFJ4blvnfGgBlAI3Gs="
+          "hash": "76bGVl3t1rLQ6z1j3P9lffP2jsjhe2Qd/b7f0F/83CU="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.html",
-          "hash": "QYgfJ34xgS1rJZWbZcNoFgE3VkM7Xzfez8QNtSVn7fE="
+          "hash": "nxgPdG7zHxfVKJR9MGalF/NRiBR98HhGZ/GUbmaEZtM="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.html",
-          "hash": "F7c0lWA4L8esTGa9OSs9NBvC4FGuGR0SO5vqfXJI9pQ="
+          "hash": "sammOvp3AxQCTnTGcYaYhbY7o8tjomcxRtiWVX+MEH0="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "KbQ44wkBV/vDR1AGW97/wLpBCChcXme27i4C3y8ET4A="
+          "hash": "JNZwxTE9V1iTDSY7lb9ljTPR4zcGSjS+cKPV9Rle8mg="
         }
       },
       "is_incremental": false,

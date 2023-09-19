@@ -63,7 +63,19 @@
 <h1 id="wan24-compression">wan24-Compression</h1>
 
 <p>This library exports a generic compression API, which allows to use any
-implemented compression algorithm to be applied using a simple interface:</p>
+implemented compression algorithm to be applied using a simple interface.</p>
+<p>The goals of this library are:</p>
+<ul>
+<li>Make a choice being a less torture</li>
+<li>Make a complex thing as easy as possible</li>
+</ul>
+<p>Implementing (new) compression algorithms into (existing) code can be
+challenging. <code>wan24-Compression</code> tries to make it as easy as possible, while
+the API is still complex due to the huge number of options it offers.</p>
+<h2 id="how-to-get-it">How to get it</h2>
+<p>This library is available as
+<a href="https://www.nuget.org/packages/wan24-Compression/">NuGet package</a>.</p>
+<h2 id="usage">Usage</h2>
 <pre><code class="lang-cs">// Compress memory
 byte[] compressed = uncompressed.Compress();
 uncompressed = compressed.Decompress();
@@ -76,14 +88,6 @@ uncompressedStream.Compress(compressedStream, new()
 uncompressedStream.SetLength(0);
 compressedStream.Decompress(uncompressedStream);
 </code></pre>
-<p>The goals of this library are:</p>
-<ul>
-<li>Make a choice being a less torture</li>
-<li>Make a complex thing as easy as possible</li>
-</ul>
-<p>Implementing (new) compression algorithms into (existing) code can be
-challenging. <code>wan24-Compression</code> tries to make it as easy as possible, while
-the API is still complex due to the huge number of options it offers.</p>
 <p><strong>NOTE</strong>: The compressed output of this library may include a header, which
 can't (yet) be interpreted by any third party vendor code. That means, a
 compressed output of this library can't be decompressed with a third party
@@ -95,9 +99,18 @@ algorithm output, is not recommended - it may not work!</p>
 <p>Anyway, this library should be a good choice for isolated use within your
 application(s), if want to avoid a hussle with implementing newer compression
 algorithms.</p>
-<h2 id="how-to-get-it">How to get it</h2>
-<p>This library is available as
-<a href="https://www.nuget.org/packages/wan24-Compression/">NuGet package</a>.</p>
+<h2 id="decompression-length-limit">Decompression length limit</h2>
+<p>To avoid compressed bombs, which are tiny, but decompress to huge amounts of
+data, which may DoS your app, you should set a maximum for the uncompressed
+data size, if possible:</p>
+<pre><code class="lang-cs">CompressionOptions options = new CompressionOptions()
+    .WithMaxUncompressedDataLength(12345);// Limit to 12345 byte
+</code></pre>
+<p>This limits the decompressed data length effective, even if the uncompressed
+length is unknown.</p>
+<p><strong>NOTE</strong>: This limit won't affect compression and is being applied only for
+decompression! Anyway, it's a security task to set a decompression length
+limit.</p>
 </article>
           </div>
           
