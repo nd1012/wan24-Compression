@@ -25,6 +25,6 @@
         /// <summary>
         /// All flags
         /// </summary>
-        FLAGS = SerializerVersionIncluded | AlgorithmIncluded | UncompressedLengthIncluded
+        ALL = SerializerVersionIncluded | AlgorithmIncluded | UncompressedLengthIncluded
     }
 }

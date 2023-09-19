@@ -44,11 +44,22 @@ namespace wan24_Compression_Tests
         public void MaxUncompressedDataLength_Tests()
         {
             CompressionOptions options = new();
-            options.WithFlagsIncluded(CompressionFlags.FLAGS)
+            options.WithFlagsIncluded(CompressionFlags.ALL)
                 .WithMaxUncompressedDataLength(1);
             byte[] data = new byte[] { 1, 2 },
-                compressed = data.Compress(options);
-            Assert.ThrowsException<InvalidDataException>(() => compressed.Decompress(options));
+                compressed = data.Compress(options),
+                decompressed = Array.Empty<byte>();
+
+            // Limit from header
+            Assert.AreNotEqual(0, compressed.Length);
+            Assert.ThrowsException<InvalidDataException>(() => decompressed = compressed.Decompress(options), $"Decompressed length: {decompressed.Length}");
+
+            // Limit from length limited stream
+            options.IncludeNothing();
+            compressed = data.Compress(options);
+            Assert.AreNotEqual(0, compressed.Length);
+            decompressed = Array.Empty<byte>();
+            Assert.ThrowsException<InvalidDataException>(() => decompressed = compressed.Decompress(options), $"Decompressed length: {decompressed.Length}");
         }
 
         public static void CompareOptions(CompressionOptions a, CompressionOptions b, bool serialized = true)

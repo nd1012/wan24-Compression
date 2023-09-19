@@ -118,6 +118,7 @@ namespace wan24.Compression
             Level = Level,
             SerializerVersion = SerializerVersion,
             UncompressedDataLength = UncompressedDataLength,
+            MaxUncompressedDataLength = MaxUncompressedDataLength,
             LeaveOpen = LeaveOpen
         };
 
