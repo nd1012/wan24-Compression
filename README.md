@@ -62,4 +62,5 @@ This limits the decompressed data length effective, even if the uncompressed
 length is unknown.
 
 **NOTE**: This limit won't affect compression and is being applied only for 
-decompression!
+decompression! Anyway, it's a security task to set a decompression length 
+limit.
