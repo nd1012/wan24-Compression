@@ -33,7 +33,7 @@ namespace wan24.Compression
         public int? SerializerVersion { get; set; }
 
         /// <summary>
-        /// Uncompressed data length in bytes (used internal when using the compression helper)
+        /// Uncompressed data length in bytes (or <c>-1</c>, if unknown; used internal when using the compression helper)
         /// </summary>
         [Range(-1, long.MaxValue)]
         public long UncompressedDataLength { get; set; } = -1;
