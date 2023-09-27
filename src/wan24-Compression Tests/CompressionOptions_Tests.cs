@@ -15,7 +15,7 @@ namespace wan24_Compression_Tests
             {
                 Algorithm = BrotliCompressionAlgorithm.ALGORITHM_NAME,
                 AlgorithmIncluded = true,
-                SerializerVersion = StreamSerializer.VERSION,
+                CustomSerializerVersion = StreamSerializer.VERSION,
                 SerializerVersionIncluded = true,
                 UncompressedDataLength = 123,
                 UncompressedLengthIncluded = true,
@@ -69,7 +69,7 @@ namespace wan24_Compression_Tests
             Assert.AreEqual(a.Algorithm, b.Algorithm);
             Assert.AreEqual(a.SerializerVersionIncluded, b.SerializerVersionIncluded);
             if (serialized) return;
-            Assert.AreEqual(a.SerializerVersion, b.SerializerVersion);
+            Assert.AreEqual(a.CustomSerializerVersion, b.CustomSerializerVersion);
             Assert.AreEqual(a.UncompressedDataLength, b.UncompressedDataLength);
             Assert.AreEqual(a.Level, b.Level);
             Assert.AreEqual(a.LeaveOpen, b.LeaveOpen);
