@@ -120,6 +120,12 @@
       <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializer.DeserializeAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)</span>
     </div>
     <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.SerializedObjectVersion</span>
+    </div>
+    <div>
+      <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.SerializerVersion</span>
+    </div>
+    <div>
       <span class="xref">wan24.StreamSerializerExtensions.StreamSerializerBase.wan24.StreamSerializerExtensions.IStreamSerializerVersion.ObjectVersion</span>
     </div>
     <div>
@@ -282,6 +288,38 @@ public string Algorithm { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_CustomSerializerVersion.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.CustomSerializerVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L32">View Source</a>
+  </span>
+  <a id="wan24_Compression_CompressionOptions_CustomSerializerVersion_" data-uid="wan24.Compression.CompressionOptions.CustomSerializerVersion*"></a>
+  <h4 id="wan24_Compression_CompressionOptions_CustomSerializerVersion" data-uid="wan24.Compression.CompressionOptions.CustomSerializerVersion">CustomSerializerVersion</h4>
+  <div class="markdown level1 summary"><p>Serializer version</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(1, 255)]
+public int? CustomSerializerVersion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_Flags.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.Flags%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -438,38 +476,6 @@ public long MaxUncompressedDataLength { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersion.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersion%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/CompressionOptions.cs/#L32">View Source</a>
-  </span>
-  <a id="wan24_Compression_CompressionOptions_SerializerVersion_" data-uid="wan24.Compression.CompressionOptions.SerializerVersion*"></a>
-  <h4 id="wan24_Compression_CompressionOptions_SerializerVersion" data-uid="wan24.Compression.CompressionOptions.SerializerVersion">SerializerVersion</h4>
-  <div class="markdown level1 summary"><p>Serializer version</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Range(1, 255)]
-public int? SerializerVersion { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_CompressionOptions_SerializerVersionIncluded.md&amp;value=---%0Auid%3A%20wan24.Compression.CompressionOptions.SerializerVersionIncluded%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -508,7 +514,7 @@ public int? SerializerVersion { get; set; }</code></pre>
   </span>
   <a id="wan24_Compression_CompressionOptions_UncompressedDataLength_" data-uid="wan24.Compression.CompressionOptions.UncompressedDataLength*"></a>
   <h4 id="wan24_Compression_CompressionOptions_UncompressedDataLength" data-uid="wan24.Compression.CompressionOptions.UncompressedDataLength">UncompressedDataLength</h4>
-  <div class="markdown level1 summary"><p>Uncompressed data length in bytes (used internal when using the compression helper)</p>
+  <div class="markdown level1 summary"><p>Uncompressed data length in bytes (or <code>-1</code>, if unknown; used internal when using the compression helper)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>

@@ -658,6 +658,19 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.Clone
   nameWithType: CompressionOptions.Clone
+- uid: wan24.Compression.CompressionOptions.CustomSerializerVersion
+  name: CustomSerializerVersion
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_CustomSerializerVersion
+  commentId: P:wan24.Compression.CompressionOptions.CustomSerializerVersion
+  fullName: wan24.Compression.CompressionOptions.CustomSerializerVersion
+  nameWithType: CompressionOptions.CustomSerializerVersion
+- uid: wan24.Compression.CompressionOptions.CustomSerializerVersion*
+  name: CustomSerializerVersion
+  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_CustomSerializerVersion_
+  commentId: Overload:wan24.Compression.CompressionOptions.CustomSerializerVersion
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionOptions.CustomSerializerVersion
+  nameWithType: CompressionOptions.CustomSerializerVersion
 - uid: wan24.Compression.CompressionOptions.Deserialize(Stream,System.Int32)
   name: Deserialize(Stream, Int32)
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_Deserialize_Stream_System_Int32_
@@ -826,19 +839,6 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionOptions.SerializeAsync
   nameWithType: CompressionOptions.SerializeAsync
-- uid: wan24.Compression.CompressionOptions.SerializerVersion
-  name: SerializerVersion
-  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializerVersion
-  commentId: P:wan24.Compression.CompressionOptions.SerializerVersion
-  fullName: wan24.Compression.CompressionOptions.SerializerVersion
-  nameWithType: CompressionOptions.SerializerVersion
-- uid: wan24.Compression.CompressionOptions.SerializerVersion*
-  name: SerializerVersion
-  href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializerVersion_
-  commentId: Overload:wan24.Compression.CompressionOptions.SerializerVersion
-  isSpec: "True"
-  fullName: wan24.Compression.CompressionOptions.SerializerVersion
-  nameWithType: CompressionOptions.SerializerVersion
 - uid: wan24.Compression.CompressionOptions.SerializerVersionIncluded
   name: SerializerVersionIncluded
   href: api/wan24.Compression.CompressionOptions.html#wan24_Compression_CompressionOptions_SerializerVersionIncluded
