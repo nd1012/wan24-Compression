@@ -190,7 +190,10 @@ namespace wan24.Compression
         {
             options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
-            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = compressedSource.ReadSerializerVersion() : null;
+            int serializerVersion = options.SerializerVersionIncluded
+                ? compressedSource.ReadSerializerVersion()
+                : StreamSerializer.Version;
+            options.CustomSerializerVersion = serializerVersion;
             if (options.AlgorithmIncluded && compressedSource.ReadNumber<int>(serializerVersion) != Value) throw new InvalidDataException("Compression algorithm mismatch");
             if (options.UncompressedLengthIncluded)
             {
@@ -219,7 +222,10 @@ namespace wan24.Compression
         {
             options = options?.Clone() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
-            int? serializerVersion = options.SerializerVersionIncluded ? options.SerializerVersion = await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext() : null;
+            int serializerVersion = options.SerializerVersionIncluded
+                ? await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext()
+                : StreamSerializer.Version;
+            options.CustomSerializerVersion = serializerVersion;
             if (options.AlgorithmIncluded && await compressedSource.ReadNumberAsync<int>(serializerVersion, cancellationToken: cancellationToken).DynamicContext() != Value)
                 throw new InvalidDataException("Compression algorithm mismatch");
             if (options.UncompressedLengthIncluded)

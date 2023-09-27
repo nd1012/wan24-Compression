@@ -30,10 +30,10 @@ namespace wan24.Compression
         /// Serializer version
         /// </summary>
         [Range(1, byte.MaxValue)]
-        public int? SerializerVersion { get; set; }
+        public int? CustomSerializerVersion { get; set; }
 
         /// <summary>
-        /// Uncompressed data length in bytes (used internal when using the compression helper)
+        /// Uncompressed data length in bytes (or <c>-1</c>, if unknown; used internal when using the compression helper)
         /// </summary>
         [Range(-1, long.MaxValue)]
         public long UncompressedDataLength { get; set; } = -1;
@@ -116,7 +116,7 @@ namespace wan24.Compression
             FlagsIncluded = FlagsIncluded,
             Flags = Flags,
             Level = Level,
-            SerializerVersion = SerializerVersion,
+            CustomSerializerVersion = CustomSerializerVersion,
             UncompressedDataLength = UncompressedDataLength,
             MaxUncompressedDataLength = MaxUncompressedDataLength,
             LeaveOpen = LeaveOpen
@@ -144,7 +144,7 @@ namespace wan24.Compression
         protected override void Deserialize(Stream stream, int version)
         {
             Algorithm = stream.ReadStringNullable(version, minLen: 1, maxLen: byte.MaxValue);
-            switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
+            switch (SerializedObjectVersion)// Object version switch
             {
                 case 2:
                     MaxUncompressedDataLength = stream.ReadLong(version);
@@ -158,7 +158,7 @@ namespace wan24.Compression
         protected override async Task DeserializeAsync(Stream stream, int version, CancellationToken cancellationToken)
         {
             Algorithm = await stream.ReadStringNullableAsync(version, minLen: 1, maxLen: byte.MaxValue, cancellationToken: cancellationToken).DynamicContext();
-            switch (((IStreamSerializerVersion)this).SerializedObjectVersion)// Object version switch
+            switch (SerializedObjectVersion)// Object version switch
             {
                 case 2:
                     MaxUncompressedDataLength = await stream.ReadLongAsync(version, cancellationToken: cancellationToken).DynamicContext();
