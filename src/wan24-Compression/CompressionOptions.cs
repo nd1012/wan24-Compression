@@ -8,7 +8,7 @@ namespace wan24.Compression
     /// <summary>
     /// Compression options
     /// </summary>
-    public sealed class CompressionOptions : StreamSerializerBase
+    public sealed record class CompressionOptions : StreamSerializerRecordBase
     {
         /// <summary>
         /// Object version
@@ -107,10 +107,10 @@ namespace wan24.Compression
         }
 
         /// <summary>
-        /// Get a clone
+        /// Get a copy of this instance
         /// </summary>
-        /// <returns></returns>
-        public CompressionOptions Clone() => new()
+        /// <returns>Instance copy</returns>
+        public CompressionOptions GetCopy() => new()
         {
             Algorithm = Algorithm,
             FlagsIncluded = FlagsIncluded,

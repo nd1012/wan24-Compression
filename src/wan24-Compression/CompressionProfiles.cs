@@ -37,6 +37,6 @@ namespace wan24.Compression
         /// <param name="key">Key</param>
         /// <returns>Profile</returns>
         public static CompressionOptions GetProfile(string key)
-            => Registered.TryGetValue(key, out CompressionOptions? res) ? res.Clone() : throw new ArgumentException("Unknown profile", nameof(key));
+            => Registered.TryGetValue(key, out CompressionOptions? res) ? res.GetCopy() : throw new ArgumentException("Unknown profile", nameof(key));
     }
 }

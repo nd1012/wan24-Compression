@@ -5,7 +5,7 @@ namespace wan24.Compression
     /// <summary>
     /// GZip compression algorithm
     /// </summary>
-    public sealed class GZipCompressionAlgorithm : CompressionAlgorithmBase
+    public sealed record class GZipCompressionAlgorithm : CompressionAlgorithmBase
     {
         /// <summary>
         /// Algorithm name
