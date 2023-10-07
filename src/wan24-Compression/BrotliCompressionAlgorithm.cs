@@ -5,7 +5,7 @@ namespace wan24.Compression
     /// <summary>
     /// Brotli compression algorithm
     /// </summary>
-    public sealed class BrotliCompressionAlgorithm : CompressionAlgorithmBase
+    public sealed record class BrotliCompressionAlgorithm : CompressionAlgorithmBase
     {
         /// <summary>
         /// Algorithm name

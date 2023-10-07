@@ -7,7 +7,7 @@ namespace wan24.Compression
     /// <summary>
     /// Compression algorithm
     /// </summary>
-    public abstract class CompressionAlgorithmBase
+    public abstract record class CompressionAlgorithmBase
     {
         /// <summary>
         /// Default options
@@ -42,7 +42,7 @@ namespace wan24.Compression
         /// <summary>
         /// Default options
         /// </summary>
-        public CompressionOptions DefaultOptions => _DefaultOptions.Clone();
+        public CompressionOptions DefaultOptions => _DefaultOptions.GetCopy();
 
         /// <summary>
         /// Compress a stream
@@ -188,7 +188,7 @@ namespace wan24.Compression
             CompressionOptions? options = null
             )
         {
-            options = options?.Clone() ?? DefaultOptions;
+            options = options?.GetCopy() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
             int serializerVersion = options.SerializerVersionIncluded
                 ? compressedSource.ReadSerializerVersion()
@@ -220,7 +220,7 @@ namespace wan24.Compression
             CancellationToken cancellationToken = default
             )
         {
-            options = options?.Clone() ?? DefaultOptions;
+            options = options?.GetCopy() ?? DefaultOptions;
             if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
             int serializerVersion = options.SerializerVersionIncluded
                 ? await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext()

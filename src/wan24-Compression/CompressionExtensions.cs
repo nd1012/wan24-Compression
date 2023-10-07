@@ -13,7 +13,7 @@
         /// <returns>Compressed data</returns>
         public static byte[] Compress(this Span<byte> data, CompressionOptions? options = null)
         {
-            options = CompressionHelper.GetDefaultOptions(options?.Clone());
+            options = CompressionHelper.GetDefaultOptions(options?.GetCopy());
             options.LeaveOpen = true;
             using MemoryStream compressed = new();
             using (MemoryStream ms = new())
@@ -49,7 +49,7 @@
         /// <returns>Decompressed data</returns>
         public static byte[] Decompress(this Span<byte> data, CompressionOptions? options = null)
         {
-            options = CompressionHelper.GetDefaultOptions(options?.Clone());
+            options = CompressionHelper.GetDefaultOptions(options?.GetCopy());
             options.LeaveOpen = true;
             using MemoryStream decompressed = new();
             using (MemoryStream ms = new())

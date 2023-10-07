@@ -24,7 +24,7 @@ namespace wan24_Compression_Tests
                 LeaveOpen = true
             };
             // Cloning
-            CompareOptions(options, options.Clone(), false);
+            CompareOptions(options, options.GetCopy(), false);
             // Casting
             byte[] optionsData = (byte[])options;
             CompareOptions(options, (CompressionOptions)optionsData);
