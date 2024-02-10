@@ -1,6 +1,5 @@
 {
-  "homepages": [],
-  "source_base_path": "D:/P/wan24-Compression/src/wan24-Compression Docs",
+  "source_base_path": "/home/runner/work/wan24-Compression/wan24-Compression/src/wan24-Compression Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -8,11 +7,9 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "6XOh9czgXiFVURI35j8tZ/A5nISBxf2T/ci1Sg0cR3I="
+          "relative_path": "api/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -20,23 +17,32 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "GDvSlG3w+rKpNx/9hyM8oGirc+Lp93th6WCdzHNoxu8="
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/wan24.Compression..yml",
+      "source_relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression..html",
-          "hash": "3lDxKoGuztetZDOR5uvCC5SuQB756wh8gPNLVFE6BqY="
+          "relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionAlgorithmBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionAlgorithmBase.html"
+        }
+      },
       "version": ""
     },
     {
@@ -44,11 +50,9 @@
       "source_relative_path": "api/wan24.Compression.CompressionExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionExtensions.html",
-          "hash": "rSx9WTUyBE5mwqGhirgKJgch4NhdoG2vNN1brzV1KMs="
+          "relative_path": "api/wan24.Compression.CompressionExtensions.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,11 +60,9 @@
       "source_relative_path": "api/wan24.Compression.CompressionFlags.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionFlags.html",
-          "hash": "s+bmYxQa9TyZiK+qxvjpF1iN0vzHzve/twB2UhMGf5Q="
+          "relative_path": "api/wan24.Compression.CompressionFlags.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -68,11 +70,19 @@
       "source_relative_path": "api/wan24.Compression.CompressionHelper.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionHelper.html",
-          "hash": "D8w59ypiOMOmPx3T3CSRss3BoWutbPkdH485XJpaW0g="
+          "relative_path": "api/wan24.Compression.CompressionHelper.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.CompressionOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.CompressionOptions.html"
+        }
+      },
       "version": ""
     },
     {
@@ -80,11 +90,9 @@
       "source_relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.html",
-          "hash": "4xGs6Iyss9TE7tRbBenmFKoU8Zu/xk1r3UtgNKIpWWQ="
+          "relative_path": "api/wan24.Compression.CompressionOptionsFluentExtensions.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -92,11 +100,19 @@
       "source_relative_path": "api/wan24.Compression.CompressionProfiles.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.CompressionProfiles.html",
-          "hash": "Tqjp0rIE+/k4sKche8MEZKCnpZwaDeekCoQGaiyNi70="
+          "relative_path": "api/wan24.Compression.CompressionProfiles.html"
         }
       },
-      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.GZipCompressionAlgorithm.html"
+        }
+      },
       "version": ""
     },
     {
@@ -104,11 +120,9 @@
       "source_relative_path": "api/wan24.Compression.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Compression.html",
-          "hash": "IXQudljFphxcBvfR0DZbsC6LNLuGcLNB8FhFaA41I+0="
+          "relative_path": "api/wan24.Compression.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -116,11 +130,9 @@
       "source_relative_path": "articles/intro.md",
       "output": {
         ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "9Pqqy1byvs1XkXpjKCiumxyzYNXwPtyVnBEw/43EN6k="
+          "relative_path": "articles/intro.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -128,11 +140,12 @@
       "source_relative_path": "articles/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "articles/toc.html",
-          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -140,11 +153,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "JNZwxTE9V1iTDSY7lb9ljTPR4zcGSjS+cKPV9Rle8mg="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -152,58 +163,15 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "s+UecGKJLe11K3w4+MJjx6QoiqktkO8teeQG06lk8L0="
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     }
   ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 7,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
-    }
-  ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"
