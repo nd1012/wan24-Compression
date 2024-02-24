@@ -15,8 +15,8 @@ namespace wan24.Compression
         /// <summary>
         /// Constructor
         /// </summary>
-        static CompressionProfiles() => Registered = new(new KeyValuePair<string, CompressionOptions>[]
-        {
+        static CompressionProfiles() => Registered = new(
+        [
             new(
                 GZipCompressionAlgorithm.PROFILE_GZIP_RAW,
                 new CompressionOptions()
@@ -29,7 +29,7 @@ namespace wan24.Compression
                     .IncludeNothing()
                     .WithAlgorithm(BrotliCompressionAlgorithm.ALGORITHM_NAME)
                 )
-        });
+        ]);
 
         /// <summary>
         /// Get a profile

@@ -23,11 +23,11 @@ namespace wan24.Compression
         /// </summary>
         static CompressionHelper()
         {
-            Algorithms = new(new KeyValuePair<string, CompressionAlgorithmBase>[]
-            {
+            Algorithms = new(
+            [
                 new(GZipCompressionAlgorithm.Instance.Name, GZipCompressionAlgorithm.Instance),
                 new(BrotliCompressionAlgorithm.Instance.Name, BrotliCompressionAlgorithm.Instance)
-            });
+            ]);
             _DefaultAlgorithm = BrotliCompressionAlgorithm.Instance;
         }
 
