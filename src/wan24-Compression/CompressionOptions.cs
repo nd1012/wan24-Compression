@@ -18,7 +18,32 @@ namespace wan24.Compression
         /// <summary>
         /// Constructor
         /// </summary>
-        public CompressionOptions() : base(VERSION) { }
+        public CompressionOptions() : base(VERSION) => Flags = DefaultFlags;
+
+        /// <summary>
+        /// Default flags
+        /// </summary>
+        public static CompressionFlags DefaultFlags { get; set; } = CompressionFlags.SerializerVersionIncluded | CompressionFlags.AlgorithmIncluded | CompressionFlags.UncompressedLengthIncluded;
+
+        /// <summary>
+        /// Default flags included?
+        /// </summary>
+        public static bool DefaultFlagsIncluded { get; set; } = true;
+
+        /// <summary>
+        /// Default compression level
+        /// </summary>
+        public static CompressionLevel DefaultCompressionLevel { get; set; } = CompressionLevel.Optimal;
+
+        /// <summary>
+        /// Default custom serializer version
+        /// </summary>
+        public static int? DefaultCustomSerializerVersion { get; set; }
+
+        /// <summary>
+        /// Any tagged object (will be cloned, if it implements <see cref="ICloneable"/>, and <see cref="GetCopy"/> has been called)
+        /// </summary>
+        public object? Tag { get; set; }
 
         /// <summary>
         /// Algorithm
@@ -30,7 +55,7 @@ namespace wan24.Compression
         /// Serializer version
         /// </summary>
         [Range(1, byte.MaxValue)]
-        public int? CustomSerializerVersion { get; set; }
+        public int? CustomSerializerVersion { get; set; } = DefaultCustomSerializerVersion;
 
         /// <summary>
         /// Uncompressed data length in bytes (or <c>-1</c>, if unknown; used internal when using the compression helper)
@@ -47,27 +72,27 @@ namespace wan24.Compression
         /// <summary>
         /// Serializer version included?
         /// </summary>
-        public bool SerializerVersionIncluded { get; set; } = true;
+        public bool SerializerVersionIncluded { get; set; }
 
         /// <summary>
         /// Algorithm included?
         /// </summary>
-        public bool AlgorithmIncluded { get; set; } = true;
+        public bool AlgorithmIncluded { get; set; }
 
         /// <summary>
         /// Uncompressed data length in bytes included?
         /// </summary>
-        public bool UncompressedLengthIncluded { get; set; } = true;
+        public bool UncompressedLengthIncluded { get; set; }
 
         /// <summary>
         /// Compression flags included?
         /// </summary>
-        public bool FlagsIncluded { get; set; } = true;
+        public bool FlagsIncluded { get; set; } = DefaultFlagsIncluded;
 
         /// <summary>
         /// Compression level
         /// </summary>
-        public CompressionLevel Level { get; set; } = CompressionLevel.Optimal;
+        public CompressionLevel Level { get; set; } = DefaultCompressionLevel;
 
         /// <summary>
         /// Leave the compression target/decompression source stream open?
@@ -112,6 +137,7 @@ namespace wan24.Compression
         /// <returns>Instance copy</returns>
         public CompressionOptions GetCopy() => new()
         {
+            Tag = Tag is null ? null : (Tag as ICloneable)?.Clone() ?? Tag,
             Algorithm = Algorithm,
             FlagsIncluded = FlagsIncluded,
             Flags = Flags,
