@@ -37,6 +37,20 @@ namespace wan24.Compression
         public static object SyncObject { get; } = new();
 
         /// <summary>
+        /// State
+        /// </summary>
+        public static IEnumerable<Status> State
+        {
+            get
+            {
+                yield return new("Default", DefaultAlgorithm.Name, "Default algorithm name");
+                foreach (CompressionAlgorithmBase algo in Algorithms.Values)
+                    foreach (Status status in algo.State)
+                        yield return new(status.Name, status.State, status.Description, $"Compression\\{algo.DisplayName}");
+            }
+        }
+
+        /// <summary>
         /// Default compression algorithm
         /// </summary>
         public static CompressionAlgorithmBase DefaultAlgorithm

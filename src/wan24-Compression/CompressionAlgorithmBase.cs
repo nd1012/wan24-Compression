@@ -7,7 +7,7 @@ namespace wan24.Compression
     /// <summary>
     /// Compression algorithm
     /// </summary>
-    public abstract record class CompressionAlgorithmBase
+    public abstract record class CompressionAlgorithmBase : IStatusProvider
     {
         /// <summary>
         /// Default options
@@ -40,9 +40,26 @@ namespace wan24.Compression
         public int Value { get; }
 
         /// <summary>
+        /// Algorithm display name
+        /// </summary>
+        public abstract string DisplayName { get; }
+
+        /// <summary>
         /// Default options
         /// </summary>
         public CompressionOptions DefaultOptions => _DefaultOptions.GetCopy();
+
+        /// <inheritdoc/>
+        public virtual IEnumerable<Status> State
+        {
+            get
+            {
+                yield return new("Type", GetType(), "The algorithm CLR type");
+                yield return new("Display name", DisplayName, "The algorithm display name");
+                yield return new("Name", Name, "The algorithm name");
+                yield return new("Value", Value, "The algorithm value");
+            }
+        }
 
         /// <summary>
         /// Compress a stream
