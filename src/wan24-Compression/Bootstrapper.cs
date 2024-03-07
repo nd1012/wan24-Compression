@@ -1,13 +1,13 @@
 ﻿using wan24.Core;
 
-[assembly: Bootstrapper(typeof(wan24.Compression.Bootstrap), nameof(wan24.Compression.Bootstrap.Boot))]
+[assembly: Bootstrapper(typeof(wan24.Compression.Bootstrapper), nameof(wan24.Compression.Bootstrapper.Boot))]
 
 namespace wan24.Compression
 {
     /// <summary>
     /// Bootstrapper
     /// </summary>
-    public static class Bootstrap
+    public static class Bootstrapper
     {
         /// <summary>
         /// Boot
