@@ -1,6 +1,7 @@
 ﻿using System.Buffers;
 using wan24.Core;
 using wan24.StreamSerializerExtensions;
+using static wan24.Core.TranslationHelper;
 
 namespace wan24.Compression
 {
@@ -54,10 +55,10 @@ namespace wan24.Compression
         {
             get
             {
-                yield return new("Type", GetType(), "The algorithm CLR type");
-                yield return new("Display name", DisplayName, "The algorithm display name");
-                yield return new("Name", Name, "The algorithm name");
-                yield return new("Value", Value, "The algorithm value");
+                yield return new(__("Type"), GetType(), __("The algorithm CLR type"));
+                yield return new(__("Display name"), DisplayName, __("The algorithm display name"));
+                yield return new(__("Name"), Name, __("The algorithm name"));
+                yield return new(__("Value"), Value, __("The algorithm value"));
             }
         }
 

@@ -14,7 +14,7 @@ namespace wan24.Compression
         /// </summary>
         public static void Boot()
         {
-            StatusProvider.Providers["Compression"] = CompressionHelper.State;
+            StatusProviderTable.Providers["Compression"] = CompressionHelper.State;
         }
     }
 }

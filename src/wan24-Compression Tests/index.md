@@ -19,6 +19,15 @@ This library is available as
 
 ## Usage
 
+In case you don't use the `wan24-Core` bootstrapper logic, you need to 
+initialize the library first, before you can use it:
+
+```cs
+wan24.Compression.Bootstrapper.Boot();
+```
+
+This will initialize the `wan24-Compression` library.
+
 ```cs
 // Compress memory
 byte[] compressed = uncompressed.Compress();
@@ -64,3 +73,36 @@ length is unknown.
 **NOTE**: This limit won't affect compression and is being applied only for 
 decompression! Anyway, it's a security task to set a decompression length 
 limit.
+
+## JSON configuration
+
+You could implement a JSON configuration file using the `AppConfig` logic from 
+`wan24-Core`, and the `CompressionAppConfig`. There it's possible to define 
+disabled algorithms, which makes it possible to react to an unwanted algorithm 
+very fast, at any time and without having to update your app, for example. If 
+you use an `AppConfig`, it could look like this:
+
+```cs
+public class YourAppConfig : AppConfig
+{
+    public YourAppConfig() : base() { }
+
+    [AppConfig(AfterBootstrap = true)]
+    public CompressionAppConfig? Compression { get; set; }
+}
+
+await AppConfig.LoadAsync<YourAppConfig>();
+```
+
+In the `config.json` in your app root folder:
+
+```json
+{
+    "Compression":{
+        ...
+    }
+}
+```
+
+Anyway, you could also place and load a `CompressionAppConfig` in any 
+configuration which supports using that custom type.
