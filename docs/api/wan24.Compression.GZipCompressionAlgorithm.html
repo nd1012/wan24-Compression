@@ -112,6 +112,7 @@
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><span class="xref">IStatusProvider</span></div>
     <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html">CompressionAlgorithmBase</a>&gt;</div>
     <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="wan24.Compression.GZipCompressionAlgorithm.html">GZipCompressionAlgorithm</a>&gt;</div>
   </div>
@@ -125,6 +126,9 @@
     </div>
     <div>
       <a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_DefaultOptions">CompressionAlgorithmBase.DefaultOptions</a>
+    </div>
+    <div>
+      <a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_State">CompressionAlgorithmBase.State</a>
     </div>
     <div>
       <a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_Compress_System_IO_Stream_System_IO_Stream_wan24_Compression_CompressionOptions_">CompressionAlgorithmBase.Compress(Stream, Stream, CompressionOptions)</a>
@@ -179,7 +183,7 @@
   <h6><strong>Assembly</strong>: wan24Compression.dll</h6>
   <h5 id="wan24_Compression_GZipCompressionAlgorithm_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed record GZipCompressionAlgorithm : CompressionAlgorithmBase, IEquatable&lt;CompressionAlgorithmBase&gt;, IEquatable&lt;GZipCompressionAlgorithm&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed record GZipCompressionAlgorithm : CompressionAlgorithmBase, IStatusProvider, IEquatable&lt;CompressionAlgorithmBase&gt;, IEquatable&lt;GZipCompressionAlgorithm&gt;</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -245,10 +249,40 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_PROFILE_GZIP_RAW.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_DISPLAY_NAME.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.DISPLAY_NAME%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L21">View Source</a>
+  </span>
+  <h4 id="wan24_Compression_GZipCompressionAlgorithm_DISPLAY_NAME" data-uid="wan24.Compression.GZipCompressionAlgorithm.DISPLAY_NAME">DISPLAY_NAME</h4>
+  <div class="markdown level1 summary"><p>Algorithm display name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DISPLAY_NAME = &quot;GZip&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_PROFILE_GZIP_RAW.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L25">View Source</a>
   </span>
   <h4 id="wan24_Compression_GZipCompressionAlgorithm_PROFILE_GZIP_RAW" data-uid="wan24.Compression.GZipCompressionAlgorithm.PROFILE_GZIP_RAW">PROFILE_GZIP_RAW</h4>
   <div class="markdown level1 summary"><p>GZip raw (without header) profile key</p>
@@ -277,10 +311,43 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_DisplayName.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.DisplayName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L43">View Source</a>
+  </span>
+  <a id="wan24_Compression_GZipCompressionAlgorithm_DisplayName_" data-uid="wan24.Compression.GZipCompressionAlgorithm.DisplayName*"></a>
+  <h4 id="wan24_Compression_GZipCompressionAlgorithm_DisplayName" data-uid="wan24.Compression.GZipCompressionAlgorithm.DisplayName">DisplayName</h4>
+  <div class="markdown level1 summary"><p>Algorithm display name</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string DisplayName { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_DisplayName">CompressionAlgorithmBase.DisplayName</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_Instance.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.Instance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L36">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L40">View Source</a>
   </span>
   <a id="wan24_Compression_GZipCompressionAlgorithm_Instance_" data-uid="wan24.Compression.GZipCompressionAlgorithm.Instance*"></a>
   <h4 id="wan24_Compression_GZipCompressionAlgorithm_Instance" data-uid="wan24.Compression.GZipCompressionAlgorithm.Instance">Instance</h4>
@@ -313,7 +380,7 @@
     <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_CreateCompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.CreateCompressionStream(System.IO.Stream%2Cwan24.Compression.CompressionOptions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L39">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L46">View Source</a>
   </span>
   <a id="wan24_Compression_GZipCompressionAlgorithm_CreateCompressionStream_" data-uid="wan24.Compression.GZipCompressionAlgorithm.CreateCompressionStream*"></a>
   <h4 id="wan24_Compression_GZipCompressionAlgorithm_CreateCompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.GZipCompressionAlgorithm.CreateCompressionStream(System.IO.Stream,wan24.Compression.CompressionOptions)">CreateCompressionStream(Stream, CompressionOptions)</h4>
@@ -371,7 +438,7 @@
     <a href="https://github.com/nd1012/wan24-Compression/new/main/apiSpec/new?filename=wan24_Compression_GZipCompressionAlgorithm_CreateDecompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_.md&amp;value=---%0Auid%3A%20wan24.Compression.GZipCompressionAlgorithm.CreateDecompressionStream(System.IO.Stream%2Cwan24.Compression.CompressionOptions)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L43">View Source</a>
+    <a href="https://github.com/nd1012/wan24-Compression/blob/main/src/wan24-Compression/GZipCompressionAlgorithm.cs/#L50">View Source</a>
   </span>
   <a id="wan24_Compression_GZipCompressionAlgorithm_CreateDecompressionStream_" data-uid="wan24.Compression.GZipCompressionAlgorithm.CreateDecompressionStream*"></a>
   <h4 id="wan24_Compression_GZipCompressionAlgorithm_CreateDecompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_" data-uid="wan24.Compression.GZipCompressionAlgorithm.CreateDecompressionStream(System.IO.Stream,wan24.Compression.CompressionOptions)">CreateDecompressionStream(Stream, CompressionOptions)</h4>
@@ -424,6 +491,9 @@
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_CreateDecompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_">CompressionAlgorithmBase.CreateDecompressionStream(Stream, CompressionOptions)</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">wan24.Core.IStatusProvider</span>
+  </div>
   <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
   </div>

@@ -7,6 +7,25 @@ references:
   commentId: N:wan24.Compression
   fullName: wan24.Compression
   nameWithType: wan24.Compression
+- uid: wan24.Compression.Bootstrapper
+  name: Bootstrapper
+  href: api/wan24.Compression.Bootstrapper.html
+  commentId: T:wan24.Compression.Bootstrapper
+  fullName: wan24.Compression.Bootstrapper
+  nameWithType: Bootstrapper
+- uid: wan24.Compression.Bootstrapper.Boot
+  name: Boot()
+  href: api/wan24.Compression.Bootstrapper.html#wan24_Compression_Bootstrapper_Boot
+  commentId: M:wan24.Compression.Bootstrapper.Boot
+  fullName: wan24.Compression.Bootstrapper.Boot()
+  nameWithType: Bootstrapper.Boot()
+- uid: wan24.Compression.Bootstrapper.Boot*
+  name: Boot
+  href: api/wan24.Compression.Bootstrapper.html#wan24_Compression_Bootstrapper_Boot_
+  commentId: Overload:wan24.Compression.Bootstrapper.Boot
+  isSpec: "True"
+  fullName: wan24.Compression.Bootstrapper.Boot
+  nameWithType: Bootstrapper.Boot
 - uid: wan24.Compression.BrotliCompressionAlgorithm
   name: BrotliCompressionAlgorithm
   href: api/wan24.Compression.BrotliCompressionAlgorithm.html
@@ -51,6 +70,25 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.BrotliCompressionAlgorithm.CreateDecompressionStream
   nameWithType: BrotliCompressionAlgorithm.CreateDecompressionStream
+- uid: wan24.Compression.BrotliCompressionAlgorithm.DISPLAY_NAME
+  name: DISPLAY_NAME
+  href: api/wan24.Compression.BrotliCompressionAlgorithm.html#wan24_Compression_BrotliCompressionAlgorithm_DISPLAY_NAME
+  commentId: F:wan24.Compression.BrotliCompressionAlgorithm.DISPLAY_NAME
+  fullName: wan24.Compression.BrotliCompressionAlgorithm.DISPLAY_NAME
+  nameWithType: BrotliCompressionAlgorithm.DISPLAY_NAME
+- uid: wan24.Compression.BrotliCompressionAlgorithm.DisplayName
+  name: DisplayName
+  href: api/wan24.Compression.BrotliCompressionAlgorithm.html#wan24_Compression_BrotliCompressionAlgorithm_DisplayName
+  commentId: P:wan24.Compression.BrotliCompressionAlgorithm.DisplayName
+  fullName: wan24.Compression.BrotliCompressionAlgorithm.DisplayName
+  nameWithType: BrotliCompressionAlgorithm.DisplayName
+- uid: wan24.Compression.BrotliCompressionAlgorithm.DisplayName*
+  name: DisplayName
+  href: api/wan24.Compression.BrotliCompressionAlgorithm.html#wan24_Compression_BrotliCompressionAlgorithm_DisplayName_
+  commentId: Overload:wan24.Compression.BrotliCompressionAlgorithm.DisplayName
+  isSpec: "True"
+  fullName: wan24.Compression.BrotliCompressionAlgorithm.DisplayName
+  nameWithType: BrotliCompressionAlgorithm.DisplayName
 - uid: wan24.Compression.BrotliCompressionAlgorithm.Instance
   name: Instance
   href: api/wan24.Compression.BrotliCompressionAlgorithm.html#wan24_Compression_BrotliCompressionAlgorithm_Instance
@@ -198,6 +236,19 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionAlgorithmBase.DefaultOptions
   nameWithType: CompressionAlgorithmBase.DefaultOptions
+- uid: wan24.Compression.CompressionAlgorithmBase.DisplayName
+  name: DisplayName
+  href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_DisplayName
+  commentId: P:wan24.Compression.CompressionAlgorithmBase.DisplayName
+  fullName: wan24.Compression.CompressionAlgorithmBase.DisplayName
+  nameWithType: CompressionAlgorithmBase.DisplayName
+- uid: wan24.Compression.CompressionAlgorithmBase.DisplayName*
+  name: DisplayName
+  href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_DisplayName_
+  commentId: Overload:wan24.Compression.CompressionAlgorithmBase.DisplayName
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionAlgorithmBase.DisplayName
+  nameWithType: CompressionAlgorithmBase.DisplayName
 - uid: wan24.Compression.CompressionAlgorithmBase.GetCompressionStream(System.IO.Stream,wan24.Compression.CompressionOptions)
   name: GetCompressionStream(Stream, CompressionOptions?)
   href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_GetCompressionStream_System_IO_Stream_wan24_Compression_CompressionOptions_
@@ -275,6 +326,19 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionAlgorithmBase.ReadOptionsAsync
   nameWithType: CompressionAlgorithmBase.ReadOptionsAsync
+- uid: wan24.Compression.CompressionAlgorithmBase.State
+  name: State
+  href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_State
+  commentId: P:wan24.Compression.CompressionAlgorithmBase.State
+  fullName: wan24.Compression.CompressionAlgorithmBase.State
+  nameWithType: CompressionAlgorithmBase.State
+- uid: wan24.Compression.CompressionAlgorithmBase.State*
+  name: State
+  href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_State_
+  commentId: Overload:wan24.Compression.CompressionAlgorithmBase.State
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionAlgorithmBase.State
+  nameWithType: CompressionAlgorithmBase.State
 - uid: wan24.Compression.CompressionAlgorithmBase.Value
   name: Value
   href: api/wan24.Compression.CompressionAlgorithmBase.html#wan24_Compression_CompressionAlgorithmBase_Value
@@ -759,6 +823,19 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.CompressionHelper.ReadOptionsAsync
   nameWithType: CompressionHelper.ReadOptionsAsync
+- uid: wan24.Compression.CompressionHelper.State
+  name: State
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_State
+  commentId: P:wan24.Compression.CompressionHelper.State
+  fullName: wan24.Compression.CompressionHelper.State
+  nameWithType: CompressionHelper.State
+- uid: wan24.Compression.CompressionHelper.State*
+  name: State
+  href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_State_
+  commentId: Overload:wan24.Compression.CompressionHelper.State
+  isSpec: "True"
+  fullName: wan24.Compression.CompressionHelper.State
+  nameWithType: CompressionHelper.State
 - uid: wan24.Compression.CompressionHelper.SyncObject
   name: SyncObject
   href: api/wan24.Compression.CompressionHelper.html#wan24_Compression_CompressionHelper_SyncObject
@@ -1407,6 +1484,25 @@ references:
   isSpec: "True"
   fullName: wan24.Compression.GZipCompressionAlgorithm.CreateDecompressionStream
   nameWithType: GZipCompressionAlgorithm.CreateDecompressionStream
+- uid: wan24.Compression.GZipCompressionAlgorithm.DISPLAY_NAME
+  name: DISPLAY_NAME
+  href: api/wan24.Compression.GZipCompressionAlgorithm.html#wan24_Compression_GZipCompressionAlgorithm_DISPLAY_NAME
+  commentId: F:wan24.Compression.GZipCompressionAlgorithm.DISPLAY_NAME
+  fullName: wan24.Compression.GZipCompressionAlgorithm.DISPLAY_NAME
+  nameWithType: GZipCompressionAlgorithm.DISPLAY_NAME
+- uid: wan24.Compression.GZipCompressionAlgorithm.DisplayName
+  name: DisplayName
+  href: api/wan24.Compression.GZipCompressionAlgorithm.html#wan24_Compression_GZipCompressionAlgorithm_DisplayName
+  commentId: P:wan24.Compression.GZipCompressionAlgorithm.DisplayName
+  fullName: wan24.Compression.GZipCompressionAlgorithm.DisplayName
+  nameWithType: GZipCompressionAlgorithm.DisplayName
+- uid: wan24.Compression.GZipCompressionAlgorithm.DisplayName*
+  name: DisplayName
+  href: api/wan24.Compression.GZipCompressionAlgorithm.html#wan24_Compression_GZipCompressionAlgorithm_DisplayName_
+  commentId: Overload:wan24.Compression.GZipCompressionAlgorithm.DisplayName
+  isSpec: "True"
+  fullName: wan24.Compression.GZipCompressionAlgorithm.DisplayName
+  nameWithType: GZipCompressionAlgorithm.DisplayName
 - uid: wan24.Compression.GZipCompressionAlgorithm.Instance
   name: Instance
   href: api/wan24.Compression.GZipCompressionAlgorithm.html#wan24_Compression_GZipCompressionAlgorithm_Instance

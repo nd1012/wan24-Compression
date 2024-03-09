@@ -109,6 +109,11 @@ the API is still complex due to the huge number of options it offers.</p>
 <p>This library is available as
 <a href="https://www.nuget.org/packages/wan24-Compression/">NuGet package</a>.</p>
 <h2 id="usage">Usage</h2>
+<p>In case you don't use the <code>wan24-Core</code> bootstrapper logic, you need to
+initialize the library first, before you can use it:</p>
+<pre><code class="lang-cs">wan24.Compression.Bootstrapper.Boot();
+</code></pre>
+<p>This will initialize the <code>wan24-Compression</code> library.</p>
 <pre><code class="lang-cs">// Compress memory
 byte[] compressed = uncompressed.Compress();
 uncompressed = compressed.Decompress();

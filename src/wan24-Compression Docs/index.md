@@ -19,6 +19,15 @@ This library is available as
 
 ## Usage
 
+In case you don't use the `wan24-Core` bootstrapper logic, you need to 
+initialize the library first, before you can use it:
+
+```cs
+wan24.Compression.Bootstrapper.Boot();
+```
+
+This will initialize the `wan24-Compression` library.
+
 ```cs
 // Compress memory
 byte[] compressed = uncompressed.Compress();

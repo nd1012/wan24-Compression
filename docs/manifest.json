@@ -35,6 +35,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Compression.Bootstrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Compression.Bootstrapper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/wan24.Compression.BrotliCompressionAlgorithm.yml",
       "output": {
         ".html": {
