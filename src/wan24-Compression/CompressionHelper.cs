@@ -1,5 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using wan24.Core;
+using wan24.StreamSerializerExtensions;
+using static wan24.Core.TranslationHelper;
 
 namespace wan24.Compression
 {
@@ -35,6 +37,25 @@ namespace wan24.Compression
         /// An object for thread synchronization
         /// </summary>
         public static object SyncObject { get; } = new();
+
+        /// <summary>
+        /// State
+        /// </summary>
+        public static IEnumerable<Status> State
+        {
+            get
+            {
+                yield return new(__("Default"), DefaultAlgorithm.Name, __("Default algorithm name"));
+                yield return new(__("Flags included"), CompressionOptions.DefaultFlagsIncluded, __("If the flags are included per default"));
+                yield return new(__("Compression level"), CompressionOptions.DefaultCompressionLevel, __("The default compression level"));
+                yield return new(__("Serializer version"), CompressionOptions.DefaultCustomSerializerVersion ?? StreamSerializer.Version, __("The serializer version"));
+                foreach (CompressionAlgorithmBase algo in Algorithms.Values)
+                    foreach (Status status in algo.State)
+                        yield return new(status.Name, status.State, status.Description, $"{__("Compression")}\\{algo.DisplayName.Replace('\\', '/')}{(status.Group is null ? string.Empty : $"\\{status.Group}")}");
+                foreach (string profile in CompressionProfiles.Registered.Keys)
+                    yield return new(__("Profile"), profile, __("Name of a compression profile"), __("Profiles"));
+            }
+        }
 
         /// <summary>
         /// Default compression algorithm

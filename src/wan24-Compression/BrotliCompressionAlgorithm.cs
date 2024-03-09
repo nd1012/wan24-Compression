@@ -16,6 +16,10 @@ namespace wan24.Compression
         /// </summary>
         public const int ALGORITHM_VALUE = 1;
         /// <summary>
+        /// Algorithm display name
+        /// </summary>
+        public const string DISPLAY_NAME = "Brotli";
+        /// <summary>
         /// Brotli raw (without header) profile key
         /// </summary>
         public const string PROFILE_BROTLI_RAW = "BROTLI_RAW";
@@ -34,6 +38,9 @@ namespace wan24.Compression
         /// Singleton instance
         /// </summary>
         public static BrotliCompressionAlgorithm Instance { get; }
+
+        /// <inheritdoc/>
+        public override string DisplayName => DISPLAY_NAME;
 
         /// <inheritdoc/>
         protected override Stream CreateCompressionStream(Stream compressedTarget, CompressionOptions options)

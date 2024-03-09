@@ -1,13 +1,14 @@
 ﻿using System.Buffers;
 using wan24.Core;
 using wan24.StreamSerializerExtensions;
+using static wan24.Core.TranslationHelper;
 
 namespace wan24.Compression
 {
     /// <summary>
     /// Compression algorithm
     /// </summary>
-    public abstract record class CompressionAlgorithmBase
+    public abstract record class CompressionAlgorithmBase : IStatusProvider
     {
         /// <summary>
         /// Default options
@@ -40,9 +41,26 @@ namespace wan24.Compression
         public int Value { get; }
 
         /// <summary>
+        /// Algorithm display name
+        /// </summary>
+        public abstract string DisplayName { get; }
+
+        /// <summary>
         /// Default options
         /// </summary>
         public CompressionOptions DefaultOptions => _DefaultOptions.GetCopy();
+
+        /// <inheritdoc/>
+        public virtual IEnumerable<Status> State
+        {
+            get
+            {
+                yield return new(__("Type"), GetType(), __("The algorithm CLR type"));
+                yield return new(__("Display name"), DisplayName, __("The algorithm display name"));
+                yield return new(__("Name"), Name, __("The algorithm name"));
+                yield return new(__("Value"), Value, __("The algorithm value"));
+            }
+        }
 
         /// <summary>
         /// Compress a stream
