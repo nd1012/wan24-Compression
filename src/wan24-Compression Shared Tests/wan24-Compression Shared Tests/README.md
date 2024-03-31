@@ -12,8 +12,8 @@ original published form.
 
 ## wan24-Compression Shared Tests referenced libraries
 
-The published `wan24-Compression Shared Tests` library uses the following referenced open 
-source libraries:
+The published `wan24-Compression Shared Tests` library uses the following 
+referenced open source libraries:
 
 | Library | License |
 | ------- | ------- |
