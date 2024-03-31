@@ -43,6 +43,15 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+    <None Update="wan24-Compression Shared Tests\LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-Compression Shared Tests\MSTest.TestFramework.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="wan24-Compression Shared Tests\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
