@@ -17,4 +17,4 @@ referenced open source libraries:
 
 | Library | License |
 | ------- | ------- |
-| [`MSTest.TestFramework`](https://github.com/microsoft/testfx) | [MIT](https://github.com/WAN-Solutions/wan24-Core/blob/main/LICENSE) |
+| [`MSTest.TestFramework`](https://github.com/microsoft/testfx) | [MIT](https://licenses.nuget.org/MIT) |
