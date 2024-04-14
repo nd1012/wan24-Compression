@@ -5,8 +5,6 @@ VisualStudioVersion = 17.6.33606.364
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression", "wan24-Compression\wan24-Compression.csproj", "{A17C5885-020A-40B0-9BDE-36B3D5B5468A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression Docs", "wan24-Compression Docs\wan24-Compression Docs.csproj", "{068B58A4-3FDA-4454-8040-A661766F06AC}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression Tests", "wan24-Compression Tests\wan24-Compression Tests.csproj", "{1012897F-CA96-47E8-806A-C9723D1DE904}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wan24-Compression Shared Tests", "wan24-Compression Shared Tests\wan24-Compression Shared Tests.csproj", "{8CD086BA-72F2-424C-AAC2-547AEC8BC4AF}"
@@ -28,9 +26,6 @@ Global
 		{A17C5885-020A-40B0-9BDE-36B3D5B5468A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A17C5885-020A-40B0-9BDE-36B3D5B5468A}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
 		{A17C5885-020A-40B0-9BDE-36B3D5B5468A}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
-		{068B58A4-3FDA-4454-8040-A661766F06AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{068B58A4-3FDA-4454-8040-A661766F06AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{068B58A4-3FDA-4454-8040-A661766F06AC}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1012897F-CA96-47E8-806A-C9723D1DE904}.Release|Any CPU.ActiveCfg = Release|Any CPU

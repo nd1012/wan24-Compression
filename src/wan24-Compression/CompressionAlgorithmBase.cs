@@ -239,7 +239,7 @@ namespace wan24.Compression
             )
         {
             options = options?.GetCopy() ?? DefaultOptions;
-            if (options.FlagsIncluded) options.Flags = (CompressionFlags)compressedSource.ReadOneByte();
+            if (options.FlagsIncluded) options.Flags = (CompressionFlags)await compressedSource.ReadOneByteAsync(cancellationToken: cancellationToken).DynamicContext();
             int serializerVersion = options.SerializerVersionIncluded
                 ? await compressedSource.ReadSerializerVersionAsync(cancellationToken).DynamicContext()
                 : StreamSerializer.Version;
