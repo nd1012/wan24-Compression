@@ -1,4 +1,6 @@
-﻿namespace wan24.Compression
+﻿using wan24.Core;
+
+namespace wan24.Compression
 {
     /// <summary>
     /// Compression extensions
@@ -11,7 +13,7 @@
         /// <param name="data">Data</param>
         /// <param name="options">Options</param>
         /// <returns>Compressed data</returns>
-        public static byte[] Compress(this Span<byte> data, CompressionOptions? options = null)
+        public static byte[] Compress(this ReadOnlySpan<byte> data, CompressionOptions? options = null)
         {
             options = CompressionHelper.GetDefaultOptions(options?.GetCopy());
             options.LeaveOpen = true;
@@ -31,7 +33,7 @@
         /// <param name="data">Data</param>
         /// <param name="options">Options</param>
         /// <returns>Compressed data</returns>
-        public static byte[] Compress(this Memory<byte> data, CompressionOptions? options = null) => data.Span.Compress(options);
+        public static byte[] Compress(this Span<byte> data, CompressionOptions? options = null) => data.AsReadOnly().Compress(options);
 
         /// <summary>
         /// Compress
@@ -39,7 +41,23 @@
         /// <param name="data">Data</param>
         /// <param name="options">Options</param>
         /// <returns>Compressed data</returns>
-        public static byte[] Compress(this byte[] data, CompressionOptions? options = null) => data.AsSpan().Compress(options);
+        public static byte[] Compress(this Memory<byte> data, CompressionOptions? options = null) => data.Span.AsReadOnly().Compress(options);
+
+        /// <summary>
+        /// Compress
+        /// </summary>
+        /// <param name="data">Data</param>
+        /// <param name="options">Options</param>
+        /// <returns>Compressed data</returns>
+        public static byte[] Compress(this ReadOnlyMemory<byte> data, CompressionOptions? options = null) => data.Span.Compress(options);
+
+        /// <summary>
+        /// Compress
+        /// </summary>
+        /// <param name="data">Data</param>
+        /// <param name="options">Options</param>
+        /// <returns>Compressed data</returns>
+        public static byte[] Compress(this byte[] data, CompressionOptions? options = null) => data.AsSpan().AsReadOnly().Compress(options);
 
         /// <summary>
         /// Decompress
@@ -47,7 +65,7 @@
         /// <param name="data">Compressed data</param>
         /// <param name="options">Options</param>
         /// <returns>Decompressed data</returns>
-        public static byte[] Decompress(this Span<byte> data, CompressionOptions? options = null)
+        public static byte[] Decompress(this ReadOnlySpan<byte> data, CompressionOptions? options = null)
         {
             options = CompressionHelper.GetDefaultOptions(options?.GetCopy());
             options.LeaveOpen = true;
@@ -67,7 +85,7 @@
         /// <param name="data">Compressed data</param>
         /// <param name="options">Options</param>
         /// <returns>Decompressed data</returns>
-        public static byte[] Decompress(this Memory<byte> data, CompressionOptions? options = null) => data.Span.Decompress(options);
+        public static byte[] Decompress(this Span<byte> data, CompressionOptions? options = null) => data.AsReadOnly().Decompress(options);
 
         /// <summary>
         /// Decompress
@@ -75,6 +93,22 @@
         /// <param name="data">Compressed data</param>
         /// <param name="options">Options</param>
         /// <returns>Decompressed data</returns>
-        public static byte[] Decompress(this byte[] data, CompressionOptions? options = null) => data.AsSpan().Decompress(options);
+        public static byte[] Decompress(this Memory<byte> data, CompressionOptions? options = null) => data.Span.AsReadOnly().Decompress(options);
+
+        /// <summary>
+        /// Decompress
+        /// </summary>
+        /// <param name="data">Compressed data</param>
+        /// <param name="options">Options</param>
+        /// <returns>Decompressed data</returns>
+        public static byte[] Decompress(this ReadOnlyMemory<byte> data, CompressionOptions? options = null) => data.Span.Decompress(options);
+
+        /// <summary>
+        /// Decompress
+        /// </summary>
+        /// <param name="data">Compressed data</param>
+        /// <param name="options">Options</param>
+        /// <returns>Decompressed data</returns>
+        public static byte[] Decompress(this byte[] data, CompressionOptions? options = null) => data.AsSpan().AsReadOnly().Decompress(options);
     }
 }
