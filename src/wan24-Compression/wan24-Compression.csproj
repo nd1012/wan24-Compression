@@ -26,6 +26,7 @@
     <EmbedAllSources>true</EmbedAllSources>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <Configurations>Debug;Release;Trunk</Configurations>
+    <EnablePreviewFeatures Condition="'$(Configuration)' != 'Release'">True</EnablePreviewFeatures>
   </PropertyGroup>
 
   <ItemGroup>
