@@ -23,7 +23,8 @@ namespace wan24.Compression
         /// <summary>
         /// Default flags
         /// </summary>
-        public static CompressionFlags DefaultFlags { get; set; } = CompressionFlags.SerializerVersionIncluded | CompressionFlags.AlgorithmIncluded | CompressionFlags.UncompressedLengthIncluded;
+        public static CompressionFlags DefaultFlags { get; set; }
+            = CompressionFlags.SerializerVersionIncluded | CompressionFlags.AlgorithmIncluded | CompressionFlags.UncompressedLengthIncluded;
 
         /// <summary>
         /// Default flags included?
