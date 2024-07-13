@@ -7,13 +7,11 @@ namespace wan24.Compression
     /// <summary>
     /// Compression app configuration (<see cref="AppConfig"/>; should be applied AFTER bootstrapping (<see cref="AppConfigAttribute.AfterBootstrap"/>))
     /// </summary>
-    public class CompressionAppConfig : AppConfigBase
+    /// <remarks>
+    /// Constructor
+    /// </remarks>
+    public class CompressionAppConfig() : AppConfigBase()
     {
-        /// <summary>
-        /// Constructor
-        /// </summary>
-        public CompressionAppConfig() : base() { }
-
         /// <summary>
         /// Applied compression app configuration
         /// </summary>
