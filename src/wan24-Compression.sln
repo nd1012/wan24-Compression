@@ -13,6 +13,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stream-Serializer-Extension
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wan24-Core", "..\..\wan24-Core\src\Wan24-Core\Wan24-Core.csproj", "{9F1C55EE-2BFB-4384-A567-A44B995675FB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Referenced", "Referenced", "{9D7E7B19-C001-4E9F-8D5B-514BC87B57CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectValidation", "..\..\ObjectValidation\src\ObjectValidation\ObjectValidation.csproj", "{988E6884-941E-4C5A-99C1-18EC4FCA7BD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +50,18 @@ Global
 		{9F1C55EE-2BFB-4384-A567-A44B995675FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F1C55EE-2BFB-4384-A567-A44B995675FB}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
 		{9F1C55EE-2BFB-4384-A567-A44B995675FB}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
+		{988E6884-941E-4C5A-99C1-18EC4FCA7BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988E6884-941E-4C5A-99C1-18EC4FCA7BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988E6884-941E-4C5A-99C1-18EC4FCA7BD4}.Trunk|Any CPU.ActiveCfg = Trunk|Any CPU
+		{988E6884-941E-4C5A-99C1-18EC4FCA7BD4}.Trunk|Any CPU.Build.0 = Trunk|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E028AD5E-7E4D-42DB-AD5D-7F2CCC5E8DD7} = {9D7E7B19-C001-4E9F-8D5B-514BC87B57CB}
+		{9F1C55EE-2BFB-4384-A567-A44B995675FB} = {9D7E7B19-C001-4E9F-8D5B-514BC87B57CB}
+		{988E6884-941E-4C5A-99C1-18EC4FCA7BD4} = {9D7E7B19-C001-4E9F-8D5B-514BC87B57CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99F95E69-E285-4426-B77B-9621929AEA6E}
