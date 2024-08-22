@@ -1,11 +1,12 @@
 ﻿using System.IO.Compression;
 using wan24.Compression;
 using wan24.StreamSerializerExtensions;
+using wan24.Tests;
 
 namespace wan24_Compression_Tests
 {
     [TestClass]
-    public class CompressionOptions_Tests
+    public class CompressionOptions_Tests : TestBase
     {
         [TestMethod]
         public void General_Tests()
