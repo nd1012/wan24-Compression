@@ -1,10 +1,11 @@
 ﻿using wan24.Compression;
 using wan24.Compression.Tests;
+using wan24.Tests;
 
 namespace wan24_Compression_Tests
 {
     [TestClass]
-    public class CompressionExtensions_Tests
+    public class CompressionExtensions_Tests : TestBase
     {
         [TestMethod]
         public void General_Tests()
