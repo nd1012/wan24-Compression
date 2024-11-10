@@ -135,6 +135,7 @@ namespace wan24.Compression
                     Console.WriteLine($"ITEM {info.Type} {info.Key} {info.Length}");
                     if (info.Type == ArchiveItemTypes.None) return res;
                     if (hasItemInfoHandler && !await itemInfoHandler!(this, info, cancellationToken).DynamicContext()) continue;
+                    if (!await HandleItemInfoAsync(info, cancellationToken).DynamicContext()) continue;
                     switch (info.Type & ~ArchiveItemTypes.FLAGS)
                     {
                         case ArchiveItemTypes.File:

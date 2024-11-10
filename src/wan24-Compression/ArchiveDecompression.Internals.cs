@@ -134,6 +134,14 @@ namespace wan24.Compression
         }
 
         /// <summary>
+        /// Handle an item information before it's going to be processed (called after an external item information handler, if any)
+        /// </summary>
+        /// <param name="info">Item information</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>If to process the item</returns>
+        protected virtual Task<bool> HandleItemInfoAsync(ArchiveItemInfo info, CancellationToken cancellationToken) => Task.FromResult(true);
+
+        /// <summary>
         /// Create non-value item information
         /// </summary>
         /// <param name="type">Type</param>
