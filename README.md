@@ -92,7 +92,7 @@ using FileStream fs = FsHelper.CreateFileStream("/path/to/compressed.dat");
 
 // Create a compressed archive
 using(ArchiveCompression compression = new ArchiveCompression(fs, leaveOpen: true))
-    await compression.AddFolderRecursiveAsync("/path/to/sourceFolder");
+    await compression.AddFolderAsync("/path/to/sourceFolder");
 
 // Uncompress a compressed archive
 fs.Position = 0;
