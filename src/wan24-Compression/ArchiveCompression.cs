@@ -1,6 +1,9 @@
 ﻿using wan24.Core;
 using wan24.StreamSerializerExtensions;
 
+//TODO Add AddFolderRecursiveAsync (with the possibility to define an archive target root)
+//TODO Add AddFsItemsAsync (for IEnumerable<string>)
+
 namespace wan24.Compression
 {
     /// <summary>

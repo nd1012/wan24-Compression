@@ -106,21 +106,24 @@ namespace wan24.Compression
         /// <summary>
         /// Extract the archive contents 
         /// </summary>
-        /// <param name="path">Target path (will be created, if not exists)</param>
+        /// <param name="path">Target path (folder will be created, if not exists)</param>
         /// <param name="overwrite">If to overwrite existing files</param>
         /// <param name="maxKeyValueLength">Maximum key/value value length in bytes</param>
+        /// <param name="itemInfoHandler">Item information handler</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Key/values</returns>
         public virtual async Task<Dictionary<string, byte[]>> ExtractToAsync(
             string path,
             bool overwrite = false,
             int maxKeyValueLength = ushort.MaxValue,
+            ItemInfoHandler_Delegate? itemInfoHandler = null,
             CancellationToken cancellationToken = default
             )
         {
             EnsureUndisposed();
             path = Path.GetFullPath(path);
             if (!Directory.Exists(path)) FsHelper.CreateFolder(path);
+            bool hasItemInfoHandler = itemInfoHandler is not null;
             Dictionary<string, byte[]> res = [];
             ArchiveItemInfo info;
             while (true)
@@ -131,6 +134,7 @@ namespace wan24.Compression
                 {
                     Console.WriteLine($"ITEM {info.Type} {info.Key} {info.Length}");
                     if (info.Type == ArchiveItemTypes.None) return res;
+                    if (hasItemInfoHandler && !await itemInfoHandler!(this, info, cancellationToken).DynamicContext()) continue;
                     switch (info.Type & ~ArchiveItemTypes.FLAGS)
                     {
                         case ArchiveItemTypes.File:
@@ -157,7 +161,7 @@ namespace wan24.Compression
         /// Extract a file
         /// </summary>
         /// <param name="path">Target base path</param>
-        /// <param name="info">Info</param>
+        /// <param name="info">Info (won't be disposed)</param>
         /// <param name="overwrite">If to overwrite an existing file</param>
         /// <param name="cancellationToken">Cancellation token</param>
         public virtual async Task ExtractFileAsync(
@@ -190,7 +194,7 @@ namespace wan24.Compression
         /// Extract a folder
         /// </summary>
         /// <param name="path">Target base path</param>
-        /// <param name="info">Info</param>
+        /// <param name="info">Info (won't be disposed)</param>
         /// <param name="cancellationToken">Cancellation token</param>
         public virtual Task ExtractFolderAsync(
             string path,
@@ -209,7 +213,7 @@ namespace wan24.Compression
         /// <summary>
         /// Extract a value
         /// </summary>
-        /// <param name="info">Info</param>
+        /// <param name="info">Info (won't be disposed)</param>
         /// <param name="maxKeyValueLength">Maximum key/value value length in bytes</param>
         /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Key/value</returns>
@@ -239,6 +243,15 @@ namespace wan24.Compression
             await info.Value.ReadExactlyAsync(value, cancellationToken).DynamicContext();
             return new(info.Key, value);
         }
+
+        /// <summary>
+        /// Delegate for an archive item information handler
+        /// </summary>
+        /// <param name="decompression">Archive decompression</param>
+        /// <param name="info">Item information (will be disposed)</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>If the item should be processed</returns>
+        public delegate Task<bool> ItemInfoHandler_Delegate(ArchiveDecompression decompression, ArchiveItemInfo info, CancellationToken cancellationToken);
 
         /// <summary>
         /// Create from a stream

@@ -74,6 +74,43 @@ length is unknown.
 decompression! Anyway, it's a security task to set a decompression length 
 limit.
 
+## Compressed archives
+
+Using the `ArchiveCompression` and `ArchiveDecompression` types you can manage 
+archives with
+
+- files
+- folders
+- key/value data
+
+with any supported compression algorithm (customizable per item) or 
+even uncompressed, which you may decide per item. Compression and 
+decompression can be done on the fly during an up-/download for example.
+
+```cs
+using FileStream fs = FsHelper.CreateFileStream("/path/to/compressed.dat");
+
+// Create a compressed archive
+using(ArchiveCompression compression = new ArchiveCompression(fs, leaveOpen: true))
+    await compression.AddFolderRecursiveAsync("/path/to/sourceFolder");
+
+// Uncompress a compressed archive
+fs.Position = 0;
+using(ArchiveDecompression decompression = await ArchiveDecompression.CreateAsync(fs))
+    Dictionary<string, byte[]> keyValues = await decompression.ExtractToAsync("/path/to/targetFolder");
+```
+
+Use the `ArchiveCompression.Add*Async` methods for adding files, folders and 
+key/value data. Use the `ArchiveDecompression.ReadItemInfoAsync` method for 
+reading single items and  `ArchiveDecompression.Extract*Async` methods for 
+extracting them.
+
+**NOTE**: The compressed archive has way more overhead than a ZIP file, for 
+example. This is required in order to be able to process data on the fly, and 
+for security reasons as well.
+
+All used types are customizable and should be configured carefully.
+
 ## JSON configuration
 
 You could implement a JSON configuration file using the `AppConfig` logic from 
