@@ -13,7 +13,7 @@ namespace wan24.Compression
         /// <summary>
         /// Object version
         /// </summary>
-        public const int VERSION = 2;
+        public const int VERSION = 3;
 
         /// <summary>
         /// Constructor
@@ -40,6 +40,16 @@ namespace wan24.Compression
         /// Default custom serializer version
         /// </summary>
         public static int? DefaultCustomSerializerVersion { get; set; }
+
+        /// <summary>
+        /// Default chunk size for non-seekable source streams for <see cref="ArchiveCompression"/>
+        /// </summary>
+        public static int DefaultChunkSize { get; set; } = 4096;
+
+        /// <summary>
+        /// Default maximum key / (file) path length for <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        public static int DefaultMaxKeyLength { get; set; } = 2048;
 
         /// <summary>
         /// Any tagged object (will be cloned, if it implements <see cref="ICloneable"/>, and <see cref="GetCopy"/> has been called)
@@ -101,6 +111,18 @@ namespace wan24.Compression
         public bool LeaveOpen { get; set; }
 
         /// <summary>
+        /// Chunk size in bytes for <see cref="ArchiveCompression"/> non-seekable source streams
+        /// </summary>
+        [Range(0, int.MaxValue)]
+        public int ChunkSize { get; set; }
+
+        /// <summary>
+        /// Maximum key / (file) path length for <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        [Range(1, int.MaxValue)]
+        public int MaxKeyLength { get; set; } = DefaultMaxKeyLength;
+
+        /// <summary>
         /// Compression flags
         /// </summary>
         public CompressionFlags Flags
@@ -146,7 +168,9 @@ namespace wan24.Compression
             CustomSerializerVersion = CustomSerializerVersion,
             UncompressedDataLength = UncompressedDataLength,
             MaxUncompressedDataLength = MaxUncompressedDataLength,
-            LeaveOpen = LeaveOpen
+            LeaveOpen = LeaveOpen,
+            ChunkSize = ChunkSize,
+            MaxKeyLength = MaxKeyLength
         };
 
         /// <inheritdoc/>
@@ -155,7 +179,9 @@ namespace wan24.Compression
             stream.WriteStringNullable(Algorithm)
                 .Write(MaxUncompressedDataLength)
                 .Write(FlagsIncluded)
-                .WriteEnum(Flags);
+                .WriteEnum(Flags)
+                .WriteNumber(ChunkSize)
+                .WriteNumber(MaxKeyLength);
         }
 
         /// <inheritdoc/>
@@ -165,6 +191,8 @@ namespace wan24.Compression
             await stream.WriteAsync(MaxUncompressedDataLength, cancellationToken).DynamicContext();
             await stream.WriteAsync(FlagsIncluded, cancellationToken).DynamicContext();
             await stream.WriteEnumAsync(Flags, cancellationToken).DynamicContext();
+            await stream.WriteNumberAsync(ChunkSize, cancellationToken).DynamicContext();
+            await stream.WriteNumberAsync(MaxKeyLength, cancellationToken).DynamicContext();
         }
 
         /// <inheritdoc/>
@@ -174,11 +202,19 @@ namespace wan24.Compression
             switch (SerializedObjectVersion)// Object version switch
             {
                 case 2:
+                case 3:
                     MaxUncompressedDataLength = stream.ReadLong(version);
                     break;
             }
             FlagsIncluded = stream.ReadBool(version);
             Flags = stream.ReadEnum<CompressionFlags>(version);
+            switch (SerializedObjectVersion)// Object version switch
+            {
+                case 3:
+                    ChunkSize = stream.ReadNumber<int>(version);
+                    MaxKeyLength = stream.ReadNumber<int>(version);
+                    break;
+            }
         }
 
         /// <inheritdoc/>
@@ -188,11 +224,19 @@ namespace wan24.Compression
             switch (SerializedObjectVersion)// Object version switch
             {
                 case 2:
+                case 3:
                     MaxUncompressedDataLength = await stream.ReadLongAsync(version, cancellationToken: cancellationToken).DynamicContext();
                     break;
             }
             FlagsIncluded = await stream.ReadBoolAsync(version, cancellationToken: cancellationToken).DynamicContext();
             Flags = await stream.ReadEnumAsync<CompressionFlags>(version, cancellationToken: cancellationToken).DynamicContext();
+            switch (SerializedObjectVersion)// Object version switch
+            {
+                case 3:
+                    ChunkSize = await stream.ReadNumberAsync<int>(version, cancellationToken: cancellationToken).DynamicContext();
+                    MaxKeyLength = await stream.ReadNumberAsync<int>(version, cancellationToken: cancellationToken).DynamicContext();
+                    break;
+            }
         }
 
         /// <summary>

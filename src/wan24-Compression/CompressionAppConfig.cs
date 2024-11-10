@@ -43,6 +43,26 @@ namespace wan24.Compression
         /// </summary>
         public string[]? DisabledAlgorithms { get; set; }
 
+        /// <summary>
+        /// Default archive chunk size for compressed streams of <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        public int? DefaultArchiveChunkSize { get; set; }
+
+        /// <summary>
+        /// Default maximum archive chunk size for compressed streams of <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        public int? MaxArchiveChunkSize { get; set; }
+
+        /// <summary>
+        /// Default chunk size for non-seekable source streams for <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        public int? DefaultChunkSize { get; set; }
+
+        /// <summary>
+        /// Default maximum key / (file) path length for <see cref="ArchiveCompression"/> in bytes
+        /// </summary>
+        public int? DefaultMaxKeyLength { get; set; }
+
         /// <inheritdoc/>
         public override void Apply()
         {
@@ -55,6 +75,10 @@ namespace wan24.Compression
             if (DefaultFlags.HasValue) CompressionOptions.DefaultFlags = DefaultFlags.Value;
             if (DefaultFlagsIncluded.HasValue) CompressionOptions.DefaultFlagsIncluded = DefaultFlagsIncluded.Value;
             if (DefaultCompressionLevel.HasValue) CompressionOptions.DefaultCompressionLevel = DefaultCompressionLevel.Value;
+            if (DefaultArchiveChunkSize.HasValue) ArchiveCompression.DefaultChunkSize = DefaultArchiveChunkSize.Value;
+            if (MaxArchiveChunkSize.HasValue) ArchiveDecompression.MaxChunkSize = MaxArchiveChunkSize.Value;
+            if (DefaultChunkSize.HasValue) CompressionOptions.DefaultChunkSize = DefaultChunkSize.Value;
+            if (DefaultMaxKeyLength.HasValue) CompressionOptions.DefaultMaxKeyLength = DefaultMaxKeyLength.Value;
             ApplyProperties(afterBootstrap: false);
             if (DisabledAlgorithms is not null)
             {
@@ -78,6 +102,10 @@ namespace wan24.Compression
             if (DefaultFlags.HasValue) CompressionOptions.DefaultFlags = DefaultFlags.Value;
             if (DefaultFlagsIncluded.HasValue) CompressionOptions.DefaultFlagsIncluded = DefaultFlagsIncluded.Value;
             if (DefaultCompressionLevel.HasValue) CompressionOptions.DefaultCompressionLevel = DefaultCompressionLevel.Value;
+            if (DefaultArchiveChunkSize.HasValue) ArchiveCompression.DefaultChunkSize = DefaultArchiveChunkSize.Value;
+            if (MaxArchiveChunkSize.HasValue) ArchiveDecompression.MaxChunkSize = MaxArchiveChunkSize.Value;
+            if (DefaultChunkSize.HasValue) CompressionOptions.DefaultChunkSize = DefaultChunkSize.Value;
+            if (DefaultMaxKeyLength.HasValue) CompressionOptions.DefaultMaxKeyLength = DefaultMaxKeyLength.Value;
             await ApplyPropertiesAsync(afterBootstrap: false, cancellationToken).DynamicContext();
             if (DisabledAlgorithms is not null)
                 foreach (string algo in DisabledAlgorithms)

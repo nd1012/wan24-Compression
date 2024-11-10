@@ -166,7 +166,7 @@ namespace wan24.Compression
             if (options.FlagsIncluded) compressedTarget.Write((byte)options.Flags);
             if (options.SerializerVersionIncluded) compressedTarget.WriteSerializerVersion();
             if (options.AlgorithmIncluded) compressedTarget.WriteNumber(Value);
-            if (options.UncompressedLengthIncluded) compressedTarget.WriteNumber(uncompressedSource.Length - uncompressedSource.Position);
+            if (options.UncompressedLengthIncluded) compressedTarget.WriteNumber(uncompressedSource.GetRemainingBytes());
             return options;
         }
 
@@ -189,7 +189,7 @@ namespace wan24.Compression
             if (options.FlagsIncluded) await compressedTarget.WriteAsync((byte)options.Flags, cancellationToken).DynamicContext();
             if (options.SerializerVersionIncluded) await compressedTarget.WriteSerializerVersionAsync(cancellationToken).DynamicContext();
             if (options.AlgorithmIncluded) await compressedTarget.WriteNumberAsync(Value, cancellationToken).DynamicContext();
-            if (options.UncompressedLengthIncluded) await compressedTarget.WriteNumberAsync(uncompressedSource.Length - uncompressedSource.Position, cancellationToken).DynamicContext();
+            if (options.UncompressedLengthIncluded) await compressedTarget.WriteNumberAsync(uncompressedSource.GetRemainingBytes(), cancellationToken).DynamicContext();
             return options;
         }
 
