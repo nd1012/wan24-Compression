@@ -145,7 +145,7 @@ namespace wan24.Compression
                             await ExtractFolderAsync(path, info, cancellationToken).DynamicContext();
                             break;
                         case ArchiveItemTypes.KeyValue:
-                            res[info.Key] = (await ExtractValueAsync(info, maxKeyValueLength, cancellationToken).DynamicContext()).Value;
+                            res[info.Key] = await ExtractValueAsync(info, maxKeyValueLength, cancellationToken).DynamicContext();
                             break;
                         default:
                             throw new InvalidProgramException($"Invalid item type \"{info.Type}\"");
@@ -186,9 +186,26 @@ namespace wan24.Compression
             }
             FileStream fs = FsHelper.CreateFileStream(name);
             await using (fs.DynamicContext())
-                if (!info.IsEmpty)
-                    await info.Value.CopyToAsync(fs, cancellationToken).DynamicContext();
-            if (info.Value is not null) await info.Value.CopyToAsync(Stream.Null, cancellationToken).DynamicContext();
+                await ExtractFileAsync(fs, info, cancellationToken).DynamicContext();
+        }
+
+        /// <summary>
+        /// Extract a file
+        /// </summary>
+        /// <param name="target">Target stream (won't be disposed)</param>
+        /// <param name="info">Info (won't be disposed)</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        public virtual async Task ExtractFileAsync(
+            Stream target,
+            ArchiveItemInfo info,
+            CancellationToken cancellationToken = default
+            )
+        {
+            EnsureUndisposed();
+            if (!info.IsFile) throw new InvalidOperationException("Not a file");
+            if (!info.IsEmpty)
+                await info.Value.CopyToAsync(target, cancellationToken).DynamicContext();
+            if (info.Value is not null) await info.Value.CopyToAsync(Stream.Null, cancellationToken).DynamicContext();//FIXME Won't work
         }
 
         /// <summary>
@@ -217,8 +234,8 @@ namespace wan24.Compression
         /// <param name="info">Info (won't be disposed)</param>
         /// <param name="maxKeyValueLength">Maximum key/value value length in bytes</param>
         /// <param name="cancellationToken">Cancellation token</param>
-        /// <returns>Key/value</returns>
-        public virtual async Task<KeyValuePair<string, byte[]>> ExtractValueAsync(
+        /// <returns>Value</returns>
+        public virtual async Task<byte[]> ExtractValueAsync(
             ArchiveItemInfo info,
             int maxKeyValueLength = ushort.MaxValue,
             CancellationToken cancellationToken = default
@@ -227,14 +244,14 @@ namespace wan24.Compression
             EnsureUndisposed();
             if (!info.IsKeyValue) throw new InvalidOperationException("Not a key/value");
             // Handle an empty value
-            if (info.IsEmpty) return new(info.Key, []);
+            if (info.IsEmpty) return [];
             // Handle a chunked value
             if (info.IsChunked)
             {
                 using MemoryPoolStream ms = new();
                 using LimitedLengthStream limitedMs = new(ms, maxLength: maxKeyValueLength);
                 await info.Value.CopyToAsync(limitedMs, cancellationToken).DynamicContext();
-                return new(info.Key, ms.ToArray());
+                return ms.ToArray();
             }
             // Handle an unchunked value
             if (!info.Length.HasValue) throw new InvalidProgramException();
@@ -242,7 +259,7 @@ namespace wan24.Compression
                 throw new InvalidDataException($"Value length of {info.Length} bytes exceeds the max. length of {maxKeyValueLength} bytes");
             byte[] value = new byte[info.Length.Value];
             await info.Value.ReadExactlyAsync(value, cancellationToken).DynamicContext();
-            return new(info.Key, value);
+            return value;
         }
 
         /// <summary>

@@ -1,9 +1,6 @@
 ﻿using wan24.Core;
 using wan24.StreamSerializerExtensions;
 
-//TODO Add AddFolderAsync (with the possibility to define an archive target root)
-//TODO Add AddFsItemsAsync (for IEnumerable<string>)
-
 namespace wan24.Compression
 {
     /// <summary>
@@ -11,6 +8,11 @@ namespace wan24.Compression
     /// </summary>
     public partial class ArchiveCompression : DisposableBase
     {
+        /// <summary>
+        /// Wildcard search pattern
+        /// </summary>
+        protected const string WILDCARD = "*";
+
         /// <summary>
         /// Version
         /// </summary>
@@ -70,7 +72,7 @@ namespace wan24.Compression
         /// Add a file
         /// </summary>
         /// <param name="path">Absolute item path including filename</param>
-        /// <param name="source">Source stream</param>
+        /// <param name="source">Source stream (should be seekable to avoid chunking)</param>
         /// <param name="options">Options</param>
         /// <param name="uncompressed">Uncompressed</param>
         /// <param name="cancellationToken">Cancellation token</param>
@@ -100,10 +102,124 @@ namespace wan24.Compression
         }
 
         /// <summary>
+        /// Add a folder
+        /// </summary>
+        /// <param name="path">Absolute local path</param>
+        /// <param name="root">Item root path</param>
+        /// <param name="recursive">If to recurse into sub-folders</param>
+        /// <param name="includeEmptyFolders">If to include empty folders</param>
+        /// <param name="options">Options</param>
+        /// <param name="uncompressed">If not to compress files</param>
+        /// <param name="enumerationOptions">Filesystem enumeration options</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        public virtual async Task AddFolderAsync(
+            string path,
+            string root = "/",
+            bool recursive = true,
+            bool includeEmptyFolders = true,
+            CompressionOptions? options = null,
+            bool uncompressed = false,
+            EnumerationOptions? enumerationOptions = null,
+            CancellationToken cancellationToken = default
+            )
+        {
+            EnsureUndisposed();
+            // Validate parameters
+            path = Path.GetFullPath(path);
+            if (!Directory.Exists(path)) throw new DirectoryNotFoundException();
+            //TODO Validate item root path
+            // Find all folders to investigate
+            Queue<string> folders = [];
+            folders.Enqueue(path);
+            if (enumerationOptions is not null) enumerationOptions.ReturnSpecialDirectories = false;
+            if (recursive)
+                foreach (string folder in Directory.EnumerateDirectories(path, searchPattern: WILDCARD, enumerationOptions ?? new EnumerationOptions()
+                {
+                    RecurseSubdirectories = recursive
+                }))
+                    folders.Enqueue(folder);
+            // Add folders and files
+            IEnumerable<string> files;
+            FileStream fs;
+            if (enumerationOptions is not null)
+            {
+                enumerationOptions.RecurseSubdirectories = false;
+            }
+            else
+            {
+                enumerationOptions = new();
+            }
+            while (folders.TryDequeue(out string? folder))
+            {
+                files = Directory.EnumerateFiles(folder, searchPattern: WILDCARD, enumerationOptions);
+                // Handle an empty folder
+                if (!files.Any() && !Directory.EnumerateDirectories(folder, searchPattern: WILDCARD, enumerationOptions).Any())
+                {
+                    if (includeEmptyFolders)
+                        await AddFolderAsync(FsHelper.NormalizeLinuxDisplayPath(Path.Combine(root, folder[path.Length..])), cancellationToken).DynamicContext();
+                    continue;
+                }
+                // Add files from the current folder
+                foreach (string file in files)
+                {
+                    fs = FsHelper.CreateFileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read, FileOptions.SequentialScan | FileOptions.Asynchronous);
+                    await using (fs.DynamicContext())
+                        await AddFileAsync(
+                            FsHelper.NormalizeLinuxDisplayPath(Path.Combine(root, file[path.Length..])),
+                            fs,
+                            options,
+                            uncompressed,
+                            cancellationToken
+                            )
+                            .DynamicContext();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Add filesystem items
+        /// </summary>
+        /// <param name="paths">Paths to files and folders (key is the local path, value the path in the archive</param>
+        /// <param name="recursive">If to recurse into sub-folders of a folder</param>
+        /// <param name="includeEmptyFolders">If to include empty folders</param>
+        /// <param name="options">Options</param>
+        /// <param name="uncompressed">If not to compress files</param>
+        /// <param name="enumerationOptions">Filesystem enumeration options</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        public virtual async Task AddFsItemsAsync(
+            IEnumerable<KeyValuePair<string, string>> paths,
+            bool recursive = true,
+            bool includeEmptyFolders = true,
+            CompressionOptions? options = null,
+            bool uncompressed = false,
+            EnumerationOptions? enumerationOptions = null,
+            CancellationToken cancellationToken = default
+            )
+        {
+            EnsureUndisposed();
+            FileStream fs;
+            foreach (KeyValuePair<string, string> kvp in paths)
+                if (Directory.Exists(kvp.Key))
+                {
+                    await AddFolderAsync(kvp.Key, kvp.Value, recursive, includeEmptyFolders, options, uncompressed, enumerationOptions, cancellationToken).DynamicContext();
+                }
+                else if (File.Exists(kvp.Key))
+                {
+                    fs = FsHelper.CreateFileStream(kvp.Key, FileMode.Open, FileAccess.Read, FileShare.Read, FileOptions.SequentialScan | FileOptions.Asynchronous);
+                    await using (fs.DynamicContext())
+                        await AddFileAsync(kvp.Value, fs, options, uncompressed, cancellationToken).DynamicContext();
+                }
+                else
+                {
+                    throw new FileNotFoundException($"Local path \"{kvp.Key}\" not found");
+                }
+        }
+
+        /// <summary>
         /// Add a key/value
         /// </summary>
         /// <param name="key">Item key</param>
-        /// <param name="value">Source stream</param>
+        /// <param name="value">Source stream (should be seekable to avoid chunking)</param>
         /// <param name="options">Options</param>
         /// <param name="uncompressed">If uncompressed</param>
         /// <param name="cancellationToken">Cancellation token</param>
@@ -144,6 +260,44 @@ namespace wan24.Compression
             value.AsSpan().EnsureValid(offset, length);
             using MemoryStream ms = new(value, offset, length, writable: false);
             await WriteItemAsync(ArchiveItemTypes.KeyValue, key, ms, options, uncompressed, cancellationToken).DynamicContext();
+        }
+
+        /// <summary>
+        /// Add key/values
+        /// </summary>
+        /// <param name="values">Key/values (values won't be disposed; use seekable streams to avoid chunking)</param>
+        /// <param name="options">Options</param>
+        /// <param name="uncompressed">If uncompressed</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        public virtual async Task AddKeyValueAsync(
+            IEnumerable<KeyValuePair<string, Stream>> values,
+            CompressionOptions? options = null,
+            bool uncompressed = false,
+            CancellationToken cancellationToken = default
+            )
+        {
+            EnsureUndisposed();
+            foreach (KeyValuePair<string, Stream> kvp in values)
+                await AddKeyValueAsync(kvp.Key, kvp.Value, options, uncompressed, cancellationToken).DynamicContext();
+        }
+
+        /// <summary>
+        /// Add key/values
+        /// </summary>
+        /// <param name="values">Key/values (values won't be disposed; use seekable streams to avoid chunking)</param>
+        /// <param name="options">Options</param>
+        /// <param name="uncompressed">If uncompressed</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        public virtual async Task AddKeyValueAsync(
+            IAsyncEnumerable<KeyValuePair<string, Stream>> values,
+            CompressionOptions? options = null,
+            bool uncompressed = false,
+            CancellationToken cancellationToken = default
+            )
+        {
+            EnsureUndisposed();
+            await foreach (KeyValuePair<string, Stream> kvp in values.DynamicContext().WithCancellation(cancellationToken))
+                await AddKeyValueAsync(kvp.Key, kvp.Value, options, uncompressed, cancellationToken).DynamicContext();
         }
     }
 }

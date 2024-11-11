@@ -224,11 +224,9 @@ namespace wan24.Compression
                     Value = new LimitedLengthStream(CompressionHelper.GetDecompressionStream(Source, options), maxLength: len ?? throw new InvalidProgramException())
                 };
             // Return a chunked compression stream
-            ChunkStream chunker = await ChunkStream.FromExistingAsync(Source, cancellationToken: cancellationToken).DynamicContext();
+            ChunkStream chunker = await ChunkStream.FromExistingAsync(Source, chunkSize: MaxChunkSize, cancellationToken: cancellationToken).DynamicContext();
             try
             {
-                if (chunker.ChunkSize > MaxChunkSize)
-                    throw new OutOfMemoryException($"Chunked compression stream with chunk size {chunker.ChunkSize} bytes exceeds max. chunk size of {MaxChunkSize} bytes");
                 return new()
                 {
                     Type = type,
