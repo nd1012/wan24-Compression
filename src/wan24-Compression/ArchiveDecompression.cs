@@ -306,7 +306,7 @@ namespace wan24.Compression
                     options.CustomSerializerVersion ?? throw new InvalidProgramException(), 
                     cancellationToken: cancellationToken
                     ).DynamicContext();
-                if (chunkSize < 1 || chunkSize > MaxChunkSize) throw new InvalidDataException($"Invalid chuk size {chunkSize} bytes");
+                if (chunkSize < 1 || chunkSize > MaxChunkSize) throw new InvalidDataException($"Invalid chunk size {chunkSize} bytes");
                 return new(source, (byte)version, options, chunkSize, leaveOpen, maxKeyLength);
             }
             catch
